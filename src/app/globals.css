@@ -1,0 +1,899 @@
+/* ==========================================================================
+   TAHSEEN JABER COLD STORAGE & LOGISTICS — DESIGN SYSTEM
+   --------------------------------------------------------------------------
+   Tailwind CSS v4 (CSS-first configuration).
+   This file is the single source of truth for colour, type, motion and the
+   reusable "cold industrial" surface language used across the whole product.
+   ========================================================================== */
+
+@import "tailwindcss";
+
+/* --------------------------------------------------------------------------
+   1. SELF-HOSTED TYPOGRAPHY
+   No third-party font requests (GDPR-friendly, faster, works offline).
+   Archivo Variable  -> architectural display / headings
+   Inter Variable    -> body copy, UI
+   JetBrains Mono    -> telemetry, HUD, reference IDs, tabular data
+   -------------------------------------------------------------------------- */
+
+@font-face {
+  font-family: "Archivo Variable";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url("/fonts/archivo-variable-latin.woff2") format("woff2-variations");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Inter Variable";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url("/fonts/inter-variable-latin.woff2") format("woff2-variations");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url("/fonts/jetbrains-mono-latin-400.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF,
+    U+FFFD;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url("/fonts/jetbrains-mono-latin-500.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF,
+    U+FFFD;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url("/fonts/jetbrains-mono-latin-600.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF,
+    U+FFFD;
+}
+
+/* --------------------------------------------------------------------------
+   2. DESIGN TOKENS
+   -------------------------------------------------------------------------- */
+
+@theme {
+  /* --- Surface: deep midnight navy, void to steel ------------------------ */
+  --color-midnight: #030712;
+  --color-navy: #0b132b;
+  --color-hull: #0f1b38;
+  --color-hull-raised: #16264d;
+  --color-hull-line: #1c3157;
+
+  /* --- Light: electric ice cyan + frost blue ------------------------------ */
+  --color-ice: #48cae4;
+  --color-glow: #00f5d4;
+
+  /* --- Text --------------------------------------------------------------- */
+  --color-frost: #eafcff;
+  --color-silver: #94a3b8;
+  --color-silver-dim: #64748b;
+
+  /* --- Status (semantic, never decorative) -------------------------------- */
+  --color-stable: #22c55e;
+  --color-caution: #f59e0b;
+  --color-alert: #ef4444;
+
+  /* --- Typography --------------------------------------------------------- */
+  --font-display: "Archivo Variable", "Archivo", ui-sans-serif, system-ui,
+    -apple-system, "Segoe UI", sans-serif;
+  --font-sans: "Inter Variable", "Inter", ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo,
+    monospace;
+
+  /* --- Signature motion curves (used everywhere; no ad-hoc easings) ------- */
+  --ease-cold: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-frost: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-machine: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-dock: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* --- Scale -------------------------------------------------------------- */
+  --text-micro: 0.625rem;
+  --text-micro--line-height: 1.1;
+  --text-micro--letter-spacing: 0.18em;
+
+  /* --- Keyframes ---------------------------------------------------------- */
+  --animate-mist-drift: mist-drift 44s linear infinite;
+  --animate-mist-drift-slow: mist-drift 78s linear infinite reverse;
+  --animate-status-pulse: status-pulse 2.6s var(--ease-cold) infinite;
+  --animate-scan-line: scan-line 3.4s var(--ease-machine) infinite;
+  --animate-frost-shimmer: frost-shimmer 6s var(--ease-cold) infinite;
+  --animate-sweep: sweep 2.8s var(--ease-frost) infinite;
+  --animate-breathe: breathe 7s ease-in-out infinite;
+  --animate-glow-pulse: glow-pulse 3.2s var(--ease-cold) infinite;
+  --animate-aurora: aurora 16s ease-in-out infinite;
+  --animate-frost-creep: frost-creep 9s var(--ease-cold) infinite;
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 18px rgb(0 245 212 / 0.22);
+    opacity: 1;
+  }
+  50% {
+    box-shadow: 0 0 34px rgb(0 245 212 / 0.45);
+    opacity: 0.85;
+  }
+}
+
+@keyframes aurora {
+  0%,
+  100% {
+    transform: translate3d(-4%, 0, 0) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate3d(4%, -3%, 0) scale(1.08);
+    opacity: 0.8;
+  }
+}
+
+@keyframes skeleton-sweep {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes shimmer-cross {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(400%);
+  }
+}
+
+@keyframes frost-creep {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.03);
+  }
+}
+
+@keyframes mist-drift {
+  from {
+    transform: translate3d(-25%, 0, 0);
+  }
+  to {
+    transform: translate3d(25%, 0, 0);
+  }
+}
+
+@keyframes status-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 currentColor;
+  }
+  50% {
+    opacity: 0.55;
+    box-shadow: 0 0 0 4px transparent;
+  }
+}
+
+@keyframes scan-line {
+  0% {
+    transform: translateY(-110%);
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  88% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110%);
+    opacity: 0;
+  }
+}
+
+@keyframes frost-shimmer {
+  0%,
+  100% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes sweep {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(220%);
+  }
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.04);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. BASE
+   -------------------------------------------------------------------------- */
+
+@layer base {
+  :root {
+    color-scheme: dark;
+    --tj-nav-height: 5rem;
+    --tj-gutter: 1.25rem;
+  }
+
+  * {
+    border-color: var(--color-hull-line);
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+    /* Offset in-page anchors so the fixed navbar never covers a heading. */
+    scroll-padding-top: calc(var(--tj-nav-height) + 1.5rem);
+  }
+
+  body {
+    background-color: var(--color-midnight);
+    color: var(--color-silver);
+    font-family: var(--font-sans);
+    font-feature-settings: "cv02", "cv03", "cv04", "ss01";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    color: var(--color-frost);
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    line-height: 1.02;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* Consistent, visible keyboard focus across the entire product (§37). */
+  :focus-visible {
+    outline: 2px solid var(--color-glow);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background-color: color-mix(in oklab, var(--color-glow) 32%, transparent);
+    color: var(--color-frost);
+  }
+
+  /* Engineered scrollbar — subtle, never neon. */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-hull-raised) transparent;
+  }
+
+  *::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--color-hull-raised);
+    border-radius: 999px;
+    border: 3px solid var(--color-midnight);
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-hull-line);
+  }
+
+  /* Tabular figures for every piece of telemetry / inventory data. */
+  .tabular {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum";
+  }
+
+  /*
+   * The native cursor is suppressed ONLY once CustomCursor has mounted and added
+   * this class to <html>. A JavaScript failure therefore degrades to the normal
+   * system pointer rather than leaving the visitor without one.
+   * Text-entry controls keep their caret so typing stays usable.
+   */
+  .tj-cursor-active,
+  .tj-cursor-active *:not(input):not(textarea):not(select):not([contenteditable="true"]) {
+    cursor: none;
+  }
+
+  .tj-cursor-active a,
+  .tj-cursor-active button,
+  .tj-cursor-active [role="button"],
+  .tj-cursor-active label[for] {
+    cursor: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4. COMPONENTS — the reusable cold-industrial surface language
+   -------------------------------------------------------------------------- */
+
+@layer components {
+  /*
+   * FROSTED INSTRUMENT PANEL.
+   * Ultra-heavy glass: deep navy translucency, a cyan-tinted hairline border and
+   * an outer cold glow. This is the signature surface of the whole product —
+   * nothing renders as a flat grey box.
+   */
+  .tj-panel {
+    position: relative;
+    background: linear-gradient(
+      165deg,
+      rgb(15 27 56 / 0.58),
+      rgb(11 19 43 / 0.66) 45%,
+      rgb(3 7 18 / 0.74)
+    );
+    border: 1px solid rgb(0 245 212 / 0.22);
+    backdrop-filter: blur(24px) saturate(150%);
+    -webkit-backdrop-filter: blur(24px) saturate(150%);
+    box-shadow:
+      inset 0 1px 0 0 rgb(234 252 255 / 0.09),
+      inset 0 0 40px rgb(0 245 212 / 0.04),
+      0 0 30px rgb(0 245 212 / 0.10),
+      0 28px 70px -32px rgb(0 0 0 / 0.95);
+  }
+
+  /* Denser glass for floating overlays: HUD, modals, dropdowns. */
+  .glass {
+    background: linear-gradient(
+      160deg,
+      rgb(11 19 43 / 0.60),
+      rgb(3 7 18 / 0.72)
+    );
+    border: 1px solid rgb(0 245 212 / 0.28);
+    backdrop-filter: blur(24px) saturate(160%);
+    -webkit-backdrop-filter: blur(24px) saturate(160%);
+    box-shadow:
+      inset 0 1px 0 0 rgb(234 252 255 / 0.10),
+      0 0 30px rgb(0 245 212 / 0.15),
+      0 24px 60px -28px rgb(0 0 0 / 0.9);
+  }
+
+  /* The strongest glass — modals and the login overlay. */
+  .glass-strong {
+    background: linear-gradient(
+      158deg,
+      rgb(15 27 56 / 0.78),
+      rgb(11 19 43 / 0.86) 50%,
+      rgb(3 7 18 / 0.92)
+    );
+    border: 1px solid rgb(0 245 212 / 0.35);
+    backdrop-filter: blur(32px) saturate(170%);
+    -webkit-backdrop-filter: blur(32px) saturate(170%);
+    box-shadow:
+      inset 0 1px 0 0 rgb(234 252 255 / 0.14),
+      inset 0 0 60px rgb(0 245 212 / 0.05),
+      0 0 46px rgb(0 245 212 / 0.18),
+      0 40px 90px -36px rgb(0 0 0 / 1);
+  }
+
+  /* Electric cyan glow ring, used for the hottest interactive states. */
+  .glow-ring {
+    box-shadow:
+      0 0 0 1px rgb(0 245 212 / 0.45),
+      0 0 24px rgb(0 245 212 / 0.28),
+      inset 0 0 18px rgb(0 245 212 / 0.10);
+  }
+
+  /* Ice-crystal frozen edge — appears as temperature drops (§13). */
+  .frost-edge {
+    position: relative;
+  }
+  .frost-edge::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    background:
+      radial-gradient(120% 60% at 0% 0%, rgb(234 252 255 / 0.20), transparent 42%),
+      radial-gradient(120% 60% at 100% 100%, rgb(72 202 228 / 0.16), transparent 46%);
+    mix-blend-mode: screen;
+    opacity: var(--tj-frost, 0.4);
+    transition: opacity 600ms var(--ease-cold);
+  }
+
+  /* Frosted glass text — headline accent. */
+  .glass-text {
+    background: linear-gradient(
+      178deg,
+      rgb(234 252 255 / 0.98) 6%,
+      rgb(72 202 228 / 0.92) 46%,
+      rgb(0 245 212 / 0.85) 92%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Corner brackets — the "instrument" cue. Purely decorative, aria-hidden. */
+  .tj-corners::before,
+  .tj-corners::after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-color: color-mix(in oklab, var(--color-glow) 55%, transparent);
+    pointer-events: none;
+    transition: border-color 400ms var(--ease-cold);
+  }
+
+  .tj-corners::before {
+    top: -1px;
+    left: -1px;
+    border-top-width: 1px;
+    border-left-width: 1px;
+  }
+
+  .tj-corners::after {
+    right: -1px;
+    bottom: -1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+  }
+
+  .group:hover .tj-corners::before,
+  .group:hover .tj-corners::after {
+    border-color: var(--color-glow);
+  }
+
+  /* Micro label: uppercase, mono, wide-tracked. The HUD voice. */
+  .tj-label {
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-silver-dim);
+  }
+
+  .tj-label-glow {
+    color: color-mix(in oklab, var(--color-glow) 80%, var(--color-frost));
+  }
+
+  /* Section eyebrow with the leading rule. */
+  .tj-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--color-glow);
+  }
+
+  .tj-eyebrow::before {
+    content: "";
+    width: 2.5rem;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      color-mix(in oklab, var(--color-glow) 70%, transparent)
+    );
+  }
+
+  /* Architectural display heading. */
+  .tj-display {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    line-height: 0.94;
+    text-transform: uppercase;
+    color: var(--color-frost);
+  }
+
+  /* Hairline that fades at both ends — structural, not decorative. */
+  .tj-hairline {
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      color-mix(in oklab, var(--color-hull-line) 90%, transparent) 18%,
+      color-mix(in oklab, var(--color-hull-line) 90%, transparent) 82%,
+      transparent
+    );
+  }
+
+  /* Technical grid backdrop for facility/engineering sections. */
+  .tj-grid {
+    background-image:
+      linear-gradient(
+        to right,
+        color-mix(in oklab, var(--color-hull-line) 42%, transparent) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        to bottom,
+        color-mix(in oklab, var(--color-hull-line) 42%, transparent) 1px,
+        transparent 1px
+      );
+    background-size: 64px 64px;
+  }
+
+  .tj-grid-fine {
+    background-size: 24px 24px;
+    background-image:
+      linear-gradient(
+        to right,
+        color-mix(in oklab, var(--color-hull-line) 26%, transparent) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        to bottom,
+        color-mix(in oklab, var(--color-hull-line) 26%, transparent) 1px,
+        transparent 1px
+      );
+  }
+
+  /* Status pill. Colour is set by the status token passed in. */
+  .tj-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.25rem 0.625rem;
+    border-radius: 2px;
+    border: 1px solid color-mix(in oklab, currentColor 32%, transparent);
+    background: color-mix(in oklab, currentColor 9%, transparent);
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .tj-status-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 999px;
+    background-color: currentColor;
+    flex: none;
+  }
+
+  .tj-status-live .tj-status-dot {
+    animation: var(--animate-status-pulse);
+  }
+
+  /* Text that reads like frosted glass — used sparingly on hero accents. */
+  .tj-frost-text {
+    background: linear-gradient(
+      178deg,
+      var(--color-frost) 8%,
+      color-mix(in oklab, var(--color-ice) 72%, var(--color-frost)) 52%,
+      color-mix(in oklab, var(--color-silver) 88%, transparent) 96%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Outline display type — architectural, no fill. */
+  .tj-outline-text {
+    color: transparent;
+    -webkit-text-stroke: 1px color-mix(in oklab, var(--color-silver) 42%, transparent);
+  }
+
+  /* Line-mask reveal wrapper (paired with [data-reveal-line]). */
+  .tj-mask {
+    display: block;
+    overflow: hidden;
+  }
+
+  /*
+   * SKELETON + SHIMMER — the streaming loading state.
+   * Pure CSS so `loading.tsx` paints with no client JavaScript. The shimmer is
+   * disabled under reduced motion by the block at the foot of this file.
+   */
+  .tj-skeleton {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(
+      100deg,
+      rgb(15 27 56 / 0.55),
+      rgb(28 49 87 / 0.42) 48%,
+      rgb(15 27 56 / 0.55)
+    );
+    border: 1px solid rgb(0 245 212 / 0.08);
+  }
+  .tj-skeleton::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      100deg,
+      transparent 12%,
+      rgb(0 245 212 / 0.10) 46%,
+      transparent 78%
+    );
+    transform: translateX(-100%);
+    animation: skeleton-sweep 2.1s var(--ease-cold) infinite;
+  }
+
+  .tj-shimmer {
+    animation: shimmer-cross 2.6s var(--ease-cold) infinite;
+  }
+
+  /* Data table row used by inventory / admin views. */
+  .tj-row {
+    display: grid;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.875rem 1rem;
+    border-bottom: 1px solid
+      color-mix(in oklab, var(--color-hull-line) 60%, transparent);
+    transition: background-color 260ms var(--ease-cold);
+  }
+
+  .tj-row:hover {
+    background-color: color-mix(in oklab, var(--color-hull) 42%, transparent);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   5. UTILITIES
+   -------------------------------------------------------------------------- */
+
+/*
+ * HERO FROST PARTICLES (§09, §11 Scene 01)
+ * Low density, very slow. Transform-only so the compositor handles them and the
+ * main thread stays free for the GSAP timeline running at the same time.
+ */
+@keyframes tj-particle-drift {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(16px, -48px, 0);
+  }
+  100% {
+    transform: translate3d(-8px, -96px, 0);
+  }
+}
+
+.tj-particle {
+  animation: tj-particle-drift 19s ease-in-out infinite;
+  will-change: transform;
+}
+
+/*
+ * TEMPERATURE CONTROL (§13)
+ * A native range input, restyled. Keeping it native means it is keyboard
+ * operable, announces its value to screen readers and works with every assistive
+ * technology — a custom drag surface would have to re-earn all of that (§37).
+ */
+.tj-temp-range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 34px;
+  background: transparent;
+  cursor: ew-resize;
+}
+
+.tj-temp-range::-webkit-slider-runnable-track {
+  height: 6px;
+  border-radius: 3px;
+  background: linear-gradient(
+    90deg,
+    rgba(148,163,184, 0.55) 0%,
+    rgba(72,202,228, 0.6) 45%,
+    rgba(0,245,212, 0.9) 100%
+  );
+  border: 1px solid rgba(0,245,212, 0.28);
+}
+
+.tj-temp-range::-moz-range-track {
+  height: 6px;
+  border-radius: 3px;
+  background: linear-gradient(
+    90deg,
+    rgba(148,163,184, 0.55) 0%,
+    rgba(72,202,228, 0.6) 45%,
+    rgba(0,245,212, 0.9) 100%
+  );
+  border: 1px solid rgba(0,245,212, 0.28);
+}
+
+.tj-temp-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  margin-top: -8px;
+  border-radius: 2px;
+  background: linear-gradient(180deg, #eafcff, #48cae4);
+  border: 1px solid rgba(3,7,18, 0.6);
+  box-shadow:
+    0 0 0 4px rgba(0,245,212, 0.14),
+    0 6px 18px -6px rgba(0,245,212, 0.7);
+  transition:
+    box-shadow 260ms var(--ease-cold),
+    transform 260ms var(--ease-cold);
+}
+
+.tj-temp-range::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 2px;
+  background: linear-gradient(180deg, #eafcff, #48cae4);
+  border: 1px solid rgba(3,7,18, 0.6);
+  box-shadow:
+    0 0 0 4px rgba(0,245,212, 0.14),
+    0 6px 18px -6px rgba(0,245,212, 0.7);
+}
+
+.tj-temp-range:hover::-webkit-slider-thumb,
+.tj-temp-range:active::-webkit-slider-thumb {
+  transform: scale(1.1);
+  box-shadow:
+    0 0 0 7px rgba(0,245,212, 0.18),
+    0 8px 24px -6px rgba(0,245,212, 0.85);
+}
+
+.tj-temp-range:focus-visible::-webkit-slider-thumb {
+  box-shadow:
+    0 0 0 3px var(--color-midnight),
+    0 0 0 5px var(--color-glow);
+}
+
+.tj-temp-range:focus-visible {
+  outline: none;
+}
+
+@utility text-balance-tight {
+  text-wrap: balance;
+}
+
+/* Hide from sighted users but keep for assistive tech. */
+@utility sr-focusable {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+
+  &:focus-visible {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 200;
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0.75rem 1.25rem;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+    background: var(--color-glow);
+    color: var(--color-midnight);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border-radius: 2px;
+  }
+}
+
+/* Noise/frost grain overlay — a single tiny inline SVG, not a raster asset. */
+@utility frost-grain {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.35;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  }
+}
+
+/* --------------------------------------------------------------------------
+   6. ACCESSIBILITY — reduced motion (§07, §34, §37)
+   When the user asks for less motion we honour it globally and aggressively:
+   no drifting mist, no scanning lines, no parallax, instant reveals.
+   -------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Reveal-on-scroll content must be visible without animation. */
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   7. PRINT — invoices, gate passes and reports must be legible on paper.
+   -------------------------------------------------------------------------- */
+
+@media print {
+  body {
+    background: #fff;
+    color: #111;
+  }
+
+  .tj-no-print {
+    display: none !important;
+  }
+}
