@@ -88,8 +88,8 @@ export default async function LogisticsPage() {
         className="relative z-10 mx-auto w-full max-w-[86rem] px-5 py-14 sm:px-8 lg:px-12"
       >
         <ImageBand
-          src="/assets/reefer-truck-highway.jpg"
-          alt="A refrigerated truck running an empty highway at dusk, marker lights glowing under a violet sky."
+          src="/assets/reefer-fleet-dock.jpg"
+          alt="Refrigerated trailers backed into the dock bays of the cold store at dusk, dock seals closed."
           eyebrow="Gate to gate"
           title="A chamber on wheels"
           caption="The reefer answers to the same discipline as the building: one set point, one reference, one record from dock to destination."

@@ -189,8 +189,8 @@ export default async function HomePage() {
         {/* The watchtower, as atmosphere — illustrative (§45). */}
         <figure className="tj-panel-shine group relative mt-8 h-[38vh] min-h-[280px] overflow-hidden rounded-2xl border border-hull-line/60">
           <Image
-            src="/assets/control-room-ops.jpg"
-            alt="The monitoring control room at night, screens glowing with zone temperatures under indigo light."
+            src="/assets/barcode-scanning-ops.jpg"
+            alt="A warehouse operator scanning the label of a sealed pallet at receiving, scan beam visible."
             fill
             sizes="(min-width: 1024px) 86rem, 100vw"
             className="scale-[1.22] object-cover"

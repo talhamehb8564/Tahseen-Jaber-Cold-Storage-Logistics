@@ -65,8 +65,8 @@ export default function ContactPage() {
             {/* The facility — illustrative (§45). */}
             <figure className="tj-panel-shine relative h-44 overflow-hidden rounded-2xl border border-hull-line/60 sm:h-52">
               <Image
-                src="/assets/facility-exterior-night.jpg"
-                alt="The cold storage facility at night: illuminated dock doors under an indigo sky."
+                src="/assets/aerial-facility-night.jpg"
+                alt="Aerial night view of the facility: floodlit docks and a yard of parked refrigerated trailers."
                 fill
                 sizes="(min-width: 1024px) 40vw, 100vw"
                 className="scale-[1.18] object-cover"

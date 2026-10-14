@@ -193,8 +193,8 @@ export default async function FacilityPage() {
               label: "The aisles",
             },
             {
-              src: "/assets/automated-racking.jpg",
-              alt: "High-bay racking aisle lit in frost blue with floor-level fog.",
+              src: "/assets/forklift-racking-aisle.jpg",
+              alt: "A reach truck placing a pallet of sealed cartons into high-bay racking, frost on the uprights.",
               label: "High-bay",
             },
             {
