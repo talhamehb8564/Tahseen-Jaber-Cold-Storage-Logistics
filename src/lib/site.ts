@@ -80,7 +80,16 @@ export const siteConfig = {
   },
 
   seo: {
-    url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+    /**
+     * Absolute origin for canonical URLs, Open Graph and the sitemap.
+     * Resolution order:
+     *   1. NEXT_PUBLIC_SITE_URL — set this to the final domain (e.g. https://example.com)
+     *   2. VERCEL_URL — provided automatically by Vercel preview/production deploys
+     *   3. localhost fallback for local development
+     */
+    url:
+      process.env.NEXT_PUBLIC_SITE_URL ??
+      (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000"),
     titleTemplate: "%s — Tahseen Jaber Cold Storage & Logistics",
     defaultTitle:
       "Tahseen Jaber Cold Storage & Logistics | Baghdad Cold Chain Facility",
