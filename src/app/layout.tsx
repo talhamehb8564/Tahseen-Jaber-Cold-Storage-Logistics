@@ -74,12 +74,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className="flex min-h-svh flex-col bg-midnight font-sans text-silver antialiased">
+        {/* §09 — the living sky: aurora light fields behind every route. */}
+        <AuroraSky />
+
         {/* §09 — the permanent cold atmosphere behind every route. */}
         <ColdAtmosphere />
 
         {/* Snow, ice crystals, fog and the pointer field, drawn on one canvas
             above the atmosphere and below the content. */}
         <FrostCanvas />
+
+        {/* Progress rail + scroll parallax engine (decorative; no content
+            depends on it). */}
+        <ScrollFx />
 
         {/* §08 — desktop-only instrument cursor; self-disables elsewhere. */}
         <CustomCursor />
