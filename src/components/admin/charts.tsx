@@ -32,15 +32,15 @@ import {
  */
 
 const AXIS = {
-  stroke: "#383a65",
+  stroke: "#a3aebe",
   fontSize: 10,
   fontFamily: "'JetBrains Mono', monospace",
   letterSpacing: "0.08em",
 } as const;
 
-const GRID = "#1a1b3e";
+const GRID = "#c8d1de";
 
-const SERIES = ["#8f7bff", "#4cc2ff", "#e9f3ff", "#22C55E", "#F59E0B"] as const;
+const SERIES = ["#b66a3c", "#7e3e22", "#122033", "#22C55E", "#F59E0B"] as const;
 
 interface ChartTooltipProps {
   active?: boolean;
@@ -142,12 +142,12 @@ export function TemperatureHistoryChart({
             fontSize: 10,
             letterSpacing: "0.12em",
             textTransform: "uppercase",
-            color: "#6d7aa8",
+            color: "#64778d",
             paddingTop: 8,
           }}
         />
         {/* 0 °C reference — the line that matters in cold storage. */}
-        <ReferenceLine y={0} stroke="#4cc2ff" strokeOpacity={0.35} strokeDasharray="4 4" />
+        <ReferenceLine y={0} stroke="#7e3e22" strokeOpacity={0.35} strokeDasharray="4 4" />
 
         {series.map((entry, index) => (
           <Line
@@ -185,12 +185,12 @@ export function InquiryVolumeChart({
         <CartesianGrid stroke={GRID} strokeDasharray="2 4" vertical={false} />
         <XAxis dataKey="period" tick={AXIS} tickLine={false} axisLine={{ stroke: GRID }} />
         <YAxis tick={AXIS} tickLine={false} axisLine={false} width={44} allowDecimals={false} />
-        <Tooltip content={<ChartTooltip />} cursor={{ fill: "rgba(143,123,255,0.06)" }} />
+        <Tooltip content={<ChartTooltip />} cursor={{ fill: "rgba(182,106,60,0.06)" }} />
         <Bar dataKey="count" name="Requests" radius={[2, 2, 0, 0]} maxBarSize={38}>
           {data.map((entry, index) => (
             <Cell
               key={entry.period}
-              fill={index === data.length - 1 ? "#8f7bff" : "#1c3061"}
+              fill={index === data.length - 1 ? "#b66a3c" : "#afbed2"}
             />
           ))}
         </Bar>
@@ -222,7 +222,7 @@ export function InventoryDistributionChart({
           innerRadius="52%"
           outerRadius="82%"
           paddingAngle={2}
-          stroke="#04071d"
+          stroke="#ffffff"
           strokeWidth={2}
         >
           {data.map((entry, index) => (
@@ -236,7 +236,7 @@ export function InventoryDistributionChart({
             fontSize: 10,
             letterSpacing: "0.12em",
             textTransform: "uppercase",
-            color: "#6d7aa8",
+            color: "#64778d",
           }}
         />
       </PieChart>
@@ -274,8 +274,8 @@ export function UtilisationTrendChart({
       <AreaChart data={[...data]} margin={{ top: 8, right: 12, bottom: 4, left: -18 }}>
         <defs>
           <linearGradient id="utilisationFill" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#8f7bff" stopOpacity={0.42} />
-            <stop offset="100%" stopColor="#8f7bff" stopOpacity={0.02} />
+            <stop offset="0%" stopColor="#b66a3c" stopOpacity={0.42} />
+            <stop offset="100%" stopColor="#b66a3c" stopOpacity={0.02} />
           </linearGradient>
         </defs>
         <CartesianGrid stroke={GRID} strokeDasharray="2 4" vertical={false} />
@@ -293,7 +293,7 @@ export function UtilisationTrendChart({
           type="monotone"
           dataKey="percent"
           name="Utilisation"
-          stroke="#8f7bff"
+          stroke="#b66a3c"
           strokeWidth={1.8}
           fill="url(#utilisationFill)"
           connectNulls={false}

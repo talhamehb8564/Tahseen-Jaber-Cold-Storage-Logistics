@@ -95,8 +95,8 @@ export default function SolutionsPage() {
               />
               <div aria-hidden className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(4,7,29,0.78),transparent_58%)]" />
               <figcaption className="absolute bottom-4 left-4">
-                <p className="font-mono text-[0.5625rem] tracking-[0.22em] text-ice uppercase">Chilled</p>
-                <p className="mt-1 font-display text-sm font-bold uppercase tracking-tight text-frost">Produce & fresh lines</p>
+                <p className="font-mono text-[0.5625rem] tracking-[0.22em] text-[#dba175] uppercase">Chilled</p>
+                <p className="mt-1 font-display text-sm font-bold uppercase tracking-tight text-white">Produce & fresh lines</p>
               </figcaption>
             </figure>
           </li>
@@ -112,8 +112,8 @@ export default function SolutionsPage() {
               />
               <div aria-hidden className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(4,7,29,0.78),transparent_58%)]" />
               <figcaption className="absolute bottom-4 left-4">
-                <p className="font-mono text-[0.5625rem] tracking-[0.22em] text-ice uppercase">Deep-frozen</p>
-                <p className="mt-1 font-display text-sm font-bold uppercase tracking-tight text-frost">Protein & prepared</p>
+                <p className="font-mono text-[0.5625rem] tracking-[0.22em] text-[#dba175] uppercase">Deep-frozen</p>
+                <p className="mt-1 font-display text-sm font-bold uppercase tracking-tight text-white">Protein & prepared</p>
               </figcaption>
             </figure>
           </li>
@@ -129,8 +129,8 @@ export default function SolutionsPage() {
               />
               <div aria-hidden className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(4,7,29,0.78),transparent_58%)]" />
               <figcaption className="absolute bottom-4 left-4">
-                <p className="font-mono text-[0.5625rem] tracking-[0.22em] text-ice uppercase">Least forgiving</p>
-                <p className="mt-1 font-display text-sm font-bold uppercase tracking-tight text-frost">Seafood</p>
+                <p className="font-mono text-[0.5625rem] tracking-[0.22em] text-[#dba175] uppercase">Least forgiving</p>
+                <p className="mt-1 font-display text-sm font-bold uppercase tracking-tight text-white">Seafood</p>
               </figcaption>
             </figure>
           </li>

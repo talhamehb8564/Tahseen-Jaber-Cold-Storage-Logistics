@@ -38,7 +38,7 @@ export default function Loading() {
           className="tj-shimmer pointer-events-none absolute inset-y-0 -left-1/3 w-1/3"
           style={{
             background:
-              "linear-gradient(100deg, transparent, rgba(143,123,255,0.10), transparent)",
+              "linear-gradient(100deg, transparent, rgba(182,106,60,0.10), transparent)",
           }}
         />
 

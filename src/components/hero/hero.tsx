@@ -71,10 +71,10 @@ export function Hero() {
           <div className="min-w-0">
             {/* Location — a verified fact, so it may state it plainly. */}
             <motion.p
-              className="flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-[0.625rem] tracking-[0.24em] text-silver-dim uppercase"
+              className="flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-[0.625rem] tracking-[0.24em] text-white/60 uppercase"
               {...enter(0)}
             >
-              <MapPin size={13} strokeWidth={1.6} aria-hidden className="text-glow" />
+              <MapPin size={13} strokeWidth={1.6} aria-hidden className="text-[#dba175]" />
               {siteConfig.location.facility}
               <span aria-hidden className="text-hull-line">
                 ·
@@ -90,7 +90,7 @@ export function Hero() {
                 start={mounted}
                 delay={0.05}
                 stagger={0.07}
-                className="block text-[clamp(0.95rem,2.4vw,1.5rem)] font-semibold tracking-[0.34em] text-ice"
+                className="block text-[clamp(0.95rem,2.4vw,1.5rem)] font-semibold tracking-[0.34em] text-[#dba175]"
               />
 
               {/* Lines 2–3 — the scale that carries the WOW. */}
@@ -99,20 +99,20 @@ export function Hero() {
                 text={HERO_LINES[1]}
                 start={mounted}
                 delay={0.2}
-                className="tj-frost-text mt-1.5 block text-[clamp(2.5rem,8.6vw,7rem)] sm:mt-2.5"
+                className="hero-frost-text mt-1.5 block text-[clamp(2.5rem,8.6vw,7rem)] sm:mt-2.5"
               />
               <WordReveal
                 as="span"
                 text={HERO_LINES[2]}
                 start={mounted}
                 delay={0.34}
-                className="glass-text mt-0.5 block text-[clamp(2.5rem,8.6vw,7rem)]"
+                className="hero-glass-text mt-0.5 block text-[clamp(2.5rem,8.6vw,7rem)]"
               />
             </h1>
 
             {/* Supporting line — §12. Verified wording only. */}
             <motion.p
-              className="mt-6 max-w-xl text-base leading-relaxed text-silver sm:mt-7 sm:text-lg"
+              className="mt-6 max-w-xl text-base leading-relaxed text-white/85 sm:mt-7 sm:text-lg"
               {...enter(0.5)}
             >
               {siteConfig.brand.tagline}
@@ -167,13 +167,13 @@ export function Hero() {
         >
           <Link
             href="#arrival"
-            className="group flex items-center gap-3 font-mono text-[0.5625rem] tracking-[0.24em] text-silver-dim uppercase transition-colors duration-300 hover:text-glow"
+            className="group flex items-center gap-3 font-mono text-[0.5625rem] tracking-[0.24em] text-white/55 uppercase transition-colors duration-300 hover:text-[#dba175]"
             aria-label="Scroll to the arrival sequence"
           >
             <span className="relative flex h-8 w-5 items-start justify-center rounded-full border border-glow/30 pt-1.5">
               <motion.span
                 className="size-1 rounded-full bg-glow"
-                style={{ boxShadow: "0 0 8px #8f7bff" }}
+                style={{ boxShadow: "0 0 8px #b66a3c" }}
                 animate={reduced ? undefined : { y: [0, 10, 0], opacity: [1, 0.25, 1] }}
                 transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
               />

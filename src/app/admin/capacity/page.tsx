@@ -124,7 +124,7 @@ export default async function AdminCapacityPage() {
                       className="h-full w-full opacity-30"
                       style={{
                         backgroundImage:
-                          "repeating-linear-gradient(135deg, rgba(151,166,204,0.5) 0 6px, transparent 6px 12px)",
+                          "repeating-linear-gradient(135deg, rgba(67,83,107,0.5) 0 6px, transparent 6px 12px)",
                       }}
                     />
                   )}

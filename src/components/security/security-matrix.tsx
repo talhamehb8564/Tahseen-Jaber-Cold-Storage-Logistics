@@ -98,11 +98,11 @@ function CameraTile({
       )}
     >
       {/* Schematic "feed" — a wireframe ghost of the zone, never footage. */}
-      <div className="relative aspect-[4/3] overflow-hidden bg-[#06071b]">
+      <div className="relative aspect-[4/3] overflow-hidden bg-[#eaeef3]">
         <svg viewBox="0 0 120 90" className="absolute inset-0 size-full" aria-hidden>
           <defs>
             <pattern id={`cam-grid-${camera.id.replace(/\s/g, "")}`} width="12" height="12" patternUnits="userSpaceOnUse">
-              <path d="M12 0 H0 V12" fill="none" stroke="#8f7bff" strokeWidth="0.4" opacity="0.22" />
+              <path d="M12 0 H0 V12" fill="none" stroke="#b66a3c" strokeWidth="0.4" opacity="0.22" />
             </pattern>
           </defs>
           <rect width="120" height="90" fill={`url(#cam-grid-${camera.id.replace(/\s/g, "")})`} />
@@ -110,7 +110,7 @@ function CameraTile({
           {/* Abstract zone wireframe */}
           <g
             fill="none"
-            stroke={camera.online ? "#4cc2ff" : "#EF4444"}
+            stroke={camera.online ? "#7e3e22" : "#EF4444"}
             strokeWidth="0.9"
             opacity={camera.online ? 0.55 : 0.5}
           >
@@ -121,7 +121,7 @@ function CameraTile({
           </g>
 
           {/* Corner brackets, as on a real VMS tile */}
-          <g stroke={camera.online ? "#8f7bff" : "#EF4444"} strokeWidth="1.2" opacity="0.7">
+          <g stroke={camera.online ? "#b66a3c" : "#EF4444"} strokeWidth="1.2" opacity="0.7">
             <path d="M6 16 V6 H16M104 6 H114 V16M114 74 V84 H104M16 84 H6 V74" />
           </g>
 
@@ -149,7 +149,7 @@ function CameraTile({
         {camera.online && !reduced ? (
           <div
             aria-hidden
-            className="absolute inset-x-0 h-8 bg-[linear-gradient(to_bottom,transparent,rgba(143,123,255,0.16),transparent)]"
+            className="absolute inset-x-0 h-8 bg-[linear-gradient(to_bottom,transparent,rgba(182,106,60,0.16),transparent)]"
             style={{ animation: "scan-line 4.6s cubic-bezier(0.65,0,0.35,1) infinite" }}
           />
         ) : null}
@@ -266,7 +266,7 @@ function AccessScanner({ simulated }: { simulated: boolean }) {
           {scanPhase === "reading" && !reduced ? (
             <span
               aria-hidden
-              className="absolute inset-x-2 h-6 bg-[linear-gradient(to_bottom,transparent,rgba(143,123,255,0.35),transparent)]"
+              className="absolute inset-x-2 h-6 bg-[linear-gradient(to_bottom,transparent,rgba(182,106,60,0.35),transparent)]"
               style={{ animation: "scan-line 1.25s cubic-bezier(0.65,0,0.35,1) infinite" }}
             />
           ) : null}
@@ -361,14 +361,14 @@ function DoorAndThermal({
       {/* Door state */}
       <div className="mt-5 flex items-center gap-4">
         <svg viewBox="0 0 64 88" className="h-20 w-14 shrink-0" aria-hidden>
-          <rect x="4" y="4" width="56" height="80" rx="2" fill="#0f102f" stroke="#2a2f5a" strokeWidth="1.6" />
-          <rect x="10" y="10" width="44" height="30" rx="1" fill="#090a22" stroke="#263a7a" strokeWidth="1" />
-          <rect x="10" y="46" width="44" height="32" rx="1" fill="#090a22" stroke="#263a7a" strokeWidth="1" />
+          <rect x="4" y="4" width="56" height="80" rx="2" fill="#d7dfe9" stroke="#afbbcb" strokeWidth="1.6" />
+          <rect x="10" y="10" width="44" height="30" rx="1" fill="#e3e8f0" stroke="#c9d4e1" strokeWidth="1" />
+          <rect x="10" y="46" width="44" height="32" rx="1" fill="#e3e8f0" stroke="#c9d4e1" strokeWidth="1" />
           {/* Lock indicator */}
           <circle cx="50" cy="44" r="3.4" fill={status.accessSecured ? "#22C55E" : "#EF4444"} />
-          <rect x="46" y="40" width="8" height="8" rx="1" fill="none" stroke="#2a2f5a" strokeWidth="1" />
+          <rect x="46" y="40" width="8" height="8" rx="1" fill="none" stroke="#afbbcb" strokeWidth="1" />
           {/* Handle */}
-          <rect x="14" y="42" width="10" height="3.4" rx="1.7" fill="#48507a" />
+          <rect x="14" y="42" width="10" height="3.4" rx="1.7" fill="#8f9cad" />
         </svg>
         <div className="min-w-0">
           <p className="font-mono text-[0.625rem] tracking-[0.16em] text-frost uppercase">

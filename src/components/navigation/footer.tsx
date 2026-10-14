@@ -35,14 +35,14 @@ export function Footer() {
   const { contact, location } = siteConfig;
 
   return (
-    <footer className="relative mt-auto border-t border-hull-line/70 bg-midnight/85">
+    <footer className="relative mt-auto border-t border-[#0b1f38] bg-[#0f294d]">
       {/* Cold pool lifting off the top edge */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-x-0 top-0 h-56 opacity-70 blur-3xl"
         style={{
           background:
-            "radial-gradient(60% 100% at 50% 0%, rgba(143,123,255,0.13), transparent 72%)",
+            "radial-gradient(60% 100% at 50% 0%, rgba(182,106,60,0.16), transparent 72%)",
         }}
       />
       <div aria-hidden className="tj-grid pointer-events-none absolute inset-0 opacity-25" />
@@ -52,25 +52,25 @@ export function Footer() {
         <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-start">
           <div>
             <Link href="/" className="group inline-flex items-center gap-3.5" aria-label="Home">
-              <WordmarkGlyph size={40} className="text-ice" />
+              <WordmarkGlyph size={40} className="text-[#dba175]" />
               <span className="flex flex-col leading-none">
-                <span className="font-display text-lg font-bold tracking-[-0.01em] text-frost uppercase">
+                <span className="font-display text-lg font-bold tracking-[-0.01em] text-white uppercase">
                   {siteConfig.brand.shortName}
                 </span>
-                <span className="mt-1.5 font-mono text-[0.5625rem] tracking-[0.26em] text-silver-dim uppercase">
+                <span className="mt-1.5 font-mono text-[0.5625rem] tracking-[0.26em] text-white/55 uppercase">
                   Cold Storage &amp; Logistics
                 </span>
               </span>
             </Link>
 
-            <p className="mt-6 max-w-sm text-sm leading-relaxed text-silver">
+            <p className="mt-6 max-w-sm text-sm leading-relaxed text-white/75">
               {siteConfig.brand.tagline}
             </p>
 
             <address className="mt-6 not-italic">
               <p className="tj-label">Facility</p>
-              <p className="mt-2.5 flex items-start gap-2.5 text-sm leading-relaxed text-frost">
-                <MapPin size={15} strokeWidth={1.6} aria-hidden className="mt-0.5 shrink-0 text-glow" />
+              <p className="mt-2.5 flex items-start gap-2.5 text-sm leading-relaxed text-white">
+                <MapPin size={15} strokeWidth={1.6} aria-hidden className="mt-0.5 shrink-0 text-[#dba175]" />
                 <span>
                   {location.facility}
                   <br />
@@ -108,7 +108,7 @@ export function Footer() {
             <div className="mt-8 lg:flex lg:justify-end">
               <Link
                 href={primaryCta.href}
-                className="group inline-flex items-center gap-2 border-b border-glow/40 pb-1 font-mono text-[0.6875rem] tracking-[0.18em] text-glow uppercase transition-colors duration-300 hover:border-glow hover:text-ice"
+                className="group inline-flex items-center gap-2 border-b border-[#dba175]/50 pb-1 font-mono text-[0.6875rem] tracking-[0.18em] text-[#dba175] uppercase transition-colors duration-300 hover:border-[#dba175] hover:text-[#dba175]"
               >
                 {primaryCta.label}
                 <ArrowUpRight
@@ -139,12 +139,12 @@ export function Footer() {
                 "Monitoring & logging",
                 "Dispatch & gate control",
               ].map((item) => (
-                <li key={item} className="text-sm text-silver-dim">
+                <li key={item} className="text-sm text-white/55">
                   {item}
                 </li>
               ))}
             </ul>
-            <p className="mt-4 font-mono text-[0.5625rem] leading-relaxed tracking-[0.08em] text-silver-dim/70 uppercase">
+            <p className="mt-4 font-mono text-[0.5625rem] leading-relaxed tracking-[0.08em] text-white/40 uppercase">
               Capability figures: {FALLBACK.capability}
             </p>
           </div>
@@ -152,7 +152,7 @@ export function Footer() {
 
         {/* ---------------- Legal ---------------- */}
         <div className="mt-14 flex flex-col gap-4 border-t border-hull-line/70 pt-7 sm:flex-row sm:items-center sm:justify-between">
-          <p className="font-mono text-[0.625rem] tracking-[0.1em] text-silver-dim uppercase">
+          <p className="font-mono text-[0.625rem] tracking-[0.1em] text-white/55 uppercase">
             © {year} {siteConfig.brand.name}
           </p>
 
@@ -165,7 +165,7 @@ export function Footer() {
                       href={social.url}
                       target="_blank"
                       rel="noreferrer noopener"
-                      className="font-mono text-[0.625rem] tracking-[0.14em] text-silver-dim uppercase transition-colors duration-300 hover:text-ice"
+                      className="font-mono text-[0.625rem] tracking-[0.14em] text-white/55 uppercase transition-colors duration-300 hover:text-[#dba175]"
                     >
                       {social.label}
                     </a>
@@ -174,7 +174,7 @@ export function Footer() {
               </ul>
             ) : null}
 
-            <p className="font-mono text-[0.5625rem] tracking-[0.1em] text-silver-dim/70 uppercase">
+            <p className="font-mono text-[0.5625rem] tracking-[0.1em] text-white/40 uppercase">
               Facility data shown on this site is illustrative unless marked live
             </p>
           </div>
@@ -201,8 +201,8 @@ function ContactRow({
     // §45 — no supplied detail, so no invented one either.
     return (
       <li className="flex items-center gap-2.5 lg:justify-end">
-        <span className="text-silver-dim/60">{icon}</span>
-        <span className="font-mono text-[0.625rem] tracking-[0.12em] text-silver-dim/70 uppercase">
+        <span className="text-white/40">{icon}</span>
+        <span className="font-mono text-[0.625rem] tracking-[0.12em] text-white/40 uppercase">
           {label} {FALLBACK.enquiry}
         </span>
       </li>
@@ -211,11 +211,11 @@ function ContactRow({
 
   return (
     <li className="flex items-center gap-2.5 lg:justify-end">
-      <span className="text-glow">{icon}</span>
+      <span className="text-[#dba175]">{icon}</span>
       <a
         href={href}
         {...(external ? { target: "_blank", rel: "noreferrer noopener" } : {})}
-        className="font-mono text-sm text-silver transition-colors duration-300 hover:text-ice"
+        className="font-mono text-sm text-white/75 transition-colors duration-300 hover:text-[#dba175]"
       >
         {value}
       </a>
@@ -238,7 +238,7 @@ function FooterColumn({
           <li key={link.href + link.label}>
             <Link
               href={link.href}
-              className="group inline-flex items-center gap-1.5 text-sm text-silver-dim transition-colors duration-300 hover:text-frost"
+              className="group inline-flex items-center gap-1.5 text-sm text-white/55 transition-colors duration-300 hover:text-white"
             >
               <span
                 aria-hidden

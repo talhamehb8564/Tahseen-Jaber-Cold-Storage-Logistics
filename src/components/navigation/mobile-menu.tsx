@@ -63,7 +63,7 @@ export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => vo
         className="absolute inset-x-0 top-0 h-72 opacity-60 blur-3xl"
         style={{
           background:
-            "radial-gradient(60% 100% at 50% 0%, rgba(143,123,255,0.20), transparent 70%)",
+            "radial-gradient(60% 100% at 50% 0%, rgba(182,106,60,0.20), transparent 70%)",
         }}
       />
       <div aria-hidden className="tj-grid-fine absolute inset-0 opacity-30" />

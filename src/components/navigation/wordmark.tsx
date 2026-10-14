@@ -58,9 +58,9 @@ export function WordmarkGlyph({ className, size = 34 }: { className?: string; si
 
       <defs>
         <linearGradient id="tj-mark" x1="20" y1="6" x2="20" y2="34" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#e9f3ff" />
-          <stop offset="0.55" stopColor="#4cc2ff" />
-          <stop offset="1" stopColor="#8f7bff" />
+          <stop stopColor="#122033" />
+          <stop offset="0.55" stopColor="#7e3e22" />
+          <stop offset="1" stopColor="#b66a3c" />
         </linearGradient>
       </defs>
     </svg>

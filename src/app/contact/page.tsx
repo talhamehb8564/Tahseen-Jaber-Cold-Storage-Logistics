@@ -77,10 +77,10 @@ export default function ContactPage() {
                 className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(4,7,29,0.82),transparent_62%)]"
               />
               <figcaption className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-4">
-                <span className="font-mono text-[0.5625rem] tracking-[0.2em] text-ice uppercase">
+                <span className="font-mono text-[0.5625rem] tracking-[0.2em] text-[#dba175] uppercase">
                   Uuayrij Industrial Area
                 </span>
-                <span className="font-mono text-[0.5rem] tracking-[0.16em] text-silver-dim uppercase">
+                <span className="font-mono text-[0.5rem] tracking-[0.16em] text-white/60 uppercase">
                   Illustrative
                 </span>
               </figcaption>

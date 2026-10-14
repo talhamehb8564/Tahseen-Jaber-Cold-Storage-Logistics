@@ -1,101 +1,63 @@
-import { cn } from "@/lib/utilities/cn";
-
 /**
- * COLD ATMOSPHERE (§09)
+ * ColdAtmosphere — the quiet light behind every route.
  * ---------------------------------------------------------------------------
- * The permanent background of the whole product: a deep navy environment, two
- * very slow mist layers, a faint technical grid, light spill from above and a
- * frost grain.
+ * Light theme: a white sky with the faintest cool gradient depth, a whisper
+ * of copper warmth at the horizon and an almost-invisible vignette. It is the
+ * "cold room seen in daylight" — nothing competes with the content on top of
+ * it, but the page never reads as a flat white rectangle.
  *
- * Deliberately built from CSS only — no canvas, no particle system, no per-frame
- * JavaScript. §09 asks for subtlety and §35 asks for efficiency; a fixed,
- * compositor-animated gradient stack delivers both and costs nothing on the main
- * thread. Particle density is intentionally near zero.
- *
- * Motion is 44s / 78s. It should be felt as a change in the room, not seen as an
- * animation. `prefers-reduced-motion` removes it entirely via globals.css.
+ * Pure CSS (no JS): the drifting washes animate on long loops and are killed
+ * entirely under prefers-reduced-motion by the global rule (§37).
  */
-export function ColdAtmosphere({ className }: { className?: string }) {
+
+export function ColdAtmosphere() {
   return (
     <div
       aria-hidden
-      className={cn(
-        "pointer-events-none fixed inset-0 -z-10 overflow-hidden bg-midnight",
-        className,
-      )}
+      className="pointer-events-none fixed inset-0 -z-10 overflow-hidden bg-midnight"
     >
-      {/* --- Base depth: cold light from above, darkness below --------------- */}
+      {/* Sky: near-white with a cool falloff toward the floor. */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(140% 90% at 50% -12%, #152355 0%, #0b1034 42%, #04071d 78%)",
+            "radial-gradient(140% 90% at 50% -12%, #ffffff 0%, #fbfcfe 42%, #f5f7fa 78%)",
         }}
       />
 
-      {/* --- Structural grid, masked so it dissolves toward the edges -------- */}
+      {/* A whisper of copper at the horizon — the warm edge of a cold room. */}
       <div
-        className="tj-grid absolute inset-0 opacity-[0.55]"
-        style={{
-          maskImage:
-            "radial-gradient(115% 80% at 50% 8%, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.28) 45%, transparent 78%)",
-          WebkitMaskImage:
-            "radial-gradient(115% 80% at 50% 8%, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.28) 45%, transparent 78%)",
-        }}
-      />
-
-      {/* --- Light rays from the facility roof ------------------------------- */}
-      <div
-        className="absolute -top-1/3 left-1/2 h-[85vh] w-[130vw] -translate-x-1/2 opacity-[0.16] blur-3xl"
+        className="absolute inset-0 opacity-70"
         style={{
           background:
-            "conic-gradient(from 180deg at 50% 0%, transparent 0deg, rgba(76,194,255,0.5) 78deg, transparent 96deg, transparent 264deg, rgba(143,123,255,0.42) 282deg, transparent 300deg)",
+            "radial-gradient(90% 55% at 50% 118%, rgba(182, 106, 60, 0.05), transparent 70%)",
         }}
       />
 
-      {/* --- Mist layer 1: broad, extremely slow ----------------------------- */}
-      <div className="absolute inset-x-[-30%] bottom-[-8%] h-[52vh] animate-mist-drift-slow opacity-[0.5]">
-        <div
-          className="h-full w-full blur-[70px]"
-          style={{
-            background:
-              "radial-gradient(45% 60% at 22% 70%, rgba(76,194,255,0.16), transparent 70%)," +
-              "radial-gradient(38% 55% at 62% 82%, rgba(143,123,255,0.13), transparent 72%)," +
-              "radial-gradient(50% 60% at 88% 66%, rgba(151,166,204,0.10), transparent 70%)",
-          }}
-        />
-      </div>
-
-      {/* --- Mist layer 2: tighter, drifting the other way ------------------- */}
-      <div className="absolute inset-x-[-25%] bottom-[6%] h-[36vh] animate-mist-drift opacity-[0.42]">
-        <div
-          className="h-full w-full blur-[54px]"
-          style={{
-            background:
-              "radial-gradient(34% 70% at 34% 60%, rgba(233,243,255,0.10), transparent 72%)," +
-              "radial-gradient(28% 60% at 74% 74%, rgba(76,194,255,0.11), transparent 74%)",
-          }}
-        />
-      </div>
-
-      {/* --- High-altitude frost haze ---------------------------------------- */}
+      {/* Two slow drifting washes — navy cool and copper warm, barely there. */}
       <div
-        className="absolute inset-x-0 top-0 h-[38vh] animate-breathe opacity-40 blur-2xl"
+        className="absolute -left-[12%] top-[-18%] h-[60vh] w-[55vw] rounded-full blur-3xl"
         style={{
           background:
-            "linear-gradient(180deg, rgba(76,194,255,0.09), rgba(18,29,72,0.05) 55%, transparent)",
+            "radial-gradient(closest-side, rgba(15, 41, 77, 0.045), transparent 70%)",
+          animation: "mist-drift 64s linear infinite",
+        }}
+      />
+      <div
+        className="absolute -right-[14%] top-[8%] h-[52vh] w-[48vw] rounded-full blur-3xl"
+        style={{
+          background:
+            "radial-gradient(closest-side, rgba(182, 106, 60, 0.035), transparent 70%)",
+          animation: "mist-drift 88s linear infinite reverse",
         }}
       />
 
-      {/* --- Frost grain: breaks up banding on the gradients ------------------ */}
-      <div className="frost-grain absolute inset-0 opacity-[0.22]" />
-
-      {/* --- Vignette: focuses the eye toward the centre of the stage --------- */}
+      {/* Vignette — a hair of navy at the extreme edges only. */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(120% 100% at 50% 45%, transparent 42%, rgba(4,7,29,0.55) 82%, rgba(4,7,29,0.9) 100%)",
+            "radial-gradient(120% 100% at 50% 45%, transparent 72%, rgba(15, 41, 77, 0.05) 100%)",
         }}
       />
     </div>
@@ -103,35 +65,33 @@ export function ColdAtmosphere({ className }: { className?: string }) {
 }
 
 /**
- * Localised cold pool — used inside sections that need their own atmosphere
- * (final CTA, hero, facility) without touching the global layer.
+ * ColdPool — a localised atmospheric wash for hero/CTA bands.
+ * Light theme: a cool navy breath from above with a hint of copper at the
+ * base. `intensity` is 0–1; `hue` selects a cool ("ice"/"cyan") or warm
+ * ("violet"/"copper") cast. Purely decorative, aria-hidden, CSS-only.
  */
 export function ColdPool({
-  className,
   intensity = 0.5,
   hue = "ice",
+  className,
 }: {
-  className?: string;
   intensity?: number;
-  hue?: "ice" | "cyan" | "frost" | "green";
+  hue?: "ice" | "cyan" | "violet" | "copper";
+  className?: string;
 }) {
-  const colours = {
-    ice: "76, 194, 255",
-    cyan: "143, 123, 255",
-    frost: "233, 243, 255",
-    green: "34, 197, 94",
-  } as const;
-
+  const a = Math.min(1, Math.max(0, intensity));
+  const warm = hue === "violet" || hue === "copper";
   return (
     <div
       aria-hidden
-      className={cn("pointer-events-none absolute inset-0 overflow-hidden", className)}
-      style={{ opacity: intensity }}
+      className={`pointer-events-none absolute inset-0 overflow-hidden ${className ?? ""}`}
     >
       <div
-        className="absolute inset-0 blur-[90px]"
+        className="absolute inset-0"
         style={{
-          background: `radial-gradient(58% 52% at 50% 42%, rgba(${colours[hue]},0.16), transparent 72%)`,
+          background: warm
+            ? `radial-gradient(85% 70% at 50% 30%, rgba(182, 106, 60, ${(0.1 * a).toFixed(3)}), transparent 70%)`
+            : `radial-gradient(85% 70% at 50% 30%, rgba(15, 41, 77, ${(0.06 * a).toFixed(3)}), transparent 70%), radial-gradient(60% 50% at 50% 104%, rgba(182, 106, 60, ${(0.06 * a).toFixed(3)}), transparent 72%)`,
         }}
       />
     </div>

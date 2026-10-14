@@ -403,7 +403,7 @@ export function StorageCalculator() {
               "font-display text-[0.8125rem] font-bold tracking-[0.14em] uppercase",
               "transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]",
               readyToSubmit
-                ? "bg-glow text-midnight shadow-[0_10px_30px_-12px_rgba(143,123,255,0.8)] hover:bg-ice active:scale-[0.985]"
+                ? "bg-glow text-midnight shadow-[0_10px_30px_-12px_rgba(182,106,60,0.8)] hover:bg-ice active:scale-[0.985]"
                 : "cursor-not-allowed border border-hull-line bg-transparent text-silver-dim",
               "focus-visible:ring-2 focus-visible:ring-glow focus-visible:ring-offset-2 focus-visible:ring-offset-midnight focus-visible:outline-none",
             )}
@@ -457,7 +457,7 @@ function RequirementSummary({
           style={{
             background: category
               ? `radial-gradient(80% 55% at 50% 0%, ${category.accent}1A, transparent 70%)`
-              : "radial-gradient(80% 55% at 50% 0%, rgba(143,123,255,0.10), transparent 70%)",
+              : "radial-gradient(80% 55% at 50% 0%, rgba(182,106,60,0.10), transparent 70%)",
           }}
         />
 
@@ -556,7 +556,7 @@ function SummaryRow({
       <dt className="tj-label shrink-0">{label}</dt>
       <dd
         className="min-w-0 truncate text-right font-mono text-[0.6875rem] tracking-[0.08em] uppercase"
-        style={{ color: accent ?? (value === "—" ? "#6d7aa8" : "#e9f3ff") }}
+        style={{ color: accent ?? (value === "—" ? "#64778d" : "#122033") }}
       >
         {value}
       </dd>

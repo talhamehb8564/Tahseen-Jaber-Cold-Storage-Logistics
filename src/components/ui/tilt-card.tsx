@@ -42,7 +42,7 @@ export function TiltCard({
 
   const rotateX = useSpring(rotateXValue, { stiffness: 160, damping: 18, mass: 0.6 });
   const rotateY = useSpring(rotateYValue, { stiffness: 160, damping: 18, mass: 0.6 });
-  const glare = useMotionTemplate`radial-gradient(460px circle at ${glareX}% ${glareY}%, rgba(143, 123, 255, 0.16), transparent 58%)`;
+  const glare = useMotionTemplate`radial-gradient(460px circle at ${glareX}% ${glareY}%, rgba(182, 106, 60, 0.16), transparent 58%)`;
 
   const onMove = useCallback(
     (event: React.PointerEvent<HTMLDivElement>) => {

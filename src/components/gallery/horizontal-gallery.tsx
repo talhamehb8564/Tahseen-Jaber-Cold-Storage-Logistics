@@ -223,13 +223,13 @@ export function HorizontalGallery() {
                 />
                 <figcaption className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-5 md:p-6">
                   <div>
-                    <p className="font-mono text-[0.5625rem] tracking-[0.24em] text-ice uppercase">
+                    <p className="font-mono text-[0.5625rem] tracking-[0.24em] text-[#dba175] uppercase">
                       {panel.index} / 08
                     </p>
-                    <p className="mt-1.5 font-display text-lg font-bold uppercase tracking-tight text-frost md:text-xl">
+                    <p className="mt-1.5 font-display text-lg font-bold uppercase tracking-tight text-white md:text-xl">
                       {panel.title}
                     </p>
-                    <p className="mt-1 text-[0.75rem] text-silver">{panel.line}</p>
+                    <p className="mt-1 text-[0.75rem] text-white/75">{panel.line}</p>
                   </div>
                 </figcaption>
               </figure>

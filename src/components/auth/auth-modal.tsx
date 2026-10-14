@@ -148,7 +148,7 @@ export function AuthModal({ open, onClose, from }: AuthModalProps) {
             transition={{ duration: reduced ? 0 : 0.7 }}
             style={{
               background:
-                "radial-gradient(58% 48% at 50% 46%, rgba(143,123,255,0.16), transparent 70%)",
+                "radial-gradient(58% 48% at 50% 46%, rgba(182,106,60,0.16), transparent 70%)",
             }}
           />
 
@@ -175,7 +175,7 @@ export function AuthModal({ open, onClose, from }: AuthModalProps) {
               style={{
                 background:
                   "radial-gradient(60% 40% at 0% 0%, rgba(233,243,255,0.14), transparent 68%)," +
-                  "radial-gradient(52% 38% at 100% 100%, rgba(76,194,255,0.12), transparent 70%)",
+                  "radial-gradient(52% 38% at 100% 100%, rgba(126,62,34,0.12), transparent 70%)",
               }}
             />
 
@@ -223,7 +223,7 @@ export function AuthModal({ open, onClose, from }: AuthModalProps) {
                     transition={{ duration: reduced ? 0 : 0.3 }}
                     style={{
                       background:
-                        "linear-gradient(168deg, rgba(11,16,52,0.94), rgba(4,7,29,0.97))",
+                        "linear-gradient(168deg, rgba(245,247,250,0.94), rgba(4,7,29,0.97))",
                       backdropFilter: "blur(18px)",
                     }}
                     aria-live="assertive"
@@ -235,7 +235,7 @@ export function AuthModal({ open, onClose, from }: AuthModalProps) {
                         className="pointer-events-none absolute inset-x-0 h-24"
                         style={{
                           background:
-                            "linear-gradient(180deg, transparent, rgba(143,123,255,0.10), transparent)",
+                            "linear-gradient(180deg, transparent, rgba(182,106,60,0.10), transparent)",
                         }}
                         initial={{ top: "-10%" }}
                         animate={{ top: "110%" }}
@@ -258,7 +258,7 @@ export function AuthModal({ open, onClose, from }: AuthModalProps) {
                                     ? "border-glow/50 text-glow"
                                     : "border-hull-line text-silver-dim",
                               )}
-                              style={done ? { boxShadow: "0 0 16px rgba(143,123,255,0.4)" } : undefined}
+                              style={done ? { boxShadow: "0 0 16px rgba(182,106,60,0.4)" } : undefined}
                             >
                               {done ? (
                                 <Check size={13} strokeWidth={2.6} aria-hidden />

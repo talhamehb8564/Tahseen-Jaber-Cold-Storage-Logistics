@@ -23,8 +23,10 @@ import { Float, Grid, OrbitControls } from "@react-three/drei";
  * by the section wrapper — see three-chamber-section.tsx.
  */
 
-const AZURE = "#4cc2ff";
-const VIOLET = "#8f7bff";
+/* Brand lighting for the light theme: the chamber stays a dark "night
+   viewport" (like a photograph), but its emissives are copper + navy now. */
+const AZURE = "#d99a6c"; // copper-light emissive (rack strips, scan ring)
+const VIOLET = "#b66a3c"; // copper glow (crystal core)
 const HULL = "#121d48";
 const HULL_LINE = "#263a7a";
 
@@ -175,7 +177,7 @@ function Ceiling() {
         <mesh key={z} position={[0, 0, z]}>
           <boxGeometry args={[13, 0.06, 0.28]} />
           <meshStandardMaterial
-            color="#9fd0ff"
+            color="#e3b48c"
             emissive={AZURE}
             emissiveIntensity={1.1}
             toneMapped={false}
@@ -196,9 +198,9 @@ export default function ColdChamber() {
       <color attach="background" args={["#060a20"]} />
       <fog attach="fog" args={["#060a20", 9, 30]} />
 
-      <ambientLight intensity={0.32} color="#9db8ff" />
-      <directionalLight position={[6, 9, 5]} intensity={0.7} color="#cfe2ff" />
-      <directionalLight position={[-7, 6, -4]} intensity={0.35} color={VIOLET} />
+      <ambientLight intensity={0.3} color="#b9c4d8" />
+      <directionalLight position={[6, 9, 5]} intensity={0.75} color="#e8dccb" />
+      <directionalLight position={[-7, 6, -4]} intensity={0.4} color="#8a5a3c" />
 
       {/* floor */}
       <mesh rotation={[-Math.PI / 2, 0, 0]}>

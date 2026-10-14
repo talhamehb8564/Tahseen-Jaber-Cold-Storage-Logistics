@@ -100,8 +100,8 @@ export function InventoryScanner({ items, simulated }: InventoryScannerProps) {
               scanState === "scanning" && !reduced && "tj-scan-active",
             )}
           >
-            <div className="absolute inset-x-0 top-0 h-px bg-glow shadow-[0_0_14px_2px_rgba(143,123,255,0.65)]" />
-            <div className="absolute inset-x-0 top-0 h-16 bg-[linear-gradient(to_bottom,rgba(143,123,255,0.20),transparent)]" />
+            <div className="absolute inset-x-0 top-0 h-px bg-glow shadow-[0_0_14px_2px_rgba(182,106,60,0.65)]" />
+            <div className="absolute inset-x-0 top-0 h-16 bg-[linear-gradient(to_bottom,rgba(182,106,60,0.20),transparent)]" />
           </div>
 
           {/* Verified stamp */}
@@ -287,7 +287,7 @@ function Barcode({ value }: { value: string }) {
       role="img"
       aria-label={`Barcode for batch ${value}`}
     >
-      <g fill="#dbe2f8">
+      <g fill="#0f141c">
         {bars.map((bar, index) => (
           <rect key={index} x={bar.x} y="0" width={bar.w} height="44" />
         ))}
@@ -299,7 +299,7 @@ function Barcode({ value }: { value: string }) {
         fontFamily="'JetBrains Mono', monospace"
         fontSize="9"
         letterSpacing="3"
-        fill="#6d7aa8"
+        fill="#64778d"
       >
         {value}
       </text>

@@ -53,7 +53,7 @@ export function ImageBand({
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(80%_60%_at_50%_110%,rgba(76,194,255,0.12),transparent_60%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(80%_60%_at_50%_110%,rgba(126,62,34,0.12),transparent_60%)]"
       />
 
       {/* Caption plate. */}

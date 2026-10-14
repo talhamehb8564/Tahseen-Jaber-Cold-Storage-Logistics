@@ -223,7 +223,7 @@ export default async function FacilityPage() {
                     aria-hidden
                     className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(4,7,29,0.78),transparent_58%)]"
                   />
-                  <figcaption className="absolute bottom-4 left-4 font-mono text-[0.5625rem] tracking-[0.22em] text-ice uppercase">
+                  <figcaption className="absolute bottom-4 left-4 font-mono text-[0.5625rem] tracking-[0.22em] text-[#dba175] uppercase">
                     {tile.label}
                   </figcaption>
                 </figure>

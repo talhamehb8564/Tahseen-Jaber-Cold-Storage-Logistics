@@ -77,11 +77,11 @@ export function FacilityMap({ readings, simulated }: FacilityMapProps) {
         >
           <defs>
             <linearGradient id="fm-shell" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#121d48" />
-              <stop offset="100%" stopColor="#090a22" />
+              <stop offset="0%" stopColor="#e9eef5" />
+              <stop offset="100%" stopColor="#e3e8f0" />
             </linearGradient>
             <pattern id="fm-hatch" width="8" height="8" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
-              <line x1="0" y1="0" x2="0" y2="8" stroke="#8f7bff" strokeWidth="1.4" opacity="0.16" />
+              <line x1="0" y1="0" x2="0" y2="8" stroke="#b66a3c" strokeWidth="1.4" opacity="0.16" />
             </pattern>
           </defs>
 
@@ -94,12 +94,12 @@ export function FacilityMap({ readings, simulated }: FacilityMapProps) {
             height={VIEW_H - 16}
             rx="4"
             fill="none"
-            stroke="#2a2f5a"
+            stroke="#afbbcb"
             strokeWidth="2"
           />
 
           {/* Fine engineering grid */}
-          <g stroke="#263a7a" strokeWidth="0.6" opacity="0.5">
+          <g stroke="#c9d4e1" strokeWidth="0.6" opacity="0.5">
             {Array.from({ length: 24 }, (_, index) => (
               <path key={`v${index}`} d={`M${40 + index * 40} 12 V${VIEW_H - 12}`} />
             ))}
@@ -140,7 +140,7 @@ export function FacilityMap({ readings, simulated }: FacilityMapProps) {
                 : health === "DRIFT"
                   ? "#F59E0B"
                   : health === "MAINTENANCE"
-                    ? "#97a6cc"
+                    ? "#43536b"
                     : "#22C55E";
 
             return (
@@ -171,8 +171,8 @@ export function FacilityMap({ readings, simulated }: FacilityMapProps) {
                   width={rect.w}
                   height={rect.h}
                   rx="2"
-                  fill={isActive ? "#1b2a63" : "#0f102f"}
-                  stroke={isSelected ? "#8f7bff" : isActive ? "#383f74" : "#263a7a"}
+                  fill={isActive ? "#dde5ee" : "#d7dfe9"}
+                  stroke={isSelected ? "#b66a3c" : isActive ? "#97a6bb" : "#c9d4e1"}
                   strokeWidth={isSelected ? 2.6 : 1.6}
                   style={{ transition: "fill 400ms, stroke 400ms" }}
                 />
@@ -199,7 +199,7 @@ export function FacilityMap({ readings, simulated }: FacilityMapProps) {
                     width={rect.w}
                     height={rect.h}
                     rx="2"
-                    fill="#8f7bff"
+                    fill="#b66a3c"
                     opacity="0.07"
                     pointerEvents="none"
                   />
@@ -213,7 +213,7 @@ export function FacilityMap({ readings, simulated }: FacilityMapProps) {
                   fontSize="19"
                   fontWeight="500"
                   letterSpacing="2"
-                  fill={isActive ? "#4cc2ff" : "#6d7aa8"}
+                  fill={isActive ? "#7e3e22" : "#64778d"}
                   style={{ transition: "fill 400ms" }}
                   pointerEvents="none"
                 >
@@ -228,7 +228,7 @@ export function FacilityMap({ readings, simulated }: FacilityMapProps) {
                   fontSize={rect.w > 300 ? "26" : "21"}
                   fontWeight="700"
                   letterSpacing="0.6"
-                  fill={isActive ? "#e9f3ff" : "#97a6cc"}
+                  fill={isActive ? "#122033" : "#43536b"}
                   style={{ transition: "fill 400ms" }}
                   pointerEvents="none"
                 >
@@ -257,7 +257,7 @@ export function FacilityMap({ readings, simulated }: FacilityMapProps) {
                     pointerEvents="none"
                     opacity={isActive ? 0.95 : 0.5}
                   >
-                    <rect width="26" height="14" rx="2" fill="#090a22" stroke="#F59E0B" strokeWidth="1" strokeOpacity="0.55" />
+                    <rect width="26" height="14" rx="2" fill="#e3e8f0" stroke="#F59E0B" strokeWidth="1" strokeOpacity="0.55" />
                     <text
                       x="13"
                       y="11"
@@ -280,7 +280,7 @@ export function FacilityMap({ readings, simulated }: FacilityMapProps) {
             <path
               d="M165 380 V440 H560 V400"
               fill="none"
-              stroke="#8f7bff"
+              stroke="#b66a3c"
               strokeWidth="2"
               strokeDasharray="10 9"
               opacity="0.34"
@@ -288,7 +288,7 @@ export function FacilityMap({ readings, simulated }: FacilityMapProps) {
             <path
               d="M560 440 H860 V400"
               fill="none"
-              stroke="#8f7bff"
+              stroke="#b66a3c"
               strokeWidth="2"
               strokeDasharray="10 9"
               opacity="0.34"
@@ -296,13 +296,13 @@ export function FacilityMap({ readings, simulated }: FacilityMapProps) {
             <path
               d="M250 620 H470"
               fill="none"
-              stroke="#8f7bff"
+              stroke="#b66a3c"
               strokeWidth="2"
               strokeDasharray="10 9"
               opacity="0.28"
             />
             {/* Flow arrowheads */}
-            <g fill="#8f7bff" opacity="0.5">
+            <g fill="#b66a3c" opacity="0.5">
               <path d="M556 396 l10 6 l-10 6 Z" />
               <path d="M856 396 l10 6 l-10 6 Z" />
               <path d="M466 614 l10 6 l-10 6 Z" />
@@ -312,7 +312,7 @@ export function FacilityMap({ readings, simulated }: FacilityMapProps) {
           {/* North arrow + scale */}
           <g pointerEvents="none" opacity="0.6">
             <g transform="translate(60,700)">
-              <path d="M0 -22 L7 6 L0 0 L-7 6 Z" fill="#97a6cc" />
+              <path d="M0 -22 L7 6 L0 0 L-7 6 Z" fill="#43536b" />
               <text
                 x="0"
                 y="24"
@@ -320,14 +320,14 @@ export function FacilityMap({ readings, simulated }: FacilityMapProps) {
                 fontFamily="'JetBrains Mono', monospace"
                 fontSize="13"
                 letterSpacing="1.4"
-                fill="#6d7aa8"
+                fill="#64778d"
               >
                 N
               </text>
             </g>
             <g transform="translate(820,706)">
-              <path d="M0 0 H120" stroke="#6d7aa8" strokeWidth="1.6" />
-              <path d="M0 -5 V5M60 -4 V4M120 -5 V5" stroke="#6d7aa8" strokeWidth="1.6" />
+              <path d="M0 0 H120" stroke="#64778d" strokeWidth="1.6" />
+              <path d="M0 -5 V5M60 -4 V4M120 -5 V5" stroke="#64778d" strokeWidth="1.6" />
               <text
                 x="60"
                 y="22"
@@ -335,7 +335,7 @@ export function FacilityMap({ readings, simulated }: FacilityMapProps) {
                 fontFamily="'JetBrains Mono', monospace"
                 fontSize="12"
                 letterSpacing="1.2"
-                fill="#6d7aa8"
+                fill="#64778d"
               >
                 SCALE NOT TO MEASURE
               </text>

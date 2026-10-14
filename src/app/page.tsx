@@ -155,12 +155,12 @@ export default async function HomePage() {
           />
           <figcaption className="absolute inset-x-0 bottom-0 flex flex-wrap items-end justify-between gap-3 p-5 sm:p-6">
             <div>
-              <p className="font-mono text-[0.5625rem] tracking-[0.24em] text-ice uppercase">Batch custody</p>
-              <p className="mt-1.5 font-display text-lg font-bold uppercase tracking-tight text-frost sm:text-xl">
+              <p className="font-mono text-[0.5625rem] tracking-[0.24em] text-[#dba175] uppercase">Batch custody</p>
+              <p className="mt-1.5 font-display text-lg font-bold uppercase tracking-tight text-white sm:text-xl">
                 Frost-locked, location-recorded
               </p>
             </div>
-            <p className="font-mono text-[0.5625rem] tracking-[0.16em] text-silver-dim uppercase">
+            <p className="font-mono text-[0.5625rem] tracking-[0.16em] text-white/60 uppercase">
               Illustrative visual
             </p>
           </figcaption>
@@ -202,12 +202,12 @@ export default async function HomePage() {
           />
           <figcaption className="absolute inset-x-0 bottom-0 flex flex-wrap items-end justify-between gap-3 p-5 sm:p-6">
             <div>
-              <p className="font-mono text-[0.5625rem] tracking-[0.24em] text-ice uppercase">The watchtower</p>
-              <p className="mt-1.5 font-display text-lg font-bold uppercase tracking-tight text-frost sm:text-xl">
+              <p className="font-mono text-[0.5625rem] tracking-[0.24em] text-[#dba175] uppercase">The watchtower</p>
+              <p className="mt-1.5 font-display text-lg font-bold uppercase tracking-tight text-white sm:text-xl">
                 Every threshold, watched
               </p>
             </div>
-            <p className="font-mono text-[0.5625rem] tracking-[0.16em] text-silver-dim uppercase">
+            <p className="font-mono text-[0.5625rem] tracking-[0.16em] text-white/60 uppercase">
               Illustrative visual
             </p>
           </figcaption>

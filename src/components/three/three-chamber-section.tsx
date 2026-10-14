@@ -16,7 +16,7 @@ function ChamberSkeleton() {
   return (
     <div className="flex h-full w-full items-center justify-center">
       <div className="flex items-center gap-3 rounded-full border border-hull-line/70 bg-midnight/60 px-5 py-2.5 backdrop-blur-md">
-        <span className="size-2 animate-pulse rounded-full bg-glow shadow-[0_0_12px_rgba(143,123,255,0.9)]" />
+        <span className="size-2 animate-pulse rounded-full bg-glow shadow-[0_0_12px_rgba(182,106,60,0.9)]" />
         <span className="font-mono text-[0.625rem] tracking-[0.22em] text-silver uppercase">
           Calibrating chamber…
         </span>
@@ -119,7 +119,7 @@ export function ThreeChamberSection() {
           {/* HUD chrome */}
           <div className="pointer-events-none absolute left-4 top-4 z-10 flex flex-wrap gap-2 sm:left-6 sm:top-6">
             <span className="glass flex items-center gap-2 rounded-full border border-hull-line/70 px-4 py-1.5">
-              <span className="size-1.5 animate-pulse rounded-full bg-glow shadow-[0_0_10px_rgba(143,123,255,0.9)]" />
+              <span className="size-1.5 animate-pulse rounded-full bg-glow shadow-[0_0_10px_rgba(182,106,60,0.9)]" />
               <span className="font-mono text-[0.5625rem] tracking-[0.2em] text-silver uppercase">
                 Auto-orbit active
               </span>

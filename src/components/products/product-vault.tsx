@@ -95,8 +95,8 @@ export function ProductVault() {
                 )}
                 style={{
                   backgroundColor: isActive
-                    ? `color-mix(in oklab, ${category.accent} 9%, #0b1034)`
-                    : "rgba(4,7,29,0.55)",
+                    ? `color-mix(in oklab, ${category.accent} 9%, #f5f7fa)`
+                    : "rgba(255,255,255,0.62)",
                   backdropFilter: isActive ? undefined : "blur(10px)",
                   boxShadow: isActive
                     ? `0 0 40px color-mix(in oklab, ${category.accent} 18%, transparent), inset 0 1px 0 0 rgba(233,243,255,0.10)`
@@ -355,7 +355,7 @@ function ProductEnvironment({
           <linearGradient id={`pe-${category.id}`} x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stopColor={category.accent} stopOpacity="0.16" />
             <stop offset="60%" stopColor={category.accent} stopOpacity="0.04" />
-            <stop offset="100%" stopColor="#05050f" stopOpacity="0.6" />
+            <stop offset="100%" stopColor="#f2f5f8" stopOpacity="0.6" />
           </linearGradient>
           <filter id={`pe-blur-${category.id}`}>
             <feGaussianBlur stdDeviation="18" />

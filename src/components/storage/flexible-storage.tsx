@@ -72,8 +72,8 @@ export function FlexibleStorage() {
               />
               <div aria-hidden className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(4,7,29,0.8),transparent_58%)]" />
               <figcaption className="absolute bottom-4 left-4">
-                <p className="font-mono text-[0.5625rem] tracking-[0.22em] text-ice uppercase">Chilled modes</p>
-                <p className="mt-1 font-display text-base font-bold uppercase tracking-tight text-frost">Shared & dedicated chambers</p>
+                <p className="font-mono text-[0.5625rem] tracking-[0.22em] text-[#dba175] uppercase">Chilled modes</p>
+                <p className="mt-1 font-display text-base font-bold uppercase tracking-tight text-white">Shared & dedicated chambers</p>
               </figcaption>
             </figure>
           </li>
@@ -89,8 +89,8 @@ export function FlexibleStorage() {
               />
               <div aria-hidden className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(4,7,29,0.8),transparent_58%)]" />
               <figcaption className="absolute bottom-4 left-4">
-                <p className="font-mono text-[0.5625rem] tracking-[0.22em] text-ice uppercase">Frozen modes</p>
-                <p className="mt-1 font-display text-base font-bold uppercase tracking-tight text-frost">Deep-freeze & transit holding</p>
+                <p className="font-mono text-[0.5625rem] tracking-[0.22em] text-[#dba175] uppercase">Frozen modes</p>
+                <p className="mt-1 font-display text-base font-bold uppercase tracking-tight text-white">Deep-freeze & transit holding</p>
               </figcaption>
             </figure>
           </li>

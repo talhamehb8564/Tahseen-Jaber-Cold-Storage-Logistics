@@ -13,8 +13,8 @@ type Size = "sm" | "md" | "lg";
 const VARIANTS: Record<Variant, string> = {
   primary: cn(
     "relative overflow-hidden border border-glow/45 bg-gradient-to-b from-ice to-glow",
-    "text-midnight shadow-[0_0_0_0_rgba(143,123,255,0)] ",
-    "hover:shadow-[0_10px_40px_-12px_rgba(143,123,255,0.55)]",
+    "text-midnight shadow-[0_0_0_0_rgba(182,106,60,0)] ",
+    "hover:shadow-[0_10px_40px_-12px_rgba(182,106,60,0.55)]",
     "active:translate-y-px",
   ),
   secondary: cn(

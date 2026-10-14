@@ -146,7 +146,7 @@ export function FrostCanvas() {
           r: rand(width * 0.25, width * 0.55),
           tint: (i % 2) as 0 | 1,
           drift: rand(4, 14),
-          alpha: rand(0.05, 0.1),
+          alpha: rand(0.012, 0.03),
         });
       }
     }
@@ -193,7 +193,7 @@ export function FrostCanvas() {
     function drawFog(t: number) {
       for (const bank of banks) {
         const gradient = ctx!.createRadialGradient(bank.x, bank.y, 0, bank.x, bank.y, bank.r);
-        const color = bank.tint ? "120, 150, 255" : "90, 130, 220";
+        const color = bank.tint ? "176, 196, 216" : "196, 210, 224";
         gradient.addColorStop(0, `rgba(${color}, ${bank.alpha})`);
         gradient.addColorStop(0.55, `rgba(${color}, ${bank.alpha * 0.4})`);
         gradient.addColorStop(1, "rgba(10, 16, 50, 0)");
@@ -208,7 +208,7 @@ export function FrostCanvas() {
       ctx!.save();
       ctx!.translate(c.x, c.y);
       ctx!.rotate(c.rot);
-      ctx!.strokeStyle = `rgba(200, 225, 255, ${(0.14 + c.z * 0.16).toFixed(3)})`;
+      ctx!.strokeStyle = `rgba(15, 41, 77, ${(0.08 + c.z * 0.1).toFixed(3)})`;
       ctx!.lineWidth = 1;
       for (let i = 0; i < 6; i++) {
         const a = (Math.PI * 2 * i) / 6;
@@ -264,15 +264,10 @@ export function FrostCanvas() {
         let alpha = 0.25 + f.z * 0.6;
         if (f.twinkle) alpha *= 0.55 + 0.45 * Math.sin(t * 0.001 * f.twinkle + f.phase);
 
-        if (f.z > 0.9) {
-          ctx!.shadowColor = f.violet ? "rgba(170, 150, 255, 0.6)" : "rgba(140, 180, 255, 0.55)";
-          ctx!.shadowBlur = 6;
-        } else {
-          ctx!.shadowBlur = 0;
-        }
+        ctx!.shadowBlur = 0;
         ctx!.fillStyle = f.violet
-          ? `rgba(226, 218, 255, ${alpha.toFixed(3)})`
-          : `rgba(216, 235, 255, ${alpha.toFixed(3)})`;
+          ? `rgba(146, 110, 82, ${(alpha * 0.5).toFixed(3)})`
+          : `rgba(88, 112, 138, ${(alpha * 0.5).toFixed(3)})`;
         ctx!.beginPath();
         ctx!.arc(f.x, f.y, f.r, 0, Math.PI * 2);
         ctx!.fill();
@@ -295,7 +290,7 @@ export function FrostCanvas() {
         for (const s of streaks) {
           const length = s.len * Math.min(1.6, windAbs);
           const alpha = s.alpha * Math.min(1, (windAbs - 0.22) / 0.6);
-          ctx!.strokeStyle = `rgba(160, 200, 255, ${alpha.toFixed(3)})`;
+          ctx!.strokeStyle = `rgba(88, 112, 138, ${(alpha * 0.6).toFixed(3)})`;
           ctx!.beginPath();
           ctx!.moveTo(s.x, s.y);
           ctx!.lineTo(s.x - Math.sign(wind) * length, s.y + Math.sin(t * 0.002 + s.y * 0.01) * 3);
@@ -378,8 +373,8 @@ export function FrostCanvas() {
     <canvas
       ref={canvasRef}
       aria-hidden
-      className="pointer-events-none fixed inset-0 z-0 opacity-90"
-      style={{ mixBlendMode: "screen" }}
+      className="pointer-events-none fixed inset-0 z-0 opacity-70"
+      style={{ mixBlendMode: "multiply" }}
     />
   );
 }

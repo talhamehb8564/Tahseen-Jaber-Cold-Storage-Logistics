@@ -118,7 +118,7 @@ export function ScrollFx() {
     <div aria-hidden className="pointer-events-none fixed inset-x-0 top-0 z-[80] h-[2px]">
       <div
         ref={barRef}
-        className="h-full w-full origin-left scale-x-0 bg-gradient-to-r from-ice via-[#7db4ff] to-glow shadow-[0_0_14px_rgba(143,123,255,0.75)]"
+        className="h-full w-full origin-left scale-x-0 bg-gradient-to-r from-ice via-[#2f3e53] to-glow shadow-[0_0_14px_rgba(182,106,60,0.75)]"
       />
     </div>
   );

@@ -138,9 +138,9 @@ export function statusHex(value: string, domain: StatusDomain = "generic"): stri
   const tone = DOMAIN_MAPS[domain][value] ?? "silver";
   switch (tone) {
     case "glow":
-      return "#8f7bff";
+      return "#b66a3c";
     case "ice":
-      return "#4cc2ff";
+      return "#7e3e22";
     case "stable":
       return "#22C55E";
     case "caution":
@@ -148,8 +148,8 @@ export function statusHex(value: string, domain: StatusDomain = "generic"): stri
     case "alert":
       return "#EF4444";
     case "frost":
-      return "#e9f3ff";
+      return "#122033";
     default:
-      return "#97a6cc";
+      return "#43536b";
   }
 }

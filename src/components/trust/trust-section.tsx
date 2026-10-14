@@ -84,7 +84,7 @@ export function TrustSection() {
                 data-parallax="0.3"
               />
               <div aria-hidden className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(4,7,29,0.75),transparent_55%)]" />
-              <figcaption className="absolute bottom-4 left-4 font-mono text-[0.5625rem] tracking-[0.22em] text-ice uppercase">
+              <figcaption className="absolute bottom-4 left-4 font-mono text-[0.5625rem] tracking-[0.22em] text-[#dba175] uppercase">
                 Receiving
               </figcaption>
             </figure>
@@ -102,7 +102,7 @@ export function TrustSection() {
                 data-parallax="0.3"
               />
               <div aria-hidden className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(4,7,29,0.75),transparent_55%)]" />
-              <figcaption className="absolute bottom-4 left-4 font-mono text-[0.5625rem] tracking-[0.22em] text-ice uppercase">
+              <figcaption className="absolute bottom-4 left-4 font-mono text-[0.5625rem] tracking-[0.22em] text-[#dba175] uppercase">
                 Precision
               </figcaption>
             </figure>
@@ -120,7 +120,7 @@ export function TrustSection() {
                 data-parallax="0.3"
               />
               <div aria-hidden className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(4,7,29,0.75),transparent_55%)]" />
-              <figcaption className="absolute bottom-4 left-4 font-mono text-[0.5625rem] tracking-[0.22em] text-ice uppercase">
+              <figcaption className="absolute bottom-4 left-4 font-mono text-[0.5625rem] tracking-[0.22em] text-[#dba175] uppercase">
                 Discipline
               </figcaption>
             </figure>

@@ -254,8 +254,8 @@ export function HeroSlider({ temperature, visible = true }: HeroSliderProps) {
           opacity: 0.18 + look.frost * 0.6,
           background:
             "radial-gradient(120% 78% at 50% 108%, rgba(233,243,255,0.30), transparent 58%)," +
-            "radial-gradient(90% 60% at 8% 4%, rgba(76,194,255,0.20), transparent 62%)," +
-            "radial-gradient(80% 54% at 96% 12%, rgba(143,123,255,0.16), transparent 64%)",
+            "radial-gradient(90% 60% at 8% 4%, rgba(126,62,34,0.20), transparent 62%)," +
+            "radial-gradient(80% 54% at 96% 12%, rgba(182,106,60,0.16), transparent 64%)",
           mixBlendMode: "screen",
         }}
       />
@@ -286,7 +286,7 @@ export function HeroSlider({ temperature, visible = true }: HeroSliderProps) {
           transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
           style={{
             background:
-              "radial-gradient(70% 60% at 50% 60%, rgba(143,123,255,0.28), transparent 68%)",
+              "radial-gradient(70% 60% at 50% 60%, rgba(182,106,60,0.28), transparent 68%)",
             mixBlendMode: "screen",
           }}
         />
@@ -312,7 +312,7 @@ export function HeroSlider({ temperature, visible = true }: HeroSliderProps) {
           <div className="flex items-end justify-between gap-6">
             {/* Caption — the text equivalent of the decorative plate. */}
             <div className="min-w-0">
-              <p className="font-mono text-[0.5625rem] tracking-[0.24em] text-silver-dim uppercase">
+              <p className="font-mono text-[0.5625rem] tracking-[0.24em] text-white/60 uppercase">
                 {active.zone}
               </p>
               <motion.p
@@ -320,7 +320,7 @@ export function HeroSlider({ temperature, visible = true }: HeroSliderProps) {
                 initial={reduced ? false : { opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: reduced ? 0 : 0.6, ease: [0.16, 1, 0.3, 1] }}
-                className="mt-1 font-mono text-[0.6875rem] tracking-[0.2em] text-ice uppercase"
+                className="mt-1 font-mono text-[0.6875rem] tracking-[0.2em] text-white uppercase"
               >
                 {active.caption}
               </motion.p>
@@ -351,7 +351,7 @@ export function HeroSlider({ temperature, visible = true }: HeroSliderProps) {
                       "focus-visible:ring-2 focus-visible:ring-glow focus-visible:ring-offset-2",
                       "focus-visible:ring-offset-midnight focus-visible:outline-none",
                       isActive
-                        ? "border-glow/60 bg-glow/10 shadow-[0_0_18px_rgba(143,123,255,0.28)]"
+                        ? "border-glow/60 bg-glow/10 shadow-[0_0_18px_rgba(182,106,60,0.28)]"
                         : "border-hull-line/70 bg-midnight/40 hover:border-ice/40",
                     )}
                   >

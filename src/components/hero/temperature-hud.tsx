@@ -80,7 +80,7 @@ export function TemperatureHud({
             <span className="flex items-center gap-1.5">
               <motion.span
                 className="size-1.5 rounded-full bg-glow"
-                style={{ boxShadow: "0 0 10px #8f7bff" }}
+                style={{ boxShadow: "0 0 10px #b66a3c" }}
                 animate={reduced ? undefined : { opacity: [1, 0.25, 1], scale: [1, 0.72, 1] }}
                 transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
                 aria-hidden
@@ -141,7 +141,7 @@ export function TemperatureHud({
         <div className="mt-2.5 h-[3px] w-full overflow-hidden rounded-full bg-hull-line/60">
           <motion.div
             className="h-full rounded-full"
-            style={{ background: "linear-gradient(90deg,#4cc2ff,#8f7bff)" }}
+            style={{ background: "linear-gradient(90deg,#7e3e22,#b66a3c)" }}
             animate={{ width: `${Math.round(cold * 100)}%` }}
             transition={{ duration: reduced ? 0 : 0.45, ease: [0.22, 1, 0.36, 1] }}
           />

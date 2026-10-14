@@ -40,7 +40,7 @@ export default function NotFound() {
         style={{
           background:
             "radial-gradient(48% 40% at 0% 0%, rgba(233,243,255,0.14), transparent 70%)," +
-            "radial-gradient(46% 38% at 100% 100%, rgba(76,194,255,0.12), transparent 72%)",
+            "radial-gradient(46% 38% at 100% 100%, rgba(126,62,34,0.12), transparent 72%)",
         }}
       />
 
@@ -65,7 +65,7 @@ export default function NotFound() {
             <Link
               key={destination.href}
               href={destination.href}
-              className="glass tj-corners group rounded-[3px] p-4 transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-glow/55 hover:shadow-[0_0_34px_rgba(143,123,255,0.22)] focus-visible:ring-2 focus-visible:ring-glow focus-visible:outline-none"
+              className="glass tj-corners group rounded-[3px] p-4 transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-glow/55 hover:shadow-[0_0_34px_rgba(182,106,60,0.22)] focus-visible:ring-2 focus-visible:ring-glow focus-visible:outline-none"
               data-cursor="explore"
             >
               <span className="flex items-center justify-between gap-3">

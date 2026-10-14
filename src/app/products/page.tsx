@@ -201,7 +201,7 @@ export default function ProductsPage() {
                       aria-hidden
                       className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(4,7,29,0.55),transparent_60%)]"
                     />
-                    <figcaption className="absolute bottom-3 left-3 font-mono text-[0.5rem] tracking-[0.18em] text-silver uppercase">
+                    <figcaption className="absolute bottom-3 left-3 font-mono text-[0.5rem] tracking-[0.18em] text-white/70 uppercase">
                       Illustrative visual
                     </figcaption>
                   </figure>

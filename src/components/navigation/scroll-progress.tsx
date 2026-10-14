@@ -42,14 +42,14 @@ export function ScrollProgress({ className }: { className?: string }) {
     <div
       aria-hidden
       className={className}
-      style={{ height: 1, background: "rgba(143,123,255,0.10)" }}
+      style={{ height: 1, background: "rgba(182,106,60,0.10)" }}
     >
       <div
         ref={barRef}
         className="h-full origin-left"
         style={{
           transform: "scaleX(0)",
-          background: "linear-gradient(90deg, #4cc2ff, #8f7bff)",
+          background: "linear-gradient(90deg, #7e3e22, #b66a3c)",
           willChange: "transform",
         }}
       />
