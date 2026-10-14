@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion as useMotionReducedMotion } from "motion/react";
-import type { ElementType, ReactNode } from "react";
+import type { ReactNode } from "react";
 
 import { cn } from "@/lib/utilities/cn";
 
@@ -34,6 +34,34 @@ const PRESETS: Record<RevealPreset, (delay: number) => ReturnType<typeof fadeUp>
   frostReveal: (delay) => frostReveal(delay),
 };
 
+
+/**
+ * Narrow polymorphic tag set for the reveal family.
+ *
+ * A loose `ElementType` once worked, but @react-three/fiber augments the
+ * global JSX intrinsic elements with three.js tags, which poisons any
+ * union-typed JSX tag ("children expects never"). The reveal primitives only
+ * ever render HTML flow content, so the union stays deliberately narrow.
+ */
+export type RevealTag =
+  | "div"
+  | "span"
+  | "section"
+  | "header"
+  | "footer"
+  | "p"
+  | "h1"
+  | "h2"
+  | "h3"
+  | "h4"
+  | "ul"
+  | "ol"
+  | "li"
+  | "article"
+  | "figure"
+  | "figcaption"
+  | "blockquote";
+
 interface RevealProps {
   children: ReactNode;
   preset?: RevealPreset;
@@ -42,7 +70,7 @@ interface RevealProps {
   /** IntersectionObserver threshold. */
   amount?: number;
   className?: string;
-  as?: ElementType;
+  as?: RevealTag;
   /** Skip the animation entirely (renders static markup). */
   disabled?: boolean;
   id?: string;
@@ -66,10 +94,10 @@ export function Reveal({
   id,
 }: RevealProps) {
   const reduced = useMotionReducedMotion();
-  const MotionTag = motion[as as keyof typeof motion] as typeof motion.div;
+  const MotionTag = motion[as] as typeof motion.div;
 
   if (disabled || reduced) {
-    const Tag = as as ElementType;
+    const Tag = as;
     return (
       <Tag id={id} className={className}>
         {children}
@@ -104,7 +132,7 @@ interface RevealGroupProps {
   /** Per-child delay increment, in seconds. */
   stagger?: number;
   preset?: RevealPreset;
-  as?: ElementType;
+  as?: RevealTag;
   amount?: number;
 }
 
@@ -118,11 +146,11 @@ export function RevealGroup({
   amount = 0.2,
 }: RevealGroupProps) {
   const reduced = useMotionReducedMotion();
-  const MotionTag = motion[as as keyof typeof motion] as typeof motion.div;
+  const MotionTag = motion[as] as typeof motion.div;
   const items = Array.isArray(children) ? children : [children];
 
   if (reduced) {
-    const Tag = as as ElementType;
+    const Tag = as;
     return <Tag className={className}>{children}</Tag>;
   }
 
@@ -161,10 +189,10 @@ export function TextReveal({
   className?: string;
   lineClassName?: string;
   delay?: number;
-  as?: ElementType;
+  as?: RevealTag;
 }) {
   const reduced = useMotionReducedMotion();
-  const Tag = as as ElementType;
+  const Tag = as;
 
   if (reduced) {
     return (
@@ -236,7 +264,7 @@ export function WordReveal({
   /** Seconds between successive words. */
   stagger?: number;
   duration?: number;
-  as?: ElementType;
+  as?: RevealTag;
   /**
    * When false the reveal is driven by `start` — used above the fold, where the
    * element is already on screen at load.
@@ -251,7 +279,7 @@ export function WordReveal({
   amount?: number;
 }) {
   const reduced = useMotionReducedMotion();
-  const Tag = as as ElementType;
+  const Tag = as;
   const words = text.split(/\s+/).filter(Boolean);
 
   if (reduced) {

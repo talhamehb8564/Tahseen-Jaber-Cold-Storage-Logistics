@@ -1,6 +1,8 @@
 import { CircleAlert } from "lucide-react";
+import Image from "next/image";
 
 import { CatalogIcon } from "@/components/ui/catalog-icon";
+import { TiltCard } from "@/components/ui/tilt-card";
 import { operatingPrinciples, pendingCredentials } from "@/lib/catalog";
 
 /**
@@ -65,6 +67,65 @@ export function TrustSection() {
               </div>
             </li>
           ))}
+        </ul>
+
+        {/* ---------------- The floor, as it actually feels ---------------- */}
+        {/* §45: illustrative imagery only — no facility facts are implied. */}
+        <ul className="mt-16 grid gap-3 sm:gap-4 md:grid-cols-3">
+          <li>
+            <TiltCard intensity={6} className="h-64 rounded-2xl md:h-80">
+            <figure className="tj-panel-shine relative h-full w-full overflow-hidden rounded-2xl border border-hull-line/60">
+              <Image
+                src="/assets/dock-receiving-crew.jpg"
+                alt="Workers in insulated jackets guiding a sealed pallet into a lit dock doorway at night."
+                fill
+                sizes="(min-width: 768px) 33vw, 100vw"
+                className="scale-[1.2] object-cover"
+                data-parallax="0.3"
+              />
+              <div aria-hidden className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(4,7,29,0.75),transparent_55%)]" />
+              <figcaption className="absolute bottom-4 left-4 font-mono text-[0.5625rem] tracking-[0.22em] text-ice uppercase">
+                Receiving
+              </figcaption>
+            </figure>
+          </TiltCard>
+          </li>
+          <li className="md:mt-8">
+            <TiltCard intensity={6} className="h-64 rounded-2xl md:h-80">
+            <figure className="tj-panel-shine relative h-full w-full overflow-hidden rounded-2xl border border-hull-line/60">
+              <Image
+                src="/assets/pharma-cold-room.jpg"
+                alt="A precision pharmaceutical cold room with stainless shelving and temperature sensors."
+                fill
+                sizes="(min-width: 768px) 33vw, 100vw"
+                className="scale-[1.2] object-cover"
+                data-parallax="0.3"
+              />
+              <div aria-hidden className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(4,7,29,0.75),transparent_55%)]" />
+              <figcaption className="absolute bottom-4 left-4 font-mono text-[0.5625rem] tracking-[0.22em] text-ice uppercase">
+                Precision
+              </figcaption>
+            </figure>
+          </TiltCard>
+          </li>
+          <li>
+            <TiltCard intensity={6} className="h-64 rounded-2xl md:h-80">
+            <figure className="tj-panel-shine relative h-full w-full overflow-hidden rounded-2xl border border-hull-line/60">
+              <Image
+                src="/assets/ice-crystal-macro.jpg"
+                alt="Macro photograph of ice crystals refracting azure and violet light."
+                fill
+                sizes="(min-width: 768px) 33vw, 100vw"
+                className="scale-[1.2] object-cover"
+                data-parallax="0.3"
+              />
+              <div aria-hidden className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(4,7,29,0.75),transparent_55%)]" />
+              <figcaption className="absolute bottom-4 left-4 font-mono text-[0.5625rem] tracking-[0.22em] text-ice uppercase">
+                Discipline
+              </figcaption>
+            </figure>
+          </TiltCard>
+          </li>
         </ul>
 
         {/* ---------------- Honest gap disclosure ---------------- */}

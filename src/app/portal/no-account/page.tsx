@@ -64,7 +64,7 @@ export default async function NoAccountPage() {
         <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center rounded-[2px] bg-glow px-6 py-3.5 font-display text-[0.75rem] font-bold tracking-[0.16em] text-midnight uppercase shadow-[0_12px_34px_-14px_rgba(0,245,212,0.9)] transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-ice active:scale-[0.985] focus-visible:ring-2 focus-visible:ring-glow focus-visible:ring-offset-2 focus-visible:ring-offset-midnight focus-visible:outline-none"
+            className="inline-flex items-center justify-center rounded-[2px] bg-glow px-6 py-3.5 font-display text-[0.75rem] font-bold tracking-[0.16em] text-midnight uppercase shadow-[0_12px_34px_-14px_rgba(143,123,255,0.9)] transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-ice active:scale-[0.985] focus-visible:ring-2 focus-visible:ring-glow focus-visible:ring-offset-2 focus-visible:ring-offset-midnight focus-visible:outline-none"
           >
             Contact the facility
           </Link>

@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { FinalCta } from "@/components/cta/final-cta";
 import { InquiryForm } from "@/components/inquiry/inquiry-form";
 import { StorageCalculator } from "@/components/inquiry/storage-calculator";
+import { ImageBand } from "@/components/imagery/image-band";
 import { HeroSpec, PageHero } from "@/components/layout/page-hero";
 import { Section } from "@/components/ui/section";
 import { FALLBACK, siteConfig } from "@/lib/site";
@@ -76,6 +77,20 @@ export default function RequestStoragePage() {
       >
         <StorageCalculator />
       </Section>
+
+      {/* What the requirement becomes — illustrative (§45). */}
+      <section
+        aria-label="What the requirement becomes"
+        className="relative z-10 mx-auto w-full max-w-[86rem] px-5 py-14 sm:px-8 lg:px-12"
+      >
+        <ImageBand
+          src="/assets/sealed-frozen-cartons.jpg"
+          alt="Sealed frozen cartons stacked on a pallet in the deep-freeze chamber, frost on every edge."
+          eyebrow="What arrives is what is held"
+          title="Sealed, placed, recorded"
+          caption="From this form to a batch reference: agreed in writing before anything moves, then held to the conditions confirmed for it."
+        />
+      </section>
 
       {/* ---------------- Direct inquiry ---------------- */}
       <Section

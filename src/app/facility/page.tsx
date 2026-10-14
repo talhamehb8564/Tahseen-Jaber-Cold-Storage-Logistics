@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 import { PrecisionCooling } from "@/components/cold-chain/precision-cooling";
 import { FinalCta } from "@/components/cta/final-cta";
@@ -8,6 +9,7 @@ import { SecurityMatrix } from "@/components/security/security-matrix";
 import { CatalogIcon } from "@/components/ui/catalog-icon";
 import { ProvenanceBadge } from "@/components/ui/provenance-badge";
 import { Section } from "@/components/ui/section";
+import { TiltCard } from "@/components/ui/tilt-card";
 import { getDataProvider, getDataSourceInfo } from "@/lib/data";
 import { facilityZones } from "@/lib/catalog";
 import { FALLBACK, siteConfig } from "@/lib/site";
@@ -166,6 +168,69 @@ export default async function FacilityPage() {
           Capacity and floor area: {FALLBACK.capability} — not published because
           they have not been confirmed for this facility.
         </p>
+      </Section>
+
+      {/* ---------------- Inside the building ---------------- */}
+      <Section
+        id="inside"
+        index="03"
+        eyebrow="Inside the building"
+        heading={
+          <>
+            Cold light,
+            <span className="tj-frost-text"> tall steel, held air</span>
+          </>
+        }
+        lede="The chambers as they read on the floor. Illustrative visuals — zone assignment and set points are configured per client agreement."
+        width="wide"
+        rule
+      >
+        <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            {
+              src: "/assets/warehouse-hero-interior.jpg",
+              alt: "Tall racking aisles inside the cold store under industrial lighting, vapour in the air.",
+              label: "The aisles",
+            },
+            {
+              src: "/assets/automated-racking.jpg",
+              alt: "High-bay racking aisle lit in frost blue with floor-level fog.",
+              label: "High-bay",
+            },
+            {
+              src: "/assets/frozen-pallets-frost.jpg",
+              alt: "Frosted pallets of sealed frozen goods in the deep-freeze aisle.",
+              label: "Deep freeze",
+            },
+            {
+              src: "/assets/control-room-ops.jpg",
+              alt: "The monitoring control room, screens glowing with zone conditions.",
+              label: "Watchtower",
+            },
+          ].map((tile, tileIndex) => (
+            <li key={tile.src} className={tileIndex % 2 === 1 ? "lg:mt-6" : undefined}>
+              <TiltCard intensity={6} className="h-56 rounded-2xl lg:h-64">
+                <figure className="tj-panel-shine relative h-full w-full overflow-hidden rounded-2xl border border-hull-line/60">
+                  <Image
+                    src={tile.src}
+                    alt={tile.alt}
+                    fill
+                    sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                    className="scale-[1.18] object-cover"
+                    data-parallax="0.25"
+                  />
+                  <div
+                    aria-hidden
+                    className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(4,7,29,0.78),transparent_58%)]"
+                  />
+                  <figcaption className="absolute bottom-4 left-4 font-mono text-[0.5625rem] tracking-[0.22em] text-ice uppercase">
+                    {tile.label}
+                  </figcaption>
+                </figure>
+              </TiltCard>
+            </li>
+          ))}
+        </ul>
       </Section>
 
       <PrecisionCooling />

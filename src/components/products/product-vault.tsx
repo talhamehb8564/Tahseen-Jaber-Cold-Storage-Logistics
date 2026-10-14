@@ -95,12 +95,12 @@ export function ProductVault() {
                 )}
                 style={{
                   backgroundColor: isActive
-                    ? `color-mix(in oklab, ${category.accent} 9%, #0B132B)`
-                    : "rgba(3,7,18,0.55)",
+                    ? `color-mix(in oklab, ${category.accent} 9%, #0b1034)`
+                    : "rgba(4,7,29,0.55)",
                   backdropFilter: isActive ? undefined : "blur(10px)",
                   boxShadow: isActive
-                    ? `0 0 40px color-mix(in oklab, ${category.accent} 18%, transparent), inset 0 1px 0 0 rgba(234,252,255,0.10)`
-                    : "inset 0 1px 0 0 rgba(234,252,255,0.05)",
+                    ? `0 0 40px color-mix(in oklab, ${category.accent} 18%, transparent), inset 0 1px 0 0 rgba(233,243,255,0.10)`
+                    : "inset 0 1px 0 0 rgba(233,243,255,0.05)",
                 }}
                 onMouseEnter={() => setPreviewId(category.id)}
                 onMouseLeave={() => setPreviewId(null)}
@@ -326,7 +326,7 @@ function ProductEnvironment({
         className="absolute inset-0 transition-opacity duration-[900ms]"
         style={{
           opacity: active ? 0.5 : 0.22,
-          background: `linear-gradient(178deg, ${category.accent}2E 0%, transparent 42%, rgba(3,7,18,0.86) 88%, rgba(3,7,18,0.97) 100%)`,
+          background: `linear-gradient(178deg, ${category.accent}2E 0%, transparent 42%, rgba(4,7,29,0.86) 88%, rgba(4,7,29,0.97) 100%)`,
         }}
       />
 
@@ -337,8 +337,8 @@ function ProductEnvironment({
         style={{
           opacity: active ? 0.12 : 0.5,
           background:
-            "radial-gradient(70% 50% at 50% 100%, rgba(234,252,255,0.30), transparent 68%)," +
-            "radial-gradient(56% 44% at 0% 0%, rgba(234,252,255,0.16), transparent 70%)",
+            "radial-gradient(70% 50% at 50% 100%, rgba(233,243,255,0.30), transparent 68%)," +
+            "radial-gradient(56% 44% at 0% 0%, rgba(233,243,255,0.16), transparent 70%)",
         }}
       />
 
@@ -355,7 +355,7 @@ function ProductEnvironment({
           <linearGradient id={`pe-${category.id}`} x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stopColor={category.accent} stopOpacity="0.16" />
             <stop offset="60%" stopColor={category.accent} stopOpacity="0.04" />
-            <stop offset="100%" stopColor="#05090F" stopOpacity="0.6" />
+            <stop offset="100%" stopColor="#05050f" stopOpacity="0.6" />
           </linearGradient>
           <filter id={`pe-blur-${category.id}`}>
             <feGaussianBlur stdDeviation="18" />

@@ -37,7 +37,7 @@ export function FinalCta() {
         className="pointer-events-none absolute inset-x-0 bottom-0 h-64 opacity-80"
         style={{
           background:
-            "linear-gradient(to top, rgba(0,245,212,0.10), rgba(0,245,212,0.02) 45%, transparent)",
+            "linear-gradient(to top, rgba(143,123,255,0.10), rgba(143,123,255,0.02) 45%, transparent)",
         }}
       />
       <div aria-hidden className="tj-grid pointer-events-none absolute inset-0 -z-10 opacity-30" />
@@ -88,7 +88,7 @@ export function FinalCta() {
           <div className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
             <Link
               href={primaryCta.href}
-              className="group relative inline-flex w-full items-center justify-center gap-2.5 overflow-hidden rounded-[2px] bg-glow px-8 py-4 font-display text-[0.875rem] font-bold tracking-[0.16em] text-midnight uppercase shadow-[0_16px_44px_-16px_rgba(0,245,212,0.9)] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-ice hover:shadow-[0_20px_56px_-16px_rgba(72,202,228,1)] active:scale-[0.985] focus-visible:ring-2 focus-visible:ring-glow focus-visible:ring-offset-2 focus-visible:ring-offset-midnight focus-visible:outline-none sm:w-auto"
+              className="group relative inline-flex w-full items-center justify-center gap-2.5 overflow-hidden rounded-[2px] bg-glow px-8 py-4 font-display text-[0.875rem] font-bold tracking-[0.16em] text-midnight uppercase shadow-[0_16px_44px_-16px_rgba(143,123,255,0.9)] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-ice hover:shadow-[0_20px_56px_-16px_rgba(76,194,255,1)] active:scale-[0.985] focus-visible:ring-2 focus-visible:ring-glow focus-visible:ring-offset-2 focus-visible:ring-offset-midnight focus-visible:outline-none sm:w-auto"
               data-cursor="explore"
             >
               {/* Sheen sweep */}

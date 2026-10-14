@@ -1,8 +1,10 @@
 import type { Metadata, Viewport } from "next";
 
 import "@/app/globals.css";
+import { AuroraSky } from "@/components/global/aurora-sky";
 import { ColdAtmosphere } from "@/components/global/cold-atmosphere";
 import { FrostCanvas } from "@/components/global/frost-canvas";
+import { ScrollFx } from "@/components/global/scroll-fx";
 import { CustomCursor } from "@/components/global/custom-cursor";
 import { Footer } from "@/components/navigation/footer";
 import { Navbar } from "@/components/navigation/navbar";
@@ -43,7 +45,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#030712",
+  themeColor: "#04071d",
   colorScheme: "dark",
   width: "device-width",
   initialScale: 1,

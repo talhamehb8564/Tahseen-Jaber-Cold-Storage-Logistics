@@ -267,7 +267,7 @@ export function ContactForm() {
           className={cn(
             "group inline-flex items-center justify-center gap-2.5 rounded-[2px] px-7 py-3.5",
             "font-display text-[0.8125rem] font-bold tracking-[0.14em] uppercase",
-            "bg-glow text-midnight shadow-[0_10px_30px_-12px_rgba(0,245,212,0.8)]",
+            "bg-glow text-midnight shadow-[0_10px_30px_-12px_rgba(143,123,255,0.8)]",
             "transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]",
             "hover:bg-ice active:scale-[0.985]",
             "focus-visible:ring-2 focus-visible:ring-glow focus-visible:ring-offset-2 focus-visible:ring-offset-midnight focus-visible:outline-none",

@@ -132,7 +132,7 @@ function PinnedTrack() {
                     className={cn(
                       "relative -top-[3.5px] size-[7px] rounded-full border transition-all duration-500",
                       reached
-                        ? "border-glow bg-glow shadow-[0_0_12px_rgba(0,245,212,0.8)]"
+                        ? "border-glow bg-glow shadow-[0_0_12px_rgba(143,123,255,0.8)]"
                         : "border-hull-line bg-midnight",
                     )}
                   />
@@ -198,7 +198,7 @@ function VerticalStage({
         className={cn(
           "absolute top-6 -left-[1.85rem] size-[9px] rounded-full border transition-all duration-500 sm:-left-[2.35rem]",
           inView
-            ? "border-glow bg-glow shadow-[0_0_12px_rgba(0,245,212,0.8)]"
+            ? "border-glow bg-glow shadow-[0_0_12px_rgba(143,123,255,0.8)]"
             : "border-hull-line bg-midnight",
         )}
       />
@@ -241,7 +241,7 @@ function StageCard({
         "tj-panel relative rounded-[2px] p-4 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]",
         layout === "compact" && "min-h-[17rem]",
         active
-          ? "border-glow/45 bg-hull/55 shadow-[0_24px_60px_-30px_rgba(0,245,212,0.45)]"
+          ? "border-glow/45 bg-hull/55 shadow-[0_24px_60px_-30px_rgba(143,123,255,0.45)]"
           : reached
             ? "border-hull-line opacity-85"
             : "border-hull-line/60 opacity-45",
@@ -279,7 +279,7 @@ function StageCardBody({
           className={cn(
             "flex size-9 items-center justify-center rounded-[2px] border transition-all duration-700",
             active
-              ? "border-glow/50 bg-glow/12 text-glow shadow-[0_0_20px_-4px_rgba(0,245,212,0.6)]"
+              ? "border-glow/50 bg-glow/12 text-glow shadow-[0_0_20px_-4px_rgba(143,123,255,0.6)]"
               : "border-hull-line bg-midnight/50 text-silver-dim",
           )}
         >

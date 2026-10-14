@@ -152,22 +152,22 @@ export function inquiryAdminEmail(input: {
   ].join("\n");
 
   const html = `
-<div style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#030712;color:#94a3b8;padding:28px">
-  <div style="border:1px solid #1c3157;background:#0b132b;padding:24px;max-width:640px;margin:0 auto">
-    <p style="margin:0 0 4px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#00f5d4">New storage inquiry</p>
-    <p style="margin:0 0 24px;font-size:22px;color:#eafcff;font-weight:700">${escapeHtml(input.reference)}</p>
+<div style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#04071d;color:#97a6cc;padding:28px">
+  <div style="border:1px solid #263a7a;background:#0b1034;padding:24px;max-width:640px;margin:0 auto">
+    <p style="margin:0 0 4px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#8f7bff">New storage inquiry</p>
+    <p style="margin:0 0 24px;font-size:22px;color:#e9f3ff;font-weight:700">${escapeHtml(input.reference)}</p>
     <table style="width:100%;border-collapse:collapse;font-size:13px">
       ${lines
         .map(
           ([label, value]) => `<tr>
-            <td style="padding:7px 12px 7px 0;border-bottom:1px solid #0f1b38;color:#64748b;text-transform:uppercase;font-size:10px;letter-spacing:.14em;white-space:nowrap">${escapeHtml(label)}</td>
-            <td style="padding:7px 0;border-bottom:1px solid #0f1b38;color:#eafcff;text-align:right">${escapeHtml(value)}</td>
+            <td style="padding:7px 12px 7px 0;border-bottom:1px solid #121d48;color:#6d7aa8;text-transform:uppercase;font-size:10px;letter-spacing:.14em;white-space:nowrap">${escapeHtml(label)}</td>
+            <td style="padding:7px 0;border-bottom:1px solid #121d48;color:#e9f3ff;text-align:right">${escapeHtml(value)}</td>
           </tr>`,
         )
         .join("")}
     </table>
-    <p style="margin:24px 0 6px;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#64748b">Message</p>
-    <p style="margin:0;font-size:13px;line-height:1.65;color:#DCEAF7;white-space:pre-wrap">${escapeHtml(input.message?.trim() || "(none)")}</p>
+    <p style="margin:24px 0 6px;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#6d7aa8">Message</p>
+    <p style="margin:0;font-size:13px;line-height:1.65;color:#dbe2f8;white-space:pre-wrap">${escapeHtml(input.message?.trim() || "(none)")}</p>
   </div>
 </div>`.trim();
 
@@ -194,13 +194,13 @@ export function inquiryReceiptEmail(input: {
   ].join("\n");
 
   const html = `
-<div style="font-family:ui-sans-serif,system-ui,sans-serif;background:#030712;color:#94a3b8;padding:28px">
-  <div style="border:1px solid #1c3157;background:#0b132b;padding:28px;max-width:560px;margin:0 auto">
-    <p style="margin:0 0 18px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#00f5d4">Request received</p>
-    <p style="margin:0 0 10px;font-size:26px;color:#eafcff;font-weight:700;letter-spacing:-.02em">${escapeHtml(input.reference)}</p>
+<div style="font-family:ui-sans-serif,system-ui,sans-serif;background:#04071d;color:#97a6cc;padding:28px">
+  <div style="border:1px solid #263a7a;background:#0b1034;padding:28px;max-width:560px;margin:0 auto">
+    <p style="margin:0 0 18px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#8f7bff">Request received</p>
+    <p style="margin:0 0 10px;font-size:26px;color:#e9f3ff;font-weight:700;letter-spacing:-.02em">${escapeHtml(input.reference)}</p>
     <p style="margin:0 0 20px;font-size:14px;line-height:1.7">Hello ${escapeHtml(input.name)}, your storage request has been received and recorded against the reference above.</p>
     <p style="margin:0 0 20px;font-size:14px;line-height:1.7">Keep this reference — quoting it will let us find your request immediately. Our team will respond to arrange the details of your requirement.</p>
-    <p style="margin:0;font-size:12px;color:#64748b">${escapeHtml(input.facility)}</p>
+    <p style="margin:0;font-size:12px;color:#6d7aa8">${escapeHtml(input.facility)}</p>
   </div>
 </div>`.trim();
 

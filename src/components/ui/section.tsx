@@ -53,7 +53,7 @@ const SURFACES = {
   "grid-fine": "tj-grid-fine",
   raised: "bg-navy/40",
   gradient:
-    "bg-[radial-gradient(120%_80%_at_50%_0%,rgba(15,27,56,0.55),transparent_65%)]",
+    "bg-[radial-gradient(120%_80%_at_50%_0%,rgba(18,29,72,0.55),transparent_65%)]",
 } as const;
 
 export function Section({

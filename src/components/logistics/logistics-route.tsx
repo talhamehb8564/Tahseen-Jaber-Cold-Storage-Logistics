@@ -72,16 +72,16 @@ export function LogisticsRoute({ simulated }: { simulated: boolean }) {
         <svg viewBox="0 0 900 560" className="w-full" role="img" aria-label="Schematic route diagram showing the five stages of a consignment moving through the facility: receive, store, load, check and dispatch.">
           <defs>
             <linearGradient id="lr-land" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stopColor="#0E1B2C" />
-              <stop offset="100%" stopColor="#08111D" />
+              <stop offset="0%" stopColor="#0d0e2d" />
+              <stop offset="100%" stopColor="#07081e" />
             </linearGradient>
             <linearGradient id="lr-river" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stopColor="#00f5d4" stopOpacity="0.34" />
-              <stop offset="100%" stopColor="#48cae4" stopOpacity="0.14" />
+              <stop offset="0%" stopColor="#8f7bff" stopOpacity="0.34" />
+              <stop offset="100%" stopColor="#4cc2ff" stopOpacity="0.14" />
             </linearGradient>
             <linearGradient id="lr-route" x1="0" y1="1" x2="1" y2="0">
-              <stop offset="0%" stopColor="#48cae4" />
-              <stop offset="100%" stopColor="#00f5d4" />
+              <stop offset="0%" stopColor="#4cc2ff" />
+              <stop offset="100%" stopColor="#8f7bff" />
             </linearGradient>
             <filter id="lr-glow" x="-30%" y="-30%" width="160%" height="160%">
               <feGaussianBlur stdDeviation="7" />
@@ -92,7 +92,7 @@ export function LogisticsRoute({ simulated }: { simulated: boolean }) {
           <rect width="900" height="560" rx="3" fill="url(#lr-land)" />
 
           {/* Graticule */}
-          <g stroke="#1c3157" strokeWidth="0.7" opacity="0.45">
+          <g stroke="#263a7a" strokeWidth="0.7" opacity="0.45">
             {Array.from({ length: 14 }, (_, index) => (
               <path key={`gv${index}`} d={`M${60 + index * 60} 0 V560`} />
             ))}
@@ -102,7 +102,7 @@ export function LogisticsRoute({ simulated }: { simulated: boolean }) {
           </g>
 
           {/* Landmass contours — abstract, not a geographic claim */}
-          <g fill="none" stroke="#2C4258" strokeWidth="1.1" opacity="0.5">
+          <g fill="none" stroke="#2a2f5a" strokeWidth="1.1" opacity="0.5">
             <path d="M-20 180 Q160 120 300 190 T620 170 T940 220" />
             <path d="M-20 250 Q180 200 340 260 T680 240 T940 290" />
             <path d="M-20 470 Q200 420 380 480 T740 460 T940 500" />
@@ -120,13 +120,13 @@ export function LogisticsRoute({ simulated }: { simulated: boolean }) {
           <path
             d="M420 -20 C 460 90, 380 170, 430 260 C 480 350, 400 430, 450 580"
             fill="none"
-            stroke="#48cae4"
+            stroke="#4cc2ff"
             strokeWidth="1.2"
             opacity="0.28"
           />
 
           {/* Road network */}
-          <g stroke="#33506B" strokeWidth="1.4" opacity="0.42" fill="none">
+          <g stroke="#31386d" strokeWidth="1.4" opacity="0.42" fill="none">
             <path d="M0 380 H900" />
             <path d="M180 0 V560" />
             <path d="M700 0 V560" />
@@ -135,15 +135,15 @@ export function LogisticsRoute({ simulated }: { simulated: boolean }) {
 
           {/* City node */}
           <g transform="translate(556,392)">
-            <circle r="5" fill="#48cae4" opacity="0.85" />
-            <circle r="13" fill="none" stroke="#48cae4" strokeWidth="1" opacity="0.4" />
+            <circle r="5" fill="#4cc2ff" opacity="0.85" />
+            <circle r="13" fill="none" stroke="#4cc2ff" strokeWidth="1" opacity="0.4" />
             <text
               x="20"
               y="5"
               fontFamily="'JetBrains Mono', monospace"
               fontSize="13"
               letterSpacing="2"
-              fill="#94a3b8"
+              fill="#97a6cc"
             >
               BAGHDAD
             </text>
@@ -151,15 +151,15 @@ export function LogisticsRoute({ simulated }: { simulated: boolean }) {
 
           {/* Facility node */}
           <g transform="translate(196,486)">
-            <rect x="-7" y="-7" width="14" height="14" rx="1.5" fill="#00f5d4" opacity="0.9" />
-            <rect x="-15" y="-15" width="30" height="30" rx="2" fill="none" stroke="#00f5d4" strokeWidth="1.2" opacity="0.45" />
+            <rect x="-7" y="-7" width="14" height="14" rx="1.5" fill="#8f7bff" opacity="0.9" />
+            <rect x="-15" y="-15" width="30" height="30" rx="2" fill="none" stroke="#8f7bff" strokeWidth="1.2" opacity="0.45" />
             <text
               x="24"
               y="-2"
               fontFamily="'JetBrains Mono', monospace"
               fontSize="12"
               letterSpacing="1.6"
-              fill="#48cae4"
+              fill="#4cc2ff"
             >
               UUAYRIJ INDUSTRIAL AREA
             </text>
@@ -169,7 +169,7 @@ export function LogisticsRoute({ simulated }: { simulated: boolean }) {
               fontFamily="'JetBrains Mono', monospace"
               fontSize="10"
               letterSpacing="1.4"
-              fill="#64748b"
+              fill="#6d7aa8"
             >
               FACILITY
             </text>
@@ -177,12 +177,12 @@ export function LogisticsRoute({ simulated }: { simulated: boolean }) {
 
           {/* ---- The route ---- */}
           {/* Bed */}
-          <path d={ROUTE_PATH} fill="none" stroke="#1c3157" strokeWidth="3" strokeLinecap="round" />
+          <path d={ROUTE_PATH} fill="none" stroke="#263a7a" strokeWidth="3" strokeLinecap="round" />
           {/* Glow underneath the drawn portion */}
           <path
             d={ROUTE_PATH}
             fill="none"
-            stroke="#00f5d4"
+            stroke="#8f7bff"
             strokeWidth="8"
             strokeLinecap="round"
             opacity="0.22"
@@ -212,14 +212,14 @@ export function LogisticsRoute({ simulated }: { simulated: boolean }) {
               <g key={point.x} transform={`translate(${point.x},${point.y})`}>
                 <circle
                   r={reached ? 9 : 6}
-                  fill={reached ? "#0A1421" : "#08111D"}
-                  stroke={reached ? "#00f5d4" : "#3A5772"}
+                  fill={reached ? "#090a22" : "#07081e"}
+                  stroke={reached ? "#8f7bff" : "#383f74"}
                   strokeWidth={reached ? 2.4 : 1.6}
                   style={{ transition: reduced ? undefined : "all 500ms cubic-bezier(0.22,1,0.36,1)" }}
                 />
-                {reached ? <circle r="3.2" fill="#00f5d4" /> : null}
+                {reached ? <circle r="3.2" fill="#8f7bff" /> : null}
                 {reached ? (
-                  <circle r="16" fill="none" stroke="#00f5d4" strokeWidth="1" opacity="0.3" />
+                  <circle r="16" fill="none" stroke="#8f7bff" strokeWidth="1" opacity="0.3" />
                 ) : null}
 
                 <text
@@ -230,7 +230,7 @@ export function LogisticsRoute({ simulated }: { simulated: boolean }) {
                   fontSize="12.5"
                   fontWeight="600"
                   letterSpacing="1.8"
-                  fill={reached ? "#eafcff" : "#64748b"}
+                  fill={reached ? "#e9f3ff" : "#6d7aa8"}
                   style={{ transition: reduced ? undefined : "fill 500ms" }}
                 >
                   {stop?.label ?? ""}
@@ -242,7 +242,7 @@ export function LogisticsRoute({ simulated }: { simulated: boolean }) {
                   fontFamily="'JetBrains Mono', monospace"
                   fontSize="10"
                   letterSpacing="1.2"
-                  fill="#64748b"
+                  fill="#6d7aa8"
                 >
                   {stop?.detail ?? ""}
                 </text>
@@ -262,11 +262,11 @@ export function LogisticsRoute({ simulated }: { simulated: boolean }) {
               }
             >
               <g transform="translate(-19,-11)">
-                <rect x="0" y="4" width="26" height="13" rx="1.5" fill="#DCE7F2" stroke="#0A1421" strokeWidth="1" />
-                <path d="M26 7 h8 l4 5 v5 h-12 Z" fill="#2E4661" stroke="#0A1421" strokeWidth="1" />
-                <rect x="2" y="7" width="22" height="2" fill="#00f5d4" opacity="0.75" />
-                <circle cx="8" cy="19" r="3.2" fill="#151B23" stroke="#4A586A" strokeWidth="0.9" />
-                <circle cx="31" cy="19" r="3.2" fill="#151B23" stroke="#4A586A" strokeWidth="0.9" />
+                <rect x="0" y="4" width="26" height="13" rx="1.5" fill="#dbe1f3" stroke="#090a22" strokeWidth="1" />
+                <path d="M26 7 h8 l4 5 v5 h-12 Z" fill="#2c3063" stroke="#090a22" strokeWidth="1" />
+                <rect x="2" y="7" width="22" height="2" fill="#8f7bff" opacity="0.75" />
+                <circle cx="8" cy="19" r="3.2" fill="#141524" stroke="#494a6b" strokeWidth="0.9" />
+                <circle cx="31" cy="19" r="3.2" fill="#141524" stroke="#494a6b" strokeWidth="0.9" />
               </g>
             </g>
           ) : null}
@@ -278,7 +278,7 @@ export function LogisticsRoute({ simulated }: { simulated: boolean }) {
             fontFamily="'JetBrains Mono', monospace"
             fontSize="11"
             letterSpacing="2"
-            fill="#64748b"
+            fill="#6d7aa8"
             opacity="0.85"
           >
             SCHEMATIC · NOT TO GEOGRAPHIC SCALE

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Clock, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import Image from "next/image";
 
 import { ContactForm } from "@/components/inquiry/contact-form";
 import { HeroSpec, PageHero } from "@/components/layout/page-hero";
@@ -61,6 +62,29 @@ export default function ContactPage() {
         <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.25fr)] lg:gap-14">
           {/* ---------------- Details ---------------- */}
           <div className="space-y-5">
+            {/* The facility — illustrative (§45). */}
+            <figure className="tj-panel-shine relative h-44 overflow-hidden rounded-2xl border border-hull-line/60 sm:h-52">
+              <Image
+                src="/assets/facility-exterior-night.jpg"
+                alt="The cold storage facility at night: illuminated dock doors under an indigo sky."
+                fill
+                sizes="(min-width: 1024px) 40vw, 100vw"
+                className="scale-[1.18] object-cover"
+                data-parallax="0.25"
+              />
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(4,7,29,0.82),transparent_62%)]"
+              />
+              <figcaption className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-4">
+                <span className="font-mono text-[0.5625rem] tracking-[0.2em] text-ice uppercase">
+                  Uuayrij Industrial Area
+                </span>
+                <span className="font-mono text-[0.5rem] tracking-[0.16em] text-silver-dim uppercase">
+                  Illustrative
+                </span>
+              </figcaption>
+            </figure>
             <div className="tj-panel tj-corners rounded-[2px] p-6">
               <p className="tj-label tj-label-glow flex items-center gap-2">
                 <MapPin size={13} strokeWidth={1.7} aria-hidden />

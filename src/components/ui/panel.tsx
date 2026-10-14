@@ -37,7 +37,7 @@ export function Panel({
         corners && "tj-corners",
         dense ? "p-4" : "p-6 sm:p-7",
         interactive &&
-          "transition-[border-color,box-shadow,transform] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:border-glow/40 hover:shadow-[0_28px_70px_-32px_rgba(0,245,212,0.35)]",
+          "transition-[border-color,box-shadow,transform] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:border-glow/40 hover:shadow-[0_28px_70px_-32px_rgba(143,123,255,0.35)]",
         className,
       )}
       style={accent ? ({ "--tj-accent": accent } as React.CSSProperties) : undefined}

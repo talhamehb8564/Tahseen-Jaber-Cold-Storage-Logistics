@@ -44,7 +44,7 @@ const nextConfig: NextConfig = {
 
   experimental: {
     // Tree-shake icon/data-grid libraries so only the used exports ship.
-    optimizePackageImports: ["lucide-react", "recharts", "motion"],
+    optimizePackageImports: ["lucide-react", "recharts", "motion", "@react-three/drei"],
   },
 
   images: {

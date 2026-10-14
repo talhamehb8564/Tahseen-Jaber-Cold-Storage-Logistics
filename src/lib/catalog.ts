@@ -165,8 +165,8 @@ export const productCategories: readonly ProductCategory[] = [
     name: "MEAT & POULTRY",
     shortName: "MEAT",
     icon: "beef",
-    accent: "#48cae4",
-    wash: "rgba(72,202,228, 0.10)",
+    accent: "#4cc2ff",
+    wash: "rgba(76,194,255, 0.10)",
     image: "/assets/meat-storage.jpg",
     headline: "Frozen & Chilled Protein",
     summary:
@@ -186,8 +186,8 @@ export const productCategories: readonly ProductCategory[] = [
     name: "SEAFOOD",
     shortName: "SEAFOOD",
     icon: "fish",
-    accent: "#00f5d4",
-    wash: "rgba(0,245,212, 0.10)",
+    accent: "#8f7bff",
+    wash: "rgba(143,123,255, 0.10)",
     image: "/assets/seafood-storage.jpg",
     headline: "Marine Cold Chain",
     summary:
@@ -207,8 +207,8 @@ export const productCategories: readonly ProductCategory[] = [
     name: "PHARMACEUTICALS",
     shortName: "PHARMA",
     icon: "pill",
-    accent: "#eafcff",
-    wash: "rgba(234,252,255, 0.08)",
+    accent: "#e9f3ff",
+    wash: "rgba(233,243,255, 0.08)",
     image: "/assets/pharma-storage.jpg",
     headline: "Temperature-Sensitive Products",
     summary:

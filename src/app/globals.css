@@ -77,20 +77,20 @@
 
 @theme {
   /* --- Surface: deep midnight navy, void to steel ------------------------ */
-  --color-midnight: #030712;
-  --color-navy: #0b132b;
-  --color-hull: #0f1b38;
-  --color-hull-raised: #16264d;
-  --color-hull-line: #1c3157;
+  --color-midnight: #04071d;
+  --color-navy: #0b1034;
+  --color-hull: #121d48;
+  --color-hull-raised: #1b2a63;
+  --color-hull-line: #263a7a;
 
   /* --- Light: electric ice cyan + frost blue ------------------------------ */
-  --color-ice: #48cae4;
-  --color-glow: #00f5d4;
+  --color-ice: #4cc2ff;
+  --color-glow: #8f7bff;
 
   /* --- Text --------------------------------------------------------------- */
-  --color-frost: #eafcff;
-  --color-silver: #94a3b8;
-  --color-silver-dim: #64748b;
+  --color-frost: #e9f3ff;
+  --color-silver: #97a6cc;
+  --color-silver-dim: #6d7aa8;
 
   /* --- Status (semantic, never decorative) -------------------------------- */
   --color-stable: #22c55e;
@@ -737,11 +737,11 @@
   border-radius: 3px;
   background: linear-gradient(
     90deg,
-    rgba(148,163,184, 0.55) 0%,
-    rgba(72,202,228, 0.6) 45%,
-    rgba(0,245,212, 0.9) 100%
+    rgba(151,166,204, 0.55) 0%,
+    rgba(76,194,255, 0.6) 45%,
+    rgba(143,123,255, 0.9) 100%
   );
-  border: 1px solid rgba(0,245,212, 0.28);
+  border: 1px solid rgba(143,123,255, 0.28);
 }
 
 .tj-temp-range::-moz-range-track {
@@ -749,11 +749,11 @@
   border-radius: 3px;
   background: linear-gradient(
     90deg,
-    rgba(148,163,184, 0.55) 0%,
-    rgba(72,202,228, 0.6) 45%,
-    rgba(0,245,212, 0.9) 100%
+    rgba(151,166,204, 0.55) 0%,
+    rgba(76,194,255, 0.6) 45%,
+    rgba(143,123,255, 0.9) 100%
   );
-  border: 1px solid rgba(0,245,212, 0.28);
+  border: 1px solid rgba(143,123,255, 0.28);
 }
 
 .tj-temp-range::-webkit-slider-thumb {
@@ -763,11 +763,11 @@
   height: 20px;
   margin-top: -8px;
   border-radius: 2px;
-  background: linear-gradient(180deg, #eafcff, #48cae4);
-  border: 1px solid rgba(3,7,18, 0.6);
+  background: linear-gradient(180deg, #e9f3ff, #4cc2ff);
+  border: 1px solid rgba(4,7,29, 0.6);
   box-shadow:
-    0 0 0 4px rgba(0,245,212, 0.14),
-    0 6px 18px -6px rgba(0,245,212, 0.7);
+    0 0 0 4px rgba(143,123,255, 0.14),
+    0 6px 18px -6px rgba(143,123,255, 0.7);
   transition:
     box-shadow 260ms var(--ease-cold),
     transform 260ms var(--ease-cold);
@@ -777,19 +777,19 @@
   width: 20px;
   height: 20px;
   border-radius: 2px;
-  background: linear-gradient(180deg, #eafcff, #48cae4);
-  border: 1px solid rgba(3,7,18, 0.6);
+  background: linear-gradient(180deg, #e9f3ff, #4cc2ff);
+  border: 1px solid rgba(4,7,29, 0.6);
   box-shadow:
-    0 0 0 4px rgba(0,245,212, 0.14),
-    0 6px 18px -6px rgba(0,245,212, 0.7);
+    0 0 0 4px rgba(143,123,255, 0.14),
+    0 6px 18px -6px rgba(143,123,255, 0.7);
 }
 
 .tj-temp-range:hover::-webkit-slider-thumb,
 .tj-temp-range:active::-webkit-slider-thumb {
   transform: scale(1.1);
   box-shadow:
-    0 0 0 7px rgba(0,245,212, 0.18),
-    0 8px 24px -6px rgba(0,245,212, 0.85);
+    0 0 0 7px rgba(143,123,255, 0.18),
+    0 8px 24px -6px rgba(143,123,255, 0.85);
 }
 
 .tj-temp-range:focus-visible::-webkit-slider-thumb {
@@ -896,4 +896,98 @@
   .tj-no-print {
     display: none !important;
   }
+}
+
+/* --------------------------------------------------------------------------
+   8. ARCTIC AURORA SKY — slow luminous weather behind the whole site.
+   Pure CSS: three drifting light fields (azure / violet / crown blue) that
+   give the midnight base its sense of living sky. Killed entirely under
+   prefers-reduced-motion by the global rule in section 6 (§37).
+   -------------------------------------------------------------------------- */
+
+.aurora-blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(70px);
+  will-change: transform;
+}
+
+.aurora-blob--azure {
+  top: -24%;
+  left: -14%;
+  width: 64vw;
+  height: 48vh;
+  background: radial-gradient(closest-side, rgba(76, 194, 255, 0.14), transparent 70%);
+  animation: aurora-drift-a 36s ease-in-out infinite alternate;
+}
+
+.aurora-blob--violet {
+  top: -30%;
+  right: -20%;
+  width: 60vw;
+  height: 54vh;
+  background: radial-gradient(closest-side, rgba(143, 123, 255, 0.13), transparent 70%);
+  animation: aurora-drift-b 44s ease-in-out infinite alternate;
+}
+
+.aurora-blob--crown {
+  bottom: -32%;
+  left: 20%;
+  width: 72vw;
+  height: 46vh;
+  background: radial-gradient(closest-side, rgba(76, 140, 255, 0.09), transparent 70%);
+  animation: aurora-drift-c 52s ease-in-out infinite alternate;
+}
+
+@keyframes aurora-drift-a {
+  from {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+  }
+  to {
+    transform: translate3d(9vw, 6vh, 0) rotate(8deg) scale(1.14);
+  }
+}
+
+@keyframes aurora-drift-b {
+  from {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1.08);
+  }
+  to {
+    transform: translate3d(-8vw, 8vh, 0) rotate(-10deg) scale(1);
+  }
+}
+
+@keyframes aurora-drift-c {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(6vw, -6vh, 0) scale(1.18);
+  }
+}
+
+/* Shine sweep for gallery panels and showcase frames. */
+.tj-panel-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.tj-panel-shine::after {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: linear-gradient(
+    105deg,
+    transparent 42%,
+    rgba(233, 243, 255, 0.1) 50%,
+    transparent 58%
+  );
+  transform: translateX(-120%);
+  transition: transform 1.1s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+
+.tj-panel-shine:hover::after,
+.tj-panel-shine:focus-within::after {
+  transform: translateX(120%);
 }

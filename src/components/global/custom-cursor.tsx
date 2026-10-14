@@ -180,8 +180,8 @@ export function CustomCursor() {
           "ease-[cubic-bezier(0.22,1,0.36,1)]",
           hidden && "opacity-0",
           label
-            ? "border-glow/55 bg-midnight/72 backdrop-blur-[3px] shadow-[0_0_22px_rgba(0,245,212,0.30)]"
-            : "border-glow/25 bg-glow/[0.05] shadow-[0_0_14px_rgba(0,245,212,0.14)]",
+            ? "border-glow/55 bg-midnight/72 backdrop-blur-[3px] shadow-[0_0_22px_rgba(143,123,255,0.30)]"
+            : "border-glow/25 bg-glow/[0.05] shadow-[0_0_14px_rgba(143,123,255,0.14)]",
           pressed && "scale-95",
         )}
         style={{
@@ -211,10 +211,10 @@ export function CustomCursor() {
           opacity: visible ? (label ? 0.25 : 1) : 0,
           background: label
             ? "transparent"
-            : "radial-gradient(circle, #eafcff 0%, #00f5d4 52%, rgba(72,202,228,0.35) 100%)",
+            : "radial-gradient(circle, #e9f3ff 0%, #8f7bff 52%, rgba(76,194,255,0.35) 100%)",
           boxShadow: label
             ? "none"
-            : "0 0 12px rgba(0,245,212,0.9), 0 0 28px rgba(72,202,228,0.45)",
+            : "0 0 12px rgba(143,123,255,0.9), 0 0 28px rgba(76,194,255,0.45)",
           willChange: "transform",
         }}
       />

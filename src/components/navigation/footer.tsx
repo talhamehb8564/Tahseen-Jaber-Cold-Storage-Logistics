@@ -42,7 +42,7 @@ export function Footer() {
         className="pointer-events-none absolute inset-x-0 top-0 h-56 opacity-70 blur-3xl"
         style={{
           background:
-            "radial-gradient(60% 100% at 50% 0%, rgba(0,245,212,0.13), transparent 72%)",
+            "radial-gradient(60% 100% at 50% 0%, rgba(143,123,255,0.13), transparent 72%)",
         }}
       />
       <div aria-hidden className="tj-grid pointer-events-none absolute inset-0 opacity-25" />

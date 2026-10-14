@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 import { HeroSpec, PageHero } from "@/components/layout/page-hero";
 import { ProductVault } from "@/components/products/product-vault";
 import { CatalogIcon } from "@/components/ui/catalog-icon";
 import { Section } from "@/components/ui/section";
 import { FinalCta } from "@/components/cta/final-cta";
+import { ShowcaseCarousel } from "@/components/gallery/showcase-carousel";
 import { productCategories } from "@/lib/catalog";
 import { FALLBACK, siteConfig } from "@/lib/site";
 
@@ -59,6 +61,56 @@ export default function ProductsPage() {
       />
 
       <ProductVault />
+
+      {/* ---------------- The environments, up close ---------------- */}
+      <Section
+        id="environments"
+        index="04"
+        eyebrow="The environments"
+        heading={
+          <>
+            Up close,
+            <span className="tj-frost-text"> under cold light</span>
+          </>
+        }
+        lede="The four held conditions as they read inside the chambers. Illustrative visuals — chamber assignment is always per client agreement."
+        width="wide"
+        rule
+      >
+        <ShowcaseCarousel
+          label="Storage environments"
+          slides={[
+            {
+              src: "/assets/produce-cold-room.jpg",
+              alt: "Fresh produce crates stacked in a chilled room under azure strip lighting.",
+              tag: "Chilled",
+              title: "Produce",
+              caption: "Crisp air, stable humidity, and a room that never warms up on the way in.",
+            },
+            {
+              src: "/assets/sealed-frozen-cartons.jpg",
+              alt: "Sealed frozen cartons stacked on a pallet, furred with frost.",
+              tag: "Deep-frozen",
+              title: "Meat & poultry",
+              caption: "Sealed, sub-zero and unmoved — protein survives freeze-thaw badly, so it never thaws.",
+            },
+            {
+              src: "/assets/seafood-frozen-storage.jpg",
+              alt: "Sealed frozen seafood boxes with frost crystals on a cold store pallet.",
+              tag: "Least forgiving",
+              title: "Seafood",
+              caption: "The category that sets the standard for every other one in the building.",
+            },
+            {
+              src: "/assets/pharma-cold-room.jpg",
+              alt: "A pharmaceutical cold room with stainless shelving and glowing temperature sensors.",
+              tag: "Restricted",
+              title: "Pharmaceuticals",
+              caption: "A monitored, access-controlled space with a record for every movement.",
+            },
+          ]}
+        />
+      </Section>
 
       {/* ---------------- Full detail per category ---------------- */}
       <Section
@@ -134,6 +186,25 @@ export default function ProductsPage() {
                       </dd>
                     </div>
                   </dl>
+
+                  {/* Illustrative chamber imagery (§45). */}
+                  <figure className="relative mt-6 h-44 overflow-hidden rounded-[2px] border border-hull-line/60">
+                    <Image
+                      src={category.image}
+                      alt={`${category.name} storage environment, illustrative.`}
+                      fill
+                      sizes="(min-width: 1024px) 30vw, 100vw"
+                      className="scale-[1.15] object-cover"
+                      data-parallax="0.25"
+                    />
+                    <div
+                      aria-hidden
+                      className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(4,7,29,0.55),transparent_60%)]"
+                    />
+                    <figcaption className="absolute bottom-3 left-3 font-mono text-[0.5rem] tracking-[0.18em] text-silver uppercase">
+                      Illustrative visual
+                    </figcaption>
+                  </figure>
                 </div>
 
                 {/* --- Handling --- */}

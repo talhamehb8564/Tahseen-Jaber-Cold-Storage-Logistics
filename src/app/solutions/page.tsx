@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 import { PrecisionCooling } from "@/components/cold-chain/precision-cooling";
 import { FinalCta } from "@/components/cta/final-cta";
+import { ImageBand } from "@/components/imagery/image-band";
 import { HeroSpec, PageHero } from "@/components/layout/page-hero";
 import { ProductVault } from "@/components/products/product-vault";
 import { FlexibleStorage } from "@/components/storage/flexible-storage";
@@ -57,8 +59,83 @@ export default function SolutionsPage() {
       />
 
       <ProductVault />
+
+      {/* The discipline every mode shares — illustrative (§45). */}
+      <section
+        aria-label="One discipline across every mode"
+        className="relative z-10 mx-auto w-full max-w-[86rem] px-5 py-14 sm:px-8 lg:px-12"
+      >
+        <ImageBand
+          src="/assets/frozen-pallets-frost.jpg"
+          alt="Pallets of sealed frozen goods furred with frost inside a deep-freeze aisle under azure light."
+          eyebrow="Every mode"
+          title="One discipline"
+          caption="Transit holding or a dedicated chamber, a week or a year — the batch reference, the monitoring and the paperwork do not change."
+        />
+      </section>
+
       <PrecisionCooling />
       <FlexibleStorage />
+
+      {/* The environments, as imagery — illustrative (§45). */}
+      <section
+        aria-label="Held conditions"
+        className="relative z-10 mx-auto w-full max-w-[86rem] px-5 pb-16 sm:px-8 lg:px-12"
+      >
+        <ul className="grid gap-3 md:grid-cols-3">
+          <li>
+            <figure className="tj-panel-shine group relative h-56 overflow-hidden rounded-2xl border border-hull-line/60 md:h-64">
+              <Image
+                src="/assets/produce-cold-room.jpg"
+                alt="Fresh produce crates in a chilled room under azure strip lighting."
+                fill
+                sizes="(min-width: 768px) 33vw, 100vw"
+                className="scale-[1.18] object-cover"
+                data-parallax="0.28"
+              />
+              <div aria-hidden className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(4,7,29,0.78),transparent_58%)]" />
+              <figcaption className="absolute bottom-4 left-4">
+                <p className="font-mono text-[0.5625rem] tracking-[0.22em] text-ice uppercase">Chilled</p>
+                <p className="mt-1 font-display text-sm font-bold uppercase tracking-tight text-frost">Produce & fresh lines</p>
+              </figcaption>
+            </figure>
+          </li>
+          <li className="md:mt-6">
+            <figure className="tj-panel-shine group relative h-56 overflow-hidden rounded-2xl border border-hull-line/60 md:h-64">
+              <Image
+                src="/assets/sealed-frozen-cartons.jpg"
+                alt="Sealed frozen cartons furred with frost in the deep-freeze chamber."
+                fill
+                sizes="(min-width: 768px) 33vw, 100vw"
+                className="scale-[1.18] object-cover"
+                data-parallax="0.28"
+              />
+              <div aria-hidden className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(4,7,29,0.78),transparent_58%)]" />
+              <figcaption className="absolute bottom-4 left-4">
+                <p className="font-mono text-[0.5625rem] tracking-[0.22em] text-ice uppercase">Deep-frozen</p>
+                <p className="mt-1 font-display text-sm font-bold uppercase tracking-tight text-frost">Protein & prepared</p>
+              </figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure className="tj-panel-shine group relative h-56 overflow-hidden rounded-2xl border border-hull-line/60 md:h-64">
+              <Image
+                src="/assets/seafood-frozen-storage.jpg"
+                alt="Sealed frozen seafood boxes with frost crystals inside a cold store."
+                fill
+                sizes="(min-width: 768px) 33vw, 100vw"
+                className="scale-[1.18] object-cover"
+                data-parallax="0.28"
+              />
+              <div aria-hidden className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(4,7,29,0.78),transparent_58%)]" />
+              <figcaption className="absolute bottom-4 left-4">
+                <p className="font-mono text-[0.5625rem] tracking-[0.22em] text-ice uppercase">Least forgiving</p>
+                <p className="mt-1 font-display text-sm font-bold uppercase tracking-tight text-frost">Seafood</p>
+              </figcaption>
+            </figure>
+          </li>
+        </ul>
+      </section>
 
       <Section
         id="process"

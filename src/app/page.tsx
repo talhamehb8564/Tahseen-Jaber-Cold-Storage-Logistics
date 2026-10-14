@@ -5,7 +5,10 @@ import { ColdChainTimeline } from "@/components/cold-chain/cold-chain-timeline";
 import { PrecisionCooling } from "@/components/cold-chain/precision-cooling";
 import { FinalCta } from "@/components/cta/final-cta";
 import { FacilityMap } from "@/components/facility/facility-map";
+import { HorizontalGallery } from "@/components/gallery/horizontal-gallery";
 import { Hero } from "@/components/hero/hero";
+import { ImageBand } from "@/components/imagery/image-band";
+import Image from "next/image";
 import { StorageCalculator } from "@/components/inquiry/storage-calculator";
 import { InquiryForm } from "@/components/inquiry/inquiry-form";
 import { InventoryScanner } from "@/components/inventory/inventory-scanner";
@@ -13,6 +16,7 @@ import { LogisticsRoute } from "@/components/logistics/logistics-route";
 import { ProductVault } from "@/components/products/product-vault";
 import { SecurityMatrix } from "@/components/security/security-matrix";
 import { FlexibleStorage } from "@/components/storage/flexible-storage";
+import { ThreeChamberSection } from "@/components/three/three-chamber-section";
 import { TrustSection } from "@/components/trust/trust-section";
 import { ProvenanceBadge } from "@/components/ui/provenance-badge";
 import { Section } from "@/components/ui/section";
@@ -70,8 +74,25 @@ export default async function HomePage() {
       {/* 03 — THE COLD CHAIN: pinned journey (§17) */}
       <ColdChainTimeline />
 
+      {/* Interlude — receiving, as light and frost rather than diagram. */}
+      <section
+        aria-label="Receiving at the threshold"
+        className="relative z-10 mx-auto w-full max-w-[86rem] px-5 py-14 sm:px-8 lg:px-12"
+      >
+        <ImageBand
+          src="/assets/dock-receiving-crew.jpg"
+          alt="Workers in insulated jackets guiding a sealed pallet into an illuminated cold storage dock doorway at night."
+          eyebrow="Receiving"
+          title="The threshold moment"
+          caption="Sealed pallets cross from the reefer into controlled atmosphere — the first ten minutes that decide the condition of the next month."
+        />
+      </section>
+
       {/* 03 — PRECISION COOLING: chamber cutaway (§18) */}
       <PrecisionCooling />
+
+      {/* 03b — THE CHAMBER IN 3D: illustrative WebGL model */}
+      <ThreeChamberSection />
 
       {/* 04 — PRODUCTS: four environments (§19, §20) */}
       <ProductVault />
@@ -96,6 +117,9 @@ export default async function HomePage() {
         <FacilityMap readings={zoneReadings} simulated={simulated} />
       </Section>
 
+      {/* 05b — GALLERY: the pinned horizontal walk-through */}
+      <HorizontalGallery />
+
       {/* 06 — INVENTORY: WMS view + scan animation (§22) */}
       <Section
         id="inventory"
@@ -114,6 +138,33 @@ export default async function HomePage() {
         rule
       >
         <InventoryScanner items={inventory.items} simulated={inventory.simulated} />
+
+        {/* The stock, as it is held — illustrative (§45). */}
+        <figure className="tj-panel-shine group relative mt-8 h-[38vh] min-h-[280px] overflow-hidden rounded-2xl border border-hull-line/60">
+          <Image
+            src="/assets/frozen-pallets-frost.jpg"
+            alt="Pallets of sealed frozen goods furred with frost inside the deep-freeze aisle."
+            fill
+            sizes="(min-width: 1024px) 86rem, 100vw"
+            className="scale-[1.22] object-cover"
+            data-parallax="0.35"
+          />
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(4,7,29,0.85),transparent_55%)]"
+          />
+          <figcaption className="absolute inset-x-0 bottom-0 flex flex-wrap items-end justify-between gap-3 p-5 sm:p-6">
+            <div>
+              <p className="font-mono text-[0.5625rem] tracking-[0.24em] text-ice uppercase">Batch custody</p>
+              <p className="mt-1.5 font-display text-lg font-bold uppercase tracking-tight text-frost sm:text-xl">
+                Frost-locked, location-recorded
+              </p>
+            </div>
+            <p className="font-mono text-[0.5625rem] tracking-[0.16em] text-silver-dim uppercase">
+              Illustrative visual
+            </p>
+          </figcaption>
+        </figure>
       </Section>
 
       {/* 07 — SECURITY: matrix, access, door, thermal (§23) */}
@@ -134,6 +185,33 @@ export default async function HomePage() {
         rule
       >
         <SecurityMatrix status={security} simulated={security.simulated} />
+
+        {/* The watchtower, as atmosphere — illustrative (§45). */}
+        <figure className="tj-panel-shine group relative mt-8 h-[38vh] min-h-[280px] overflow-hidden rounded-2xl border border-hull-line/60">
+          <Image
+            src="/assets/control-room-ops.jpg"
+            alt="The monitoring control room at night, screens glowing with zone temperatures under indigo light."
+            fill
+            sizes="(min-width: 1024px) 86rem, 100vw"
+            className="scale-[1.22] object-cover"
+            data-parallax="0.35"
+          />
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(4,7,29,0.85),transparent_55%)]"
+          />
+          <figcaption className="absolute inset-x-0 bottom-0 flex flex-wrap items-end justify-between gap-3 p-5 sm:p-6">
+            <div>
+              <p className="font-mono text-[0.5625rem] tracking-[0.24em] text-ice uppercase">The watchtower</p>
+              <p className="mt-1.5 font-display text-lg font-bold uppercase tracking-tight text-frost sm:text-xl">
+                Every threshold, watched
+              </p>
+            </div>
+            <p className="font-mono text-[0.5625rem] tracking-[0.16em] text-silver-dim uppercase">
+              Illustrative visual
+            </p>
+          </figcaption>
+        </figure>
       </Section>
 
       {/* 08 — LOGISTICS: the drawn route (§24) */}
@@ -155,6 +233,20 @@ export default async function HomePage() {
       >
         <LogisticsRoute simulated={simulated} />
       </Section>
+
+      {/* Interlude — the cold chain in motion. */}
+      <section
+        aria-label="The cold chain in motion"
+        className="relative z-10 mx-auto w-full max-w-[86rem] px-5 py-14 sm:px-8 lg:px-12"
+      >
+        <ImageBand
+          src="/assets/reefer-truck-highway.jpg"
+          alt="A refrigerated truck running an empty highway at dusk, marker lights glowing under a violet sky."
+          eyebrow="The road"
+          title="The cold chain in motion"
+          caption="Held at set point from dock to destination — the reefer is a chamber on wheels, and it answers to the same discipline."
+        />
+      </section>
 
       {/* 09 — FLEXIBLE STORAGE */}
       <FlexibleStorage />

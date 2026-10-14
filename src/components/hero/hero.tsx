@@ -173,7 +173,7 @@ export function Hero() {
             <span className="relative flex h-8 w-5 items-start justify-center rounded-full border border-glow/30 pt-1.5">
               <motion.span
                 className="size-1 rounded-full bg-glow"
-                style={{ boxShadow: "0 0 8px #00F5D4" }}
+                style={{ boxShadow: "0 0 8px #8f7bff" }}
                 animate={reduced ? undefined : { y: [0, 10, 0], opacity: [1, 0.25, 1] }}
                 transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
               />

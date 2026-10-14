@@ -188,7 +188,7 @@ export function LoginForm({
         className={cn(
           "group flex w-full items-center justify-center gap-2.5 rounded-[2px] px-6 py-4",
           "font-display text-[0.8125rem] font-bold tracking-[0.16em] uppercase",
-          "bg-glow text-midnight shadow-[0_12px_34px_-14px_rgba(0,245,212,0.9)]",
+          "bg-glow text-midnight shadow-[0_12px_34px_-14px_rgba(143,123,255,0.9)]",
           "transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]",
           "hover:bg-ice active:scale-[0.985]",
           "focus-visible:ring-2 focus-visible:ring-glow focus-visible:ring-offset-2 focus-visible:ring-offset-midnight focus-visible:outline-none",

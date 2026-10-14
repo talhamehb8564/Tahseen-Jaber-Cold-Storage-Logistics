@@ -52,6 +52,20 @@ const SLIDES: Slide[] = [
     focus: { x: 0.5, y: 0.42 },
   },
   {
+    src: "/assets/facility-exterior-night.jpg",
+    alt: "The cold storage facility exterior at night: a row of illuminated loading dock doors with refrigerated trucks backed in under an indigo sky.",
+    caption: "THE MAIN GATE",
+    zone: "DOCK ROW",
+    focus: { x: 0.5, y: 0.5 },
+  },
+  {
+    src: "/assets/control-room-ops.jpg",
+    alt: "The facility monitoring control room at night, walls of glowing screens tracking zone temperatures.",
+    caption: "CONTROL ROOM",
+    zone: "OPS CENTER",
+    focus: { x: 0.55, y: 0.46 },
+  },
+  {
     src: "/assets/truck-refrigerated-dock.jpg",
     alt: "A refrigerated trailer backed onto a sealed loading dock bay at night, mist spilling from the open doorway.",
     caption: "DOCKING BAY",
@@ -97,16 +111,23 @@ export function HeroSlider({ temperature, visible = true }: HeroSliderProps) {
   const stackY = useTransform(scrollY, [0, 900], [0, reduced ? 0 : 220]);
 
   /* --------------------------------------------------------- auto-advance --- */
-  const advance = useCallback(
-    (next?: number) => {
-      setIndex((prev) => {
-        const value = next ?? (prev + 1) % SLIDES.length;
-        if (value !== prev) setBurst((count) => count + 1);
-        return value;
-      });
-    },
-    [],
-  );
+  const advance = useCallback((next?: number) => {
+    setIndex((prev) => {
+      const value = next ?? (prev + 1) % SLIDES.length;
+      return value === prev ? prev : value;
+    });
+  }, []);
+
+  /* Vent a mist burst whenever the plate actually changes. Kept out of the
+     setIndex updater — state updaters must stay pure. */
+  const booted = useRef(false);
+  useEffect(() => {
+    if (!booted.current) {
+      booted.current = true;
+      return;
+    }
+    setBurst((count) => count + 1);
+  }, [index]);
 
   useEffect(() => {
     if (reduced || paused || !visible) return;
@@ -232,9 +253,9 @@ export function HeroSlider({ temperature, visible = true }: HeroSliderProps) {
         style={{
           opacity: 0.18 + look.frost * 0.6,
           background:
-            "radial-gradient(120% 78% at 50% 108%, rgba(234,252,255,0.30), transparent 58%)," +
-            "radial-gradient(90% 60% at 8% 4%, rgba(72,202,228,0.20), transparent 62%)," +
-            "radial-gradient(80% 54% at 96% 12%, rgba(0,245,212,0.16), transparent 64%)",
+            "radial-gradient(120% 78% at 50% 108%, rgba(233,243,255,0.30), transparent 58%)," +
+            "radial-gradient(90% 60% at 8% 4%, rgba(76,194,255,0.20), transparent 62%)," +
+            "radial-gradient(80% 54% at 96% 12%, rgba(143,123,255,0.16), transparent 64%)",
           mixBlendMode: "screen",
         }}
       />
@@ -246,10 +267,10 @@ export function HeroSlider({ temperature, visible = true }: HeroSliderProps) {
         style={{
           opacity: look.frost * 0.85,
           background:
-            "radial-gradient(46% 40% at 0% 0%, rgba(234,252,255,0.20), transparent 70%)," +
-            "radial-gradient(42% 38% at 100% 0%, rgba(234,252,255,0.16), transparent 70%)," +
-            "radial-gradient(52% 44% at 0% 100%, rgba(234,252,255,0.22), transparent 72%)," +
-            "radial-gradient(48% 42% at 100% 100%, rgba(234,252,255,0.18), transparent 72%)",
+            "radial-gradient(46% 40% at 0% 0%, rgba(233,243,255,0.20), transparent 70%)," +
+            "radial-gradient(42% 38% at 100% 0%, rgba(233,243,255,0.16), transparent 70%)," +
+            "radial-gradient(52% 44% at 0% 100%, rgba(233,243,255,0.22), transparent 72%)," +
+            "radial-gradient(48% 42% at 100% 100%, rgba(233,243,255,0.18), transparent 72%)",
         }}
       />
 
@@ -265,7 +286,7 @@ export function HeroSlider({ temperature, visible = true }: HeroSliderProps) {
           transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
           style={{
             background:
-              "radial-gradient(70% 60% at 50% 60%, rgba(0,245,212,0.28), transparent 68%)",
+              "radial-gradient(70% 60% at 50% 60%, rgba(143,123,255,0.28), transparent 68%)",
             mixBlendMode: "screen",
           }}
         />
@@ -274,15 +295,15 @@ export function HeroSlider({ temperature, visible = true }: HeroSliderProps) {
       {/* ================= LEGIBILITY SCRIMS ================= */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[linear-gradient(100deg,rgba(3,7,18,0.94)_0%,rgba(3,7,18,0.80)_32%,rgba(3,7,18,0.26)_60%,rgba(3,7,18,0.58)_100%)]"
+        className="pointer-events-none absolute inset-0 bg-[linear-gradient(100deg,rgba(4,7,29,0.94)_0%,rgba(4,7,29,0.80)_32%,rgba(4,7,29,0.26)_60%,rgba(4,7,29,0.58)_100%)]"
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-3/5 bg-[linear-gradient(to_top,rgba(3,7,18,0.98),rgba(3,7,18,0.55)_46%,transparent)]"
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-3/5 bg-[linear-gradient(to_top,rgba(4,7,29,0.98),rgba(4,7,29,0.55)_46%,transparent)]"
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 h-36 bg-[linear-gradient(to_bottom,rgba(3,7,18,0.90),transparent)]"
+        className="pointer-events-none absolute inset-x-0 top-0 h-36 bg-[linear-gradient(to_bottom,rgba(4,7,29,0.90),transparent)]"
       />
 
       {/* ================= SLIDE CONTROLS ================= */}
@@ -330,7 +351,7 @@ export function HeroSlider({ temperature, visible = true }: HeroSliderProps) {
                       "focus-visible:ring-2 focus-visible:ring-glow focus-visible:ring-offset-2",
                       "focus-visible:ring-offset-midnight focus-visible:outline-none",
                       isActive
-                        ? "border-glow/60 bg-glow/10 shadow-[0_0_18px_rgba(0,245,212,0.28)]"
+                        ? "border-glow/60 bg-glow/10 shadow-[0_0_18px_rgba(143,123,255,0.28)]"
                         : "border-hull-line/70 bg-midnight/40 hover:border-ice/40",
                     )}
                   >

@@ -59,7 +59,7 @@ export function WhatsappCta({ message, carry, disabled, className }: WhatsappCta
     "focus-visible:ring-offset-midnight focus-visible:outline-none",
     disabled && "pointer-events-none opacity-40",
     available
-      ? "border border-glow/50 bg-glow/12 text-glow backdrop-blur-md hover:bg-glow hover:text-midnight hover:shadow-[0_0_30px_rgba(0,245,212,0.45)] active:scale-[0.985]"
+      ? "border border-glow/50 bg-glow/12 text-glow backdrop-blur-md hover:bg-glow hover:text-midnight hover:shadow-[0_0_30px_rgba(143,123,255,0.45)] active:scale-[0.985]"
       : "border border-hull-line bg-midnight/40 text-silver backdrop-blur-md hover:border-ice/50 hover:text-ice",
     className,
   );

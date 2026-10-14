@@ -268,27 +268,27 @@ export function HeroStage({
     >
       <defs>
         <linearGradient id="tj-sky" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#070D1A" />
-          <stop offset="55%" stopColor="#0A1729" />
-          <stop offset="100%" stopColor="#0D1B2E" />
+          <stop offset="0%" stopColor="#08061b" />
+          <stop offset="55%" stopColor="#09092a" />
+          <stop offset="100%" stopColor="#0c0d2f" />
         </linearGradient>
 
         <linearGradient id="tj-facade" x1="0" y1="120" x2="0" y2="660" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stopColor="#1B2C42" />
-          <stop offset="48%" stopColor="#132135" />
-          <stop offset="100%" stopColor="#0A1421" />
+          <stop offset="0%" stopColor="#191b44" />
+          <stop offset="48%" stopColor="#121236" />
+          <stop offset="100%" stopColor="#090a22" />
         </linearGradient>
 
         <linearGradient id="tj-apron" x1="0" y1="660" x2="0" y2="900" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stopColor="#0E1B2C" />
-          <stop offset="100%" stopColor="#05090F" />
+          <stop offset="0%" stopColor="#0d0e2d" />
+          <stop offset="100%" stopColor="#05050f" />
         </linearGradient>
 
         {/* The chamber interior — the cold light that bursts out. */}
         <radialGradient id="tj-chamber" cx="50%" cy="62%" r="72%">
           <stop offset="0%" stopColor="var(--tj-light)" stopOpacity="0.95" />
           <stop offset="38%" stopColor="var(--tj-light)" stopOpacity="0.42" />
-          <stop offset="100%" stopColor="#061420" stopOpacity="0.92" />
+          <stop offset="100%" stopColor="#050921" stopOpacity="0.92" />
         </radialGradient>
 
         <linearGradient id="tj-spill" x1="1" y1="0" x2="0" y2="0.35">
@@ -298,14 +298,14 @@ export function HeroStage({
         </linearGradient>
 
         <linearGradient id="tj-door" x1="0" y1="250" x2="0" y2="560" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stopColor="#2C4257" />
-          <stop offset="50%" stopColor="#1D2E42" />
-          <stop offset="100%" stopColor="#131F2E" />
+          <stop offset="0%" stopColor="#2a2f59" />
+          <stop offset="50%" stopColor="#1c1e43" />
+          <stop offset="100%" stopColor="#12132f" />
         </linearGradient>
 
         <linearGradient id="tj-mast" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#eafcff" stopOpacity="0.30" />
-          <stop offset="100%" stopColor="#eafcff" stopOpacity="0" />
+          <stop offset="0%" stopColor="#e9f3ff" stopOpacity="0.30" />
+          <stop offset="100%" stopColor="#e9f3ff" stopOpacity="0" />
         </linearGradient>
 
         <linearGradient id="tj-baylight" x1="0.5" y1="0" x2="0.5" y2="1">
@@ -335,22 +335,22 @@ export function HeroStage({
 
       {/* Ambient lift — Scene 01 brings the room up from darkness. */}
       <g data-ambient opacity={0}>
-        <ellipse cx="800" cy="230" rx="820" ry="300" fill="#16293F" opacity="0.55" filter="url(#tj-blur-lg)" />
+        <ellipse cx="800" cy="230" rx="820" ry="300" fill="#141741" opacity="0.55" filter="url(#tj-blur-lg)" />
       </g>
 
       {/* ============ DISTANT YARD / SKYLINE ============ */}
       <g opacity="0.85">
         <path
           d="M0 660 V502 h96 v-30 h58 v30 h74 V466 h44 v36 h92 V520 h60 V486 h40 v34 h84 V660 Z"
-          fill="#0A1421"
+          fill="#090a22"
         />
         <path
           d="M0 660 V548 h120 v-22 h80 v22 h96 V534 h64 V660 Z"
-          fill="#0C1826"
+          fill="#0b0d27"
           opacity="0.9"
         />
         {/* Distant yard lighting */}
-        <g fill="#48cae4" opacity="0.35">
+        <g fill="#4cc2ff" opacity="0.35">
           <circle cx="118" cy="470" r="2.4" />
           <circle cx="272" cy="466" r="2.4" />
           <circle cx="410" cy="484" r="2.4" />
@@ -361,9 +361,9 @@ export function HeroStage({
       <g>
         {[168, 1512].map((x) => (
           <g key={x}>
-            <rect x={x - 3} y={300} width="6" height="360" fill="#16283C" />
-            <rect x={x - 26} y={288} width="52" height="14" rx="3" fill="#1E3348" />
-            <g fill="#CFE6F7" opacity="0.75">
+            <rect x={x - 3} y={300} width="6" height="360" fill="#14183e" />
+            <rect x={x - 26} y={288} width="52" height="14" rx="3" fill="#1c214a" />
+            <g fill="#cddbf9" opacity="0.75">
               <rect x={x - 20} y={292} width="12" height="6" rx="1.5" />
               <rect x={x + 8} y={292} width="12" height="6" rx="1.5" />
             </g>
@@ -381,27 +381,27 @@ export function HeroStage({
         <rect x="560" y="120" width="1040" height="540" fill="url(#tj-facade)" />
 
         {/* Parapet coping */}
-        <rect x="552" y="112" width="1048" height="16" rx="2" fill="#22364C" />
-        <rect x="552" y="112" width="1048" height="3" fill="#3B566F" opacity="0.8" />
+        <rect x="552" y="112" width="1048" height="16" rx="2" fill="#20244e" />
+        <rect x="552" y="112" width="1048" height="3" fill="#394071" opacity="0.8" />
 
         {/* Insulated wall panelling */}
-        <g stroke="#0E1B2A" strokeWidth="1.6" opacity="0.85">
+        <g stroke="#0d0f2b" strokeWidth="1.6" opacity="0.85">
           {Array.from({ length: 16 }, (_, index) => (
             <path key={index} d={`M${600 + index * 64} 128 V660`} />
           ))}
         </g>
-        <g stroke="#2E4761" strokeWidth="1" opacity="0.45">
+        <g stroke="#2c3163" strokeWidth="1" opacity="0.45">
           {Array.from({ length: 16 }, (_, index) => (
             <path key={`hl-${index}`} d={`M${602 + index * 64} 128 V660`} />
           ))}
         </g>
-        <path d="M560 214 H1600" stroke="#0E1B2A" strokeWidth="2" opacity="0.8" />
-        <path d="M560 216 H1600" stroke="#2E4761" strokeWidth="1" opacity="0.35" />
+        <path d="M560 214 H1600" stroke="#0d0f2b" strokeWidth="2" opacity="0.8" />
+        <path d="M560 216 H1600" stroke="#2c3163" strokeWidth="1" opacity="0.35" />
 
         {/* Ventilation louvres */}
         <g transform="translate(628,248)">
-          <rect width="118" height="74" rx="2" fill="#0C1826" stroke="#24384E" strokeWidth="1.4" />
-          <g stroke="#2C4459" strokeWidth="2.4" opacity="0.8">
+          <rect width="118" height="74" rx="2" fill="#0b0d27" stroke="#222650" strokeWidth="1.4" />
+          <g stroke="#2a315b" strokeWidth="2.4" opacity="0.8">
             {Array.from({ length: 7 }, (_, index) => (
               <path key={index} d={`M8 ${12 + index * 9} h102`} />
             ))}
@@ -410,13 +410,13 @@ export function HeroStage({
 
         {/* Wall-mounted brand sign (above the truck roofline, always legible) */}
         <g transform="translate(800,250)" opacity="0.92">
-          <rect x="-8" y="-34" width="352" height="96" rx="3" fill="#0B1522" opacity="0.55" />
-          <g stroke="#48cae4" strokeWidth="2.2" strokeLinecap="round" opacity="0.85">
+          <rect x="-8" y="-34" width="352" height="96" rx="3" fill="#0a0b23" opacity="0.55" />
+          <g stroke="#4cc2ff" strokeWidth="2.2" strokeLinecap="round" opacity="0.85">
             <path d="M14-14 V34" />
             <path d="M-4 4 L32 22" />
             <path d="M32 4 L-4 22" />
           </g>
-          <circle cx="14" cy="10" r="3.4" fill="#48cae4" opacity="0.9" />
+          <circle cx="14" cy="10" r="3.4" fill="#4cc2ff" opacity="0.9" />
           <text
             x="56"
             y="8"
@@ -424,7 +424,7 @@ export function HeroStage({
             fontSize="34"
             fontWeight="800"
             letterSpacing="1.6"
-            fill="#DCEAF7"
+            fill="#dbe2f8"
           >
             TAHSEEN JABER
           </text>
@@ -435,7 +435,7 @@ export function HeroStage({
             fontSize="12"
             fontWeight="500"
             letterSpacing="4"
-            fill="#48cae4"
+            fill="#4cc2ff"
             opacity="0.8"
           >
             COLD STORAGE &amp; LOGISTICS
@@ -443,8 +443,8 @@ export function HeroStage({
         </g>
 
         {/* Dock canopy / header */}
-        <rect x="1036" y="196" width="408" height="58" rx="3" fill="#1B2C42" stroke="#0C1826" strokeWidth="1.6" />
-        <rect x="1036" y="196" width="408" height="5" fill="#33506B" opacity="0.7" />
+        <rect x="1036" y="196" width="408" height="58" rx="3" fill="#191b44" stroke="#0b0d27" strokeWidth="1.6" />
+        <rect x="1036" y="196" width="408" height="5" fill="#31386d" opacity="0.7" />
         <text
           x="1240"
           y="232"
@@ -453,24 +453,24 @@ export function HeroStage({
           fontSize="15"
           fontWeight="600"
           letterSpacing="6"
-          fill="#8FA6BC"
+          fill="#8d99be"
         >
           LOADING BAY 01
         </text>
 
         {/* Canopy downlights */}
-        <g fill="#CFE6F7" opacity="0.55">
+        <g fill="#cddbf9" opacity="0.55">
           {[1080, 1160, 1240, 1320, 1400].map((x) => (
             <rect key={x} x={x - 12} y="252" width="24" height="4" rx="2" />
           ))}
         </g>
 
         {/* Dock face below the opening */}
-        <rect x="1040" y="560" width="560" height="100" fill="#0F1D2E" />
-        <rect x="1040" y="560" width="560" height="4" fill="#2B4258" opacity="0.7" />
+        <rect x="1040" y="560" width="560" height="100" fill="#0e0f2f" />
+        <rect x="1040" y="560" width="560" height="4" fill="#292f5a" opacity="0.7" />
 
         {/* Dock bumpers */}
-        <g fill="#0A0F16" stroke="#1D2A38" strokeWidth="1.4">
+        <g fill="#0a0a16" stroke="#1c1e39" strokeWidth="1.4">
           <rect x="1058" y="452" width="22" height="104" rx="3" />
           <rect x="1058" y="330" width="22" height="104" rx="3" />
         </g>
@@ -479,21 +479,21 @@ export function HeroStage({
       {/* ============ CHAMBER INTERIOR (revealed by the door) ============ */}
       <g clipPath="url(#tj-doorway-clip)">
         {/* Dark chamber base */}
-        <rect x="1080" y="250" width="320" height="310" fill="#071420" />
+        <rect x="1080" y="250" width="320" height="310" fill="#060921" />
 
         {/* Cold glow */}
         <g data-chamber-glow opacity={0}>
           <rect x="1080" y="250" width="320" height="310" fill="url(#tj-chamber)" />
 
           {/* Racking silhouettes inside the chamber */}
-          <g stroke="#0A2434" strokeWidth="5" opacity="0.85">
+          <g stroke="#081236" strokeWidth="5" opacity="0.85">
             <path d="M1112 292 V556M1176 292 V556M1240 292 V556M1304 292 V556M1368 292 V556" />
           </g>
-          <g stroke="#0C2B3D" strokeWidth="4" opacity="0.8">
+          <g stroke="#0a163f" strokeWidth="4" opacity="0.8">
             <path d="M1104 356 H1376M1104 424 H1376M1104 492 H1376" />
           </g>
           {/* Stock on the beams */}
-          <g fill="#12394C" opacity="0.75">
+          <g fill="#10214e" opacity="0.75">
             <rect x="1118" y="330" width="52" height="26" rx="2" />
             <rect x="1182" y="326" width="52" height="30" rx="2" />
             <rect x="1246" y="332" width="52" height="24" rx="2" />
@@ -505,7 +505,7 @@ export function HeroStage({
           </g>
 
           {/* Chamber strip lighting */}
-          <g fill="#EAF8FF" opacity="0.85">
+          <g fill="#e8f2ff" opacity="0.85">
             <rect x="1104" y="268" width="86" height="5" rx="2.5" />
             <rect x="1210" y="268" width="86" height="5" rx="2.5" />
             <rect x="1316" y="268" width="60" height="5" rx="2.5" />
@@ -517,36 +517,36 @@ export function HeroStage({
           </g>
 
           {/* Chamber floor */}
-          <rect x="1080" y="548" width="320" height="12" fill="#0E3244" opacity="0.9" />
+          <rect x="1080" y="548" width="320" height="12" fill="#0c1b46" opacity="0.9" />
         </g>
 
         {/* ---- Insulated door: retracts upward into the header pocket ---- */}
         <g data-door>
           <rect x="1080" y="250" width="320" height="310" fill="url(#tj-door)" />
           {/* Door panel seams */}
-          <g stroke="#0C1826" strokeWidth="2" opacity="0.9">
+          <g stroke="#0b0d27" strokeWidth="2" opacity="0.9">
             {Array.from({ length: 6 }, (_, index) => (
               <path key={index} d={`M1080 ${292 + index * 46} H1400`} />
             ))}
           </g>
-          <g stroke="#3A5772" strokeWidth="1" opacity="0.5">
+          <g stroke="#383f74" strokeWidth="1" opacity="0.5">
             {Array.from({ length: 6 }, (_, index) => (
               <path key={`dh-${index}`} d={`M1080 ${294 + index * 46} H1400`} />
             ))}
           </g>
           {/* Bottom seal */}
-          <rect x="1080" y="548" width="320" height="12" fill="#0A1119" />
+          <rect x="1080" y="548" width="320" height="12" fill="#090a1a" />
           <rect x="1080" y="548" width="320" height="2.5" fill="#F59E0B" opacity="0.55" />
           {/* Handle / latch */}
-          <rect x="1362" y="404" width="26" height="9" rx="3" fill="#54687D" />
-          <rect x="1368" y="386" width="7" height="46" rx="3" fill="#67798D" />
+          <rect x="1362" y="404" width="26" height="9" rx="3" fill="#52567f" />
+          <rect x="1368" y="386" width="7" height="46" rx="3" fill="#65698f" />
           {/* Frost build-up on the door face — responds to temperature */}
           <rect
             x="1080"
             y="250"
             width="320"
             height="310"
-            fill="#DCEEFB"
+            fill="#dbe5fc"
             style={{ opacity: "calc(var(--tj-frost) * 0.10)" }}
           />
         </g>
@@ -579,7 +579,7 @@ export function HeroStage({
         <path d="M986 664 L900 900" />
         <path d="M1436 664 L1540 900" />
       </g>
-      <g stroke="#00f5d4" strokeWidth="2" opacity="0.14">
+      <g stroke="#8f7bff" strokeWidth="2" opacity="0.14">
         <path d="M120 700 H1520" />
         <path d="M60 780 H1560" />
       </g>
@@ -589,14 +589,14 @@ export function HeroStage({
         y="660"
         width="1600"
         height="240"
-        fill="#DCEEFB"
+        fill="#dbe5fc"
         style={{ opacity: "calc(var(--tj-frost) * 0.05)" }}
       />
 
       {/* ============ DOCK LEVELLER ============ */}
       <g>
-        <path d="M984 566 L1092 560 L1092 578 L984 584 Z" fill="#2A3E52" stroke="#0C1826" strokeWidth="1.4" />
-        <g stroke="#4A6478" strokeWidth="1.4" opacity="0.7">
+        <path d="M984 566 L1092 560 L1092 578 L984 584 Z" fill="#282d54" stroke="#0b0d27" strokeWidth="1.4" />
+        <g stroke="#48507a" strokeWidth="1.4" opacity="0.7">
           {Array.from({ length: 7 }, (_, index) => (
             <path key={index} d={`M${994 + index * 14} 566 L${994 + index * 14} 582`} />
           ))}
@@ -605,8 +605,8 @@ export function HeroStage({
 
       {/* ============ FLOOR MIST (Scene 02) ============ */}
       <g data-floor-mist opacity={0} transform="translate(-70,0)">
-        <ellipse cx="620" cy="690" rx="620" ry="52" fill="#BFE3F7" opacity="0.16" filter="url(#tj-blur-lg)" />
-        <ellipse cx="1080" cy="704" rx="440" ry="44" fill="#DCEEFB" opacity="0.14" filter="url(#tj-blur-lg)" />
+        <ellipse cx="620" cy="690" rx="620" ry="52" fill="#bdd4f9" opacity="0.16" filter="url(#tj-blur-lg)" />
+        <ellipse cx="1080" cy="704" rx="440" ry="44" fill="#dbe5fc" opacity="0.14" filter="url(#tj-blur-lg)" />
       </g>
 
       {/* ============ THE TRUCK (Scene 03) ============ */}
@@ -622,22 +622,22 @@ export function HeroStage({
       {/* Travel from the truck's rear doors into the chamber. */}
       <g>
         <CargoPallet x={1004} y={556} accent="#22C55E" label="PRODUCE" index={0} />
-        <CargoPallet x={1004} y={556} accent="#48cae4" label="MEAT" index={1} />
-        <CargoPallet x={1004} y={556} accent="#00f5d4" label="SEAFOOD" index={2} />
-        <CargoPallet x={1004} y={556} accent="#eafcff" label="PHARMA" index={3} />
+        <CargoPallet x={1004} y={556} accent="#4cc2ff" label="MEAT" index={1} />
+        <CargoPallet x={1004} y={556} accent="#8f7bff" label="SEAFOOD" index={2} />
+        <CargoPallet x={1004} y={556} accent="#e9f3ff" label="PHARMA" index={3} />
       </g>
 
       {/* ============ MIST POURING FROM THE CHAMBER (Scene 05) ============ */}
       <g data-door-mist opacity={0} style={{ mixBlendMode: "screen" }}>
-        <ellipse cx="1200" cy="546" rx="230" ry="42" fill="#E4F5FF" opacity="0.5" filter="url(#tj-blur-lg)" />
-        <ellipse cx="1130" cy="576" rx="300" ry="46" fill="#BFE3F7" opacity="0.38" filter="url(#tj-blur-lg)" />
-        <ellipse cx="1260" cy="606" rx="360" ry="40" fill="#DCEEFB" opacity="0.26" filter="url(#tj-blur-lg)" />
+        <ellipse cx="1200" cy="546" rx="230" ry="42" fill="#e4eeff" opacity="0.5" filter="url(#tj-blur-lg)" />
+        <ellipse cx="1130" cy="576" rx="300" ry="46" fill="#bdd4f9" opacity="0.38" filter="url(#tj-blur-lg)" />
+        <ellipse cx="1260" cy="606" rx="360" ry="40" fill="#dbe5fc" opacity="0.26" filter="url(#tj-blur-lg)" />
       </g>
 
       {/* ============ AMBIENT MIST DENSITY (temperature-driven) ============ */}
       <g style={{ opacity: "calc(var(--tj-mist) * 0.5)", mixBlendMode: "screen" }}>
-        <ellipse cx="820" cy="640" rx="760" ry="70" fill="#CFE9FA" opacity="0.18" filter="url(#tj-blur-lg)" />
-        <ellipse cx="1180" cy="612" rx="420" ry="58" fill="#EAF8FF" opacity="0.16" filter="url(#tj-blur-lg)" />
+        <ellipse cx="820" cy="640" rx="760" ry="70" fill="#cdddfc" opacity="0.18" filter="url(#tj-blur-lg)" />
+        <ellipse cx="1180" cy="612" rx="420" ry="58" fill="#e8f2ff" opacity="0.16" filter="url(#tj-blur-lg)" />
       </g>
 
       {/* ============ HUD LINK LINE (Scene 06→07) ============ */}
@@ -667,7 +667,7 @@ export function HeroStage({
               cx={seedA}
               cy={seedB}
               r={radius}
-              fill="#EAF8FF"
+              fill="#e8f2ff"
               opacity={0.18 + ((index * 7) % 30) / 100}
               style={{ animationDelay: `${(index % 9) * 1.7}s` }}
               className="tj-particle"
@@ -680,7 +680,7 @@ export function HeroStage({
       <rect
         width="1600"
         height="900"
-        fill="#EAF8FF"
+        fill="#e8f2ff"
         style={{ opacity: "calc(var(--tj-frost) * 0.045)", mixBlendMode: "screen" }}
         pointerEvents="none"
       />
@@ -718,9 +718,9 @@ function CargoPallet({
       <g data-pallet data-travel={travel} opacity={0}>
       {/* Pallet base */}
       <g>
-        <rect x="-26" y="-12" width="52" height="5" rx="1" fill="#3B4A5A" />
-        <rect x="-26" y="-4" width="52" height="4" rx="1" fill="#2C3947" />
-        <g fill="#243040">
+        <rect x="-26" y="-12" width="52" height="5" rx="1" fill="#3a3d5b" />
+        <rect x="-26" y="-4" width="52" height="4" rx="1" fill="#2b2d48" />
+        <g fill="#232441">
           <rect x="-24" y="-8" width="9" height="4" />
           <rect x="-4" y="-8" width="9" height="4" />
           <rect x="16" y="-8" width="9" height="4" />
@@ -729,10 +729,10 @@ function CargoPallet({
 
       {/* Stacked cartons */}
       <g>
-        <rect x="-24" y="-42" width="48" height="30" rx="2" fill="#8C9DAD" stroke="#0C1826" strokeWidth="1.2" />
-        <rect x="-24" y="-42" width="48" height="4" fill="#B9C7D4" opacity="0.6" />
-        <rect x="-20" y="-64" width="40" height="22" rx="2" fill="#7C8D9D" stroke="#0C1826" strokeWidth="1.2" />
-        <path d="M0-42 V-12" stroke="#0C1826" strokeWidth="1" opacity="0.6" />
+        <rect x="-24" y="-42" width="48" height="30" rx="2" fill="#8b94ae" stroke="#0b0d27" strokeWidth="1.2" />
+        <rect x="-24" y="-42" width="48" height="4" fill="#b8bfd5" opacity="0.6" />
+        <rect x="-20" y="-64" width="40" height="22" rx="2" fill="#7b849e" stroke="#0b0d27" strokeWidth="1.2" />
+        <path d="M0-42 V-12" stroke="#0b0d27" strokeWidth="1" opacity="0.6" />
       </g>
 
       {/* Category band */}
@@ -740,7 +740,7 @@ function CargoPallet({
 
       {/* Category tag */}
       <g transform="translate(0,-78)">
-        <rect x="-30" y="-11" width="60" height="16" rx="2" fill="#07121E" opacity="0.85" stroke={accent} strokeWidth="0.9" strokeOpacity="0.5" />
+        <rect x="-30" y="-11" width="60" height="16" rx="2" fill="#06081f" opacity="0.85" stroke={accent} strokeWidth="0.9" strokeOpacity="0.5" />
         <text
           x="0"
           y="1"

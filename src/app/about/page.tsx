@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { CircleAlert, MapPin } from "lucide-react";
+import Image from "next/image";
 
 import { FinalCta } from "@/components/cta/final-cta";
+import { ImageBand } from "@/components/imagery/image-band";
 import { HeroSpec, PageHero } from "@/components/layout/page-hero";
 import { CatalogIcon } from "@/components/ui/catalog-icon";
 import { Section } from "@/components/ui/section";
@@ -132,6 +134,20 @@ export default function AboutPage() {
         </div>
       </Section>
 
+      {/* The building at night — illustrative (§45). */}
+      <section
+        aria-label="The facility at night"
+        className="relative z-10 mx-auto w-full max-w-[86rem] px-5 py-14 sm:px-8 lg:px-12"
+      >
+        <ImageBand
+          src="/assets/facility-exterior-night.jpg"
+          alt="The cold storage facility at night: illuminated dock doors and refrigerated trucks under an indigo sky."
+          eyebrow="Uuayrij Industrial Area"
+          title="The building, when the work is done at night"
+          caption="Heavy vehicles reach the dock without crossing retail streets. Industrial movement at unsocial hours is what the district is for."
+        />
+      </section>
+
       {/* ---------------- Operating principles ---------------- */}
       <Section
         id="principles"
@@ -169,6 +185,44 @@ export default function AboutPage() {
               </article>
             </li>
           ))}
+        </ul>
+
+        {/* The work, as light and frost — illustrative (§45). */}
+        <ul className="mt-6 grid gap-3 md:grid-cols-2">
+          <li>
+            <figure className="tj-panel-shine group relative h-[34vh] min-h-[240px] overflow-hidden rounded-2xl border border-hull-line/60">
+              <Image
+                src="/assets/automated-racking.jpg"
+                alt="High-bay racking aisle lit in frost blue with floor-level fog."
+                fill
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className="scale-[1.18] object-cover"
+                data-parallax="0.3"
+              />
+              <div aria-hidden className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(4,7,29,0.8),transparent_58%)]" />
+              <figcaption className="absolute bottom-4 left-4">
+                <p className="font-mono text-[0.5625rem] tracking-[0.22em] text-ice uppercase">Placed</p>
+                <p className="mt-1 font-display text-base font-bold uppercase tracking-tight text-frost">To a zone and a location</p>
+              </figcaption>
+            </figure>
+          </li>
+          <li className="md:mt-8">
+            <figure className="tj-panel-shine group relative h-[34vh] min-h-[240px] overflow-hidden rounded-2xl border border-hull-line/60">
+              <Image
+                src="/assets/control-room-ops.jpg"
+                alt="The monitoring control room, screens glowing with zone conditions."
+                fill
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className="scale-[1.18] object-cover"
+                data-parallax="0.3"
+              />
+              <div aria-hidden className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(4,7,29,0.8),transparent_58%)]" />
+              <figcaption className="absolute bottom-4 left-4">
+                <p className="font-mono text-[0.5625rem] tracking-[0.22em] text-ice uppercase">Answered for</p>
+                <p className="mt-1 font-display text-base font-bold uppercase tracking-tight text-frost">Every movement, recorded</p>
+              </figcaption>
+            </figure>
+          </li>
         </ul>
       </Section>
 

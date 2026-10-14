@@ -46,7 +46,7 @@ const REGIMES: readonly Regime[] = [
     id: "chilled",
     name: "CHILLED",
     cold: 0.18,
-    accent: "#48cae4",
+    accent: "#4cc2ff",
     summary:
       "Holding above freezing for product that must stay cool without forming ice crystals. Airflow is gentle and even so leaf and surface moisture is not driven off.",
     plant: [
@@ -61,7 +61,7 @@ const REGIMES: readonly Regime[] = [
     id: "frozen",
     name: "FROZEN",
     cold: 0.62,
-    accent: "#00f5d4",
+    accent: "#8f7bff",
     summary:
       "Sub-zero holding for protein and seafood. The plant runs harder and the defrost cycle becomes part of the routine, so swing between cycles is what gets managed.",
     plant: [
@@ -76,7 +76,7 @@ const REGIMES: readonly Regime[] = [
     id: "deep-frozen",
     name: "DEEP FROZEN",
     cold: 1,
-    accent: "#eafcff",
+    accent: "#e9f3ff",
     summary:
       "The coldest regime the chamber is asked to hold. Pull-down takes longest here, so intake is staged and the room is allowed to recover before the next load.",
     plant: [
@@ -285,8 +285,8 @@ function ColdRoomCutaway({ regime, reduced }: { regime: Regime; reduced: boolean
       >
         <defs>
           <linearGradient id="pc-wall" x1="0" y1="60" x2="0" y2="500" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stopColor="#1B2C42" />
-            <stop offset="100%" stopColor="#0C1725" />
+            <stop offset="0%" stopColor="#191b44" />
+            <stop offset="100%" stopColor="#0b0c26" />
           </linearGradient>
           <linearGradient id="pc-insul" x1="0" y1="0" x2="1" y2="0">
             <stop offset="0%" stopColor="#F59E0B" stopOpacity="0.28" />
@@ -298,8 +298,8 @@ function ColdRoomCutaway({ regime, reduced }: { regime: Regime; reduced: boolean
             <stop offset="100%" stopColor={regime.accent} stopOpacity="0" />
           </radialGradient>
           <linearGradient id="pc-floor" x1="0" y1="500" x2="0" y2="540" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stopColor="#0f1b38" />
-            <stop offset="100%" stopColor="#080F19" />
+            <stop offset="0%" stopColor="#121d48" />
+            <stop offset="100%" stopColor="#07081a" />
           </linearGradient>
           <filter id="pc-blur" x="-30%" y="-30%" width="160%" height="160%">
             <feGaussianBlur stdDeviation="14" />
@@ -311,23 +311,23 @@ function ColdRoomCutaway({ regime, reduced }: { regime: Regime; reduced: boolean
 
         {/* ---- Insulated wall cutaway (left) ---- */}
         <g>
-          <rect x="40" y="60" width="46" height="440" fill="#0A1421" />
+          <rect x="40" y="60" width="46" height="440" fill="#090a22" />
           <rect x="52" y="60" width="22" height="440" fill="url(#pc-insul)" />
-          <g stroke="#2C4258" strokeWidth="1.2" opacity="0.75">
+          <g stroke="#2a2f5a" strokeWidth="1.2" opacity="0.75">
             <path d="M40 60 V500" />
             <path d="M52 60 V500" />
             <path d="M74 60 V500" />
             <path d="M86 60 V500" />
           </g>
           {/* Panel label leader */}
-          <path d="M86 120 H150" stroke="#48cae4" strokeWidth="1" opacity="0.45" strokeDasharray="4 4" />
+          <path d="M86 120 H150" stroke="#4cc2ff" strokeWidth="1" opacity="0.45" strokeDasharray="4 4" />
           <text
             x="156"
             y="124"
             fontFamily="'JetBrains Mono', monospace"
             fontSize="10"
             letterSpacing="1.6"
-            fill="#48cae4"
+            fill="#4cc2ff"
             opacity="0.75"
           >
             INSULATED PANEL
@@ -341,7 +341,7 @@ function ColdRoomCutaway({ regime, reduced }: { regime: Regime; reduced: boolean
         <g>
           {[220, 420, 620].map((x) => (
             <g key={x}>
-              <rect x={x - 60} y="72" width="120" height="6" rx="3" fill="#EAF8FF" opacity="0.8" />
+              <rect x={x - 60} y="72" width="120" height="6" rx="3" fill="#e8f2ff" opacity="0.8" />
               <rect
                 x={x - 78}
                 y="66"
@@ -358,10 +358,10 @@ function ColdRoomCutaway({ regime, reduced }: { regime: Regime; reduced: boolean
 
         {/* ---- Evaporator / cooler unit ---- */}
         <g>
-          <rect x="118" y="104" width="196" height="86" rx="4" fill="#16283C" stroke="#2C4258" strokeWidth="1.6" />
-          <rect x="118" y="104" width="196" height="7" rx="3" fill="#33506B" opacity="0.7" />
+          <rect x="118" y="104" width="196" height="86" rx="4" fill="#14183e" stroke="#2a2f5a" strokeWidth="1.6" />
+          <rect x="118" y="104" width="196" height="7" rx="3" fill="#31386d" opacity="0.7" />
           {/* Coil fins */}
-          <g stroke="#3A5772" strokeWidth="1.4" opacity="0.75">
+          <g stroke="#383f74" strokeWidth="1.4" opacity="0.75">
             {Array.from({ length: 18 }, (_, i) => (
               <path key={i} d={`M${130 + i * 10} 122 V176`} />
             ))}
@@ -369,7 +369,7 @@ function ColdRoomCutaway({ regime, reduced }: { regime: Regime; reduced: boolean
           {/* Fans — speed scales with the regime */}
           {[166, 232, 298].map((x) => (
             <g key={x} transform={`translate(${x},148)`}>
-              <circle r="21" fill="#0A1421" stroke="#3A5772" strokeWidth="1.4" />
+              <circle r="21" fill="#090a22" stroke="#383f74" strokeWidth="1.4" />
               <g
                 className="pc-fan"
                 style={{
@@ -382,13 +382,13 @@ function ColdRoomCutaway({ regime, reduced }: { regime: Regime; reduced: boolean
                   <path
                     key={angle}
                     d="M0 0 L15 -6 A16 16 0 0 1 15 6 Z"
-                    fill="#48cae4"
+                    fill="#4cc2ff"
                     opacity="0.55"
                     transform={`rotate(${angle})`}
                   />
                 ))}
               </g>
-              <circle r="4" fill="#2C4258" />
+              <circle r="4" fill="#2a2f5a" />
             </g>
           ))}
           {/* Unit label */}
@@ -398,7 +398,7 @@ function ColdRoomCutaway({ regime, reduced }: { regime: Regime; reduced: boolean
             fontFamily="'JetBrains Mono', monospace"
             fontSize="10"
             letterSpacing="1.6"
-            fill="#94a3b8"
+            fill="#97a6cc"
             opacity="0.8"
           >
             EVAPORATOR UNIT
@@ -447,18 +447,18 @@ function ColdRoomCutaway({ regime, reduced }: { regime: Regime; reduced: boolean
           {[380, 540, 700].map((x, bayIndex) => (
             <g key={x}>
               {/* Uprights */}
-              <g stroke="#2C4258" strokeWidth="5">
+              <g stroke="#2a2f5a" strokeWidth="5">
                 <path d={`M${x - 62} 232 V498`} />
                 <path d={`M${x + 62} 232 V498`} />
               </g>
               {/* Beams */}
-              <g stroke="#3A5772" strokeWidth="4">
+              <g stroke="#383f74" strokeWidth="4">
                 <path d={`M${x - 62} 320 H${x + 62}`} />
                 <path d={`M${x - 62} 408 H${x + 62}`} />
                 <path d={`M${x - 62} 496 H${x + 62}`} />
               </g>
               {/* Stock — fill varies so the room reads as part-loaded, not staged */}
-              <g fill="#12394C" opacity="0.85" stroke="#0A2434" strokeWidth="1.2">
+              <g fill="#10214e" opacity="0.85" stroke="#081236" strokeWidth="1.2">
                 {bayIndex < 2 ? <rect x={x - 54} y={286} width="46" height="32" rx="2" /> : null}
                 <rect x={x + 4} y={290} width="50" height="28" rx="2" />
                 {bayIndex !== 1 ? <rect x={x - 54} y={374} width="46" height="32" rx="2" /> : null}
@@ -473,7 +473,7 @@ function ColdRoomCutaway({ regime, reduced }: { regime: Regime; reduced: boolean
                 fontFamily="'JetBrains Mono', monospace"
                 fontSize="9.5"
                 letterSpacing="1.4"
-                fill="#94a3b8"
+                fill="#97a6cc"
                 opacity="0.65"
               >
                 {`BAY 0${bayIndex + 1}`}
@@ -484,38 +484,38 @@ function ColdRoomCutaway({ regime, reduced }: { regime: Regime; reduced: boolean
 
         {/* ---- Floor + drainage ---- */}
         <rect x="40" y="498" width="720" height="42" fill="url(#pc-floor)" />
-        <path d="M40 498 H760" stroke="#2C4258" strokeWidth="1.6" opacity="0.8" />
-        <g stroke="#1E3348" strokeWidth="1" opacity="0.55">
+        <path d="M40 498 H760" stroke="#2a2f5a" strokeWidth="1.6" opacity="0.8" />
+        <g stroke="#1c214a" strokeWidth="1" opacity="0.55">
           {Array.from({ length: 15 }, (_, i) => (
             <path key={i} d={`M${70 + i * 48} 498 V540`} />
           ))}
         </g>
         {/* Drainage channel */}
-        <rect x="300" y="512" width="200" height="7" rx="3" fill="#0A1421" stroke="#1E3348" strokeWidth="1" />
+        <rect x="300" y="512" width="200" height="7" rx="3" fill="#090a22" stroke="#1c214a" strokeWidth="1" />
 
         {/* ---- Surface frost / condensation (regime-driven) ---- */}
         <g opacity={frostOpacity} pointerEvents="none">
-          <rect x="86" y="60" width="674" height="440" fill="#EAF8FF" opacity="0.14" />
+          <rect x="86" y="60" width="674" height="440" fill="#e8f2ff" opacity="0.14" />
           {/* Frost creeping in from the corners and the cold wall */}
           <path
             d="M86 60 H300 L86 210 Z"
-            fill="#EAF8FF"
+            fill="#e8f2ff"
             opacity="0.22"
             filter="url(#pc-blur)"
           />
           <path
             d="M760 500 H520 L760 350 Z"
-            fill="#EAF8FF"
+            fill="#e8f2ff"
             opacity="0.18"
             filter="url(#pc-blur)"
           />
           {/* Frost on the evaporator — heaviest where it is coldest */}
-          <rect x="118" y="104" width="196" height="86" rx="4" fill="#eafcff" opacity={0.1 + cold * 0.22} />
+          <rect x="118" y="104" width="196" height="86" rx="4" fill="#e9f3ff" opacity={0.1 + cold * 0.22} />
         </g>
 
         {/* ---- Vertical temperature gauge ---- */}
         <g transform="translate(24,0)">
-          <rect x="0" y="120" width="8" height="320" rx="4" fill="#0A1421" stroke="#2C4258" strokeWidth="1" />
+          <rect x="0" y="120" width="8" height="320" rx="4" fill="#090a22" stroke="#2a2f5a" strokeWidth="1" />
           <rect
             x="1.5"
             y={122 + (1 - cold) * 316}
@@ -541,7 +541,7 @@ function ColdRoomCutaway({ regime, reduced }: { regime: Regime; reduced: boolean
             fontFamily="'JetBrains Mono', monospace"
             fontSize="8"
             letterSpacing="1"
-            fill="#64748b"
+            fill="#6d7aa8"
           >
             WARM
           </text>
@@ -552,7 +552,7 @@ function ColdRoomCutaway({ regime, reduced }: { regime: Regime; reduced: boolean
             fontFamily="'JetBrains Mono', monospace"
             fontSize="8"
             letterSpacing="1"
-            fill="#64748b"
+            fill="#6d7aa8"
           >
             COLD
           </text>

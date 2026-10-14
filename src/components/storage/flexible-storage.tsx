@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 import { CatalogIcon } from "@/components/ui/catalog-icon";
@@ -54,6 +55,46 @@ export function FlexibleStorage() {
             </p>
           </div>
         </div>
+
+        {/* ---------------- The environments, as imagery ---------------- */}
+        {/* §45: illustrative visuals — terms stay per-requirement, not implied by
+            the photographs. */}
+        <ul className="mt-14 grid gap-3 md:grid-cols-2">
+          <li>
+            <figure className="tj-panel-shine group relative h-[36vh] min-h-[260px] overflow-hidden rounded-2xl border border-hull-line/60">
+              <Image
+                src="/assets/produce-cold-room.jpg"
+                alt="Fresh produce crates stacked in a chilled room under azure strip lighting."
+                fill
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className="scale-[1.2] object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.28]"
+                data-parallax="0.3"
+              />
+              <div aria-hidden className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(4,7,29,0.8),transparent_58%)]" />
+              <figcaption className="absolute bottom-4 left-4">
+                <p className="font-mono text-[0.5625rem] tracking-[0.22em] text-ice uppercase">Chilled modes</p>
+                <p className="mt-1 font-display text-base font-bold uppercase tracking-tight text-frost">Shared & dedicated chambers</p>
+              </figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure className="tj-panel-shine group relative h-[36vh] min-h-[260px] overflow-hidden rounded-2xl border border-hull-line/60">
+              <Image
+                src="/assets/sealed-frozen-cartons.jpg"
+                alt="Sealed frozen cartons furred with frost inside the deep-freeze chamber."
+                fill
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className="scale-[1.2] object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.28]"
+                data-parallax="0.3"
+              />
+              <div aria-hidden className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(4,7,29,0.8),transparent_58%)]" />
+              <figcaption className="absolute bottom-4 left-4">
+                <p className="font-mono text-[0.5625rem] tracking-[0.22em] text-ice uppercase">Frozen modes</p>
+                <p className="mt-1 font-display text-base font-bold uppercase tracking-tight text-frost">Deep-freeze & transit holding</p>
+              </figcaption>
+            </figure>
+          </li>
+        </ul>
 
         {/* ---------------- The modes ---------------- */}
         <ul className="mt-14 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">

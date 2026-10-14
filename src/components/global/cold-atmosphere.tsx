@@ -29,7 +29,7 @@ export function ColdAtmosphere({ className }: { className?: string }) {
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(140% 90% at 50% -12%, #12224a 0%, #0b132b 42%, #030712 78%)",
+            "radial-gradient(140% 90% at 50% -12%, #152355 0%, #0b1034 42%, #04071d 78%)",
         }}
       />
 
@@ -49,7 +49,7 @@ export function ColdAtmosphere({ className }: { className?: string }) {
         className="absolute -top-1/3 left-1/2 h-[85vh] w-[130vw] -translate-x-1/2 opacity-[0.16] blur-3xl"
         style={{
           background:
-            "conic-gradient(from 180deg at 50% 0%, transparent 0deg, rgba(72,202,228,0.5) 78deg, transparent 96deg, transparent 264deg, rgba(0,245,212,0.42) 282deg, transparent 300deg)",
+            "conic-gradient(from 180deg at 50% 0%, transparent 0deg, rgba(76,194,255,0.5) 78deg, transparent 96deg, transparent 264deg, rgba(143,123,255,0.42) 282deg, transparent 300deg)",
         }}
       />
 
@@ -59,9 +59,9 @@ export function ColdAtmosphere({ className }: { className?: string }) {
           className="h-full w-full blur-[70px]"
           style={{
             background:
-              "radial-gradient(45% 60% at 22% 70%, rgba(72,202,228,0.16), transparent 70%)," +
-              "radial-gradient(38% 55% at 62% 82%, rgba(0,245,212,0.13), transparent 72%)," +
-              "radial-gradient(50% 60% at 88% 66%, rgba(148,163,184,0.10), transparent 70%)",
+              "radial-gradient(45% 60% at 22% 70%, rgba(76,194,255,0.16), transparent 70%)," +
+              "radial-gradient(38% 55% at 62% 82%, rgba(143,123,255,0.13), transparent 72%)," +
+              "radial-gradient(50% 60% at 88% 66%, rgba(151,166,204,0.10), transparent 70%)",
           }}
         />
       </div>
@@ -72,8 +72,8 @@ export function ColdAtmosphere({ className }: { className?: string }) {
           className="h-full w-full blur-[54px]"
           style={{
             background:
-              "radial-gradient(34% 70% at 34% 60%, rgba(234,252,255,0.10), transparent 72%)," +
-              "radial-gradient(28% 60% at 74% 74%, rgba(72,202,228,0.11), transparent 74%)",
+              "radial-gradient(34% 70% at 34% 60%, rgba(233,243,255,0.10), transparent 72%)," +
+              "radial-gradient(28% 60% at 74% 74%, rgba(76,194,255,0.11), transparent 74%)",
           }}
         />
       </div>
@@ -83,7 +83,7 @@ export function ColdAtmosphere({ className }: { className?: string }) {
         className="absolute inset-x-0 top-0 h-[38vh] animate-breathe opacity-40 blur-2xl"
         style={{
           background:
-            "linear-gradient(180deg, rgba(72,202,228,0.09), rgba(15,27,56,0.05) 55%, transparent)",
+            "linear-gradient(180deg, rgba(76,194,255,0.09), rgba(18,29,72,0.05) 55%, transparent)",
         }}
       />
 
@@ -95,7 +95,7 @@ export function ColdAtmosphere({ className }: { className?: string }) {
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(120% 100% at 50% 45%, transparent 42%, rgba(3,7,18,0.55) 82%, rgba(3,7,18,0.9) 100%)",
+            "radial-gradient(120% 100% at 50% 45%, transparent 42%, rgba(4,7,29,0.55) 82%, rgba(4,7,29,0.9) 100%)",
         }}
       />
     </div>
@@ -116,9 +116,9 @@ export function ColdPool({
   hue?: "ice" | "cyan" | "frost" | "green";
 }) {
   const colours = {
-    ice: "72, 202, 228",
-    cyan: "0, 245, 212",
-    frost: "234, 252, 255",
+    ice: "76, 194, 255",
+    cyan: "143, 123, 255",
+    frost: "233, 243, 255",
     green: "34, 197, 94",
   } as const;
 

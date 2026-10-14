@@ -29,28 +29,28 @@ export default function GlobalError({
 
   return (
     <html lang="en" dir="ltr">
-      <body className="bg-[#030712] font-sans text-[#94a3b8] antialiased">
+      <body className="bg-[#04071d] font-sans text-[#97a6cc] antialiased">
         <main
           className="relative flex min-h-svh items-center justify-center overflow-hidden px-5 py-20"
           style={{
             background:
-              "radial-gradient(120% 90% at 50% -10%, #12224a 0%, #0b132b 44%, #030712 80%)",
+              "radial-gradient(120% 90% at 50% -10%, #152355 0%, #0b1034 44%, #04071d 80%)",
           }}
         >
           <div
-            className="relative w-full max-w-lg rounded-[4px] border border-[rgba(0,245,212,0.28)] p-8 text-center backdrop-blur-2xl sm:p-10"
+            className="relative w-full max-w-lg rounded-[4px] border border-[rgba(143,123,255,0.28)] p-8 text-center backdrop-blur-2xl sm:p-10"
             style={{
               background:
-                "linear-gradient(158deg, rgba(15,27,56,0.80), rgba(3,7,18,0.92))",
+                "linear-gradient(158deg, rgba(18,29,72,0.80), rgba(4,7,29,0.92))",
               boxShadow:
-                "0 0 46px rgba(0,245,212,0.16), 0 40px 90px -36px rgba(0,0,0,1)",
+                "0 0 46px rgba(143,123,255,0.16), 0 40px 90px -36px rgba(0,0,0,1)",
             }}
           >
             <span className="mx-auto flex size-12 items-center justify-center rounded-full border border-[rgba(239,68,68,0.45)] bg-[rgba(239,68,68,0.12)]">
               <ShieldAlert size={20} strokeWidth={1.7} aria-hidden className="text-[#ef4444]" />
             </span>
 
-            <h1 className="mt-6 text-2xl font-bold tracking-[-0.02em] text-[#eafcff] uppercase sm:text-3xl">
+            <h1 className="mt-6 text-2xl font-bold tracking-[-0.02em] text-[#e9f3ff] uppercase sm:text-3xl">
               The site hit a fault
             </h1>
 
@@ -64,7 +64,7 @@ export default function GlobalError({
               <button
                 type="button"
                 onClick={reset}
-                className="inline-flex items-center justify-center gap-2.5 rounded-[2px] bg-[#00f5d4] px-6 py-3.5 text-[0.75rem] font-bold tracking-[0.16em] text-[#030712] uppercase transition-colors duration-300 hover:bg-[#48cae4] focus-visible:ring-2 focus-visible:ring-[#00f5d4] focus-visible:ring-offset-2 focus-visible:ring-offset-[#030712] focus-visible:outline-none"
+                className="inline-flex items-center justify-center gap-2.5 rounded-[2px] bg-[#8f7bff] px-6 py-3.5 text-[0.75rem] font-bold tracking-[0.16em] text-[#04071d] uppercase transition-colors duration-300 hover:bg-[#4cc2ff] focus-visible:ring-2 focus-visible:ring-[#8f7bff] focus-visible:ring-offset-2 focus-visible:ring-offset-[#04071d] focus-visible:outline-none"
               >
                 <RotateCcw size={15} strokeWidth={2.2} aria-hidden />
                 Try again
@@ -72,14 +72,14 @@ export default function GlobalError({
 
               <a
                 href="/"
-                className="inline-flex items-center justify-center rounded-[2px] border border-[rgba(28,49,87,0.9)] px-6 py-3.5 text-[0.75rem] font-bold tracking-[0.16em] text-[#94a3b8] uppercase transition-colors duration-300 hover:border-[rgba(0,245,212,0.5)] hover:text-[#eafcff] focus-visible:ring-2 focus-visible:ring-[#00f5d4] focus-visible:outline-none"
+                className="inline-flex items-center justify-center rounded-[2px] border border-[rgba(28, 26, 89,0.9)] px-6 py-3.5 text-[0.75rem] font-bold tracking-[0.16em] text-[#97a6cc] uppercase transition-colors duration-300 hover:border-[rgba(143,123,255,0.5)] hover:text-[#e9f3ff] focus-visible:ring-2 focus-visible:ring-[#8f7bff] focus-visible:outline-none"
               >
                 Back to start
               </a>
             </div>
 
             {error.digest ? (
-              <p className="mt-7 font-mono text-[0.5625rem] tracking-[0.14em] text-[#64748b] uppercase">
+              <p className="mt-7 font-mono text-[0.5625rem] tracking-[0.14em] text-[#6d7aa8] uppercase">
                 Reference {error.digest}
               </p>
             ) : null}

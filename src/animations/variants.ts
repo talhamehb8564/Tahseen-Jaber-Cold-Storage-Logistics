@@ -204,8 +204,8 @@ export function temperatureShift(celsius: number): TemperatureLook {
     frost: Number(cold.toFixed(3)),
     mist: Number((0.18 + cold * 0.72).toFixed(3)),
     // Warm steel above freezing -> ice blue -> electric cyan at deep freeze.
-    light: mix([167, 180, 197], [34, 211, 238]),
-    wash: mix([21, 34, 53], [8, 20, 38]),
+    light: mix([167, 180, 197], [64, 176, 255]),
+    wash: mix([21, 34, 53], [10, 15, 50]),
     hudIntensity: Number((0.55 + cold * 0.45).toFixed(3)),
     label:
       clamped >= 8

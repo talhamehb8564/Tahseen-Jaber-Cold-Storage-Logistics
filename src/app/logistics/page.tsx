@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import { ColdChainTimeline } from "@/components/cold-chain/cold-chain-timeline";
 import { FinalCta } from "@/components/cta/final-cta";
+import { ImageBand } from "@/components/imagery/image-band";
 import { HeroSpec, PageHero } from "@/components/layout/page-hero";
 import { LogisticsRoute } from "@/components/logistics/logistics-route";
 import { ProvenanceBadge } from "@/components/ui/provenance-badge";
@@ -80,6 +81,20 @@ export default async function LogisticsPage() {
       >
         <LogisticsRoute simulated={simulated} />
       </Section>
+
+      {/* The cold chain in motion — illustrative (§45). */}
+      <section
+        aria-label="The cold chain in motion"
+        className="relative z-10 mx-auto w-full max-w-[86rem] px-5 py-14 sm:px-8 lg:px-12"
+      >
+        <ImageBand
+          src="/assets/reefer-truck-highway.jpg"
+          alt="A refrigerated truck running an empty highway at dusk, marker lights glowing under a violet sky."
+          eyebrow="Gate to gate"
+          title="A chamber on wheels"
+          caption="The reefer answers to the same discipline as the building: one set point, one reference, one record from dock to destination."
+        />
+      </section>
 
       <ColdChainTimeline />
 

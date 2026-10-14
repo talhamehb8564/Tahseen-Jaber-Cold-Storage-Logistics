@@ -87,7 +87,7 @@ export function Navbar() {
           "fixed inset-x-0 top-0 z-[80] transition-[background-color,backdrop-filter,border-color,height]",
           "duration-[520ms] ease-[cubic-bezier(0.22,1,0.36,1)]",
           scrolled
-            ? "h-16 border-b border-glow/18 bg-midnight/72 backdrop-blur-xl backdrop-saturate-150 shadow-[0_14px_44px_-24px_rgba(0,245,212,0.35)]"
+            ? "h-16 border-b border-glow/18 bg-midnight/72 backdrop-blur-xl backdrop-saturate-150 shadow-[0_14px_44px_-24px_rgba(143,123,255,0.35)]"
             : "h-20 border-b border-transparent bg-gradient-to-b from-midnight/62 to-transparent backdrop-blur-[3px]",
         )}
       >
